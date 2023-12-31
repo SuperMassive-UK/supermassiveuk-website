@@ -4,7 +4,7 @@ const { class: customClass } = Astro.props;
 
 <section
   class:list={[
-    "flex flex-col justify-center items-center h-screen min-h-[800px]",
+    "flex flex-col justify-center items-center h-screen min-h-[800px] max-w-screen overflow-hidden",
     customClass,
   ]}
   data-scroll-section

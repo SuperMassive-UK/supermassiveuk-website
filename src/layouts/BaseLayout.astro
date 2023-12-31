@@ -13,7 +13,7 @@ const { title, description, type = "website" } = Astro.props;
 
 <html lang="en">
   <BaseHead title={title} description={description} type={type} />
-  <body class="min-h-screen fixed" data-scroll-container>
+  <body class="min-h-screen fixed max-w-screen" data-scroll-container>
     <NavBar />
     <main class="max-w-full mt-0 pt-0 w-full">
       <slot />

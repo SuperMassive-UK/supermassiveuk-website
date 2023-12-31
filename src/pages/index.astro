@@ -21,20 +21,22 @@ const { data: bentoImages } = await getEntry("bentos", "homepage");
     class="relative bg-[radial-gradient(ellipse_at_left_top,rgba(60,28,49,1)_0%,rgba(0,0,0,1)_50%)] overflow-hidden"
   >
     <div
-      class="max-w-lg md:max-w-2xl px-6 md:px-10 z-40"
+      class="max-w-sm sm:max-w-md md:max-w-2xl px-6 md:px-10 z-40"
       data-scroll
       data-scroll-speed="10"
     >
       <h2 class="drop-shadow-custom">
         <div class="text-4xl md:text-6xl uppercase font-bold">Calling all</div>
         <div
-          class="text-7xl md:text-9xl uppercase font-black
+          class="text-5xl sm:text-7xl md:text-9xl uppercase font-black
         bg-[linear-gradient(97deg,#FF5C00_-13.38%,#F06_57.93%,#FFBA00_79.2%)] inline-block text-transparent bg-clip-text"
         >
           curious minds
         </div>
       </h2>
-      <p class="max-w-lg md:max-w-lg text-xl md:text-2xl font-bold">
+      <p
+        class="max-w-full md:max-w-lg text-md sm:text-xl md:text-2xl font-bold"
+      >
         Discover SUPERMASSIVE. We create mind-bending experiences that blur the
         boundaries between story, spectacle and activity.
       </p>
@@ -85,7 +87,7 @@ const { data: bentoImages } = await getEntry("bentos", "homepage");
     data-scroll-section
   >
     <div
-      class="hidden md:block z-50 w-1/2"
+      class="hidden lg:block z-50 w-1/2"
       data-scroll
       data-scroll-speed="10"
       data-scroll-position="top"
@@ -104,7 +106,7 @@ const { data: bentoImages } = await getEntry("bentos", "homepage");
       </BentoGrid>
     </div>
     <div
-      class="flex flex-col gap-4 w-full md:w-1/2"
+      class="flex flex-col gap-4 w-full lg:w-1/2 max-w-full"
       data-scroll
       data-scroll-speed="1"
       data-scroll-repeat
@@ -112,11 +114,13 @@ const { data: bentoImages } = await getEntry("bentos", "homepage");
     >
       <article
         class="bg-[linear-gradient(144deg,#F72585_21%,#FFBA00_103.76%)] flex flex-col justify-center items-start rounded-xl
-        h-full z-50"
+        z-50"
       >
-        <div class="max-w-lg px-5">
-          <h2 class="text-7xl uppercase font-bold">Fully Immersive</h2>
-          <p class="text-2xl font-bold">
+        <div class="px-8 md:px-16 py-48">
+          <h2 class="text-4xl sm:text-5xl md:text-7xl uppercase font-bold">
+            Fully Immersive
+          </h2>
+          <p class="text-md sm:text-lg md:text-2xl font-bold">
             “Characterised by a deep absorption into an activity or a real or
             artificial environment”
           </p>
@@ -128,11 +132,10 @@ const { data: bentoImages } = await getEntry("bentos", "homepage");
         class="h-[500px] object-cover object-center rounded-xl"
       />
       <article
-        class="bg-[linear-gradient(151deg,#4361EE_23.08%,#4361EE_23.09%,#000_102.15%)] flex flex-col justify-center items-start rounded-xl
-        h-[400px]"
+        class="bg-[linear-gradient(151deg,#4361EE_23.08%,#4361EE_23.09%,#000_102.15%)] flex flex-col justify-center items-start rounded-xl"
       >
         <div
-          class="px-12 py-5 text-2xl font-bold flex flex-col gap-8 items-center"
+          class="px-8 md:px-16 py-48 text-lg sm:text-xl md:text-2xl font-bold flex flex-col gap-8 items-center"
         >
           <p>
             We create, curate and promote high-tech interactive art that blurs
@@ -148,13 +151,20 @@ const { data: bentoImages } = await getEntry("bentos", "homepage");
     </div>
   </section>
 </BaseLayout>
-
 <script>
   import LocomotiveScroll from "locomotive-scroll";
 
   const scroller = new LocomotiveScroll({
     el: document.querySelector("[data-scroll-container]"),
     smooth: true,
+    mobile: {
+      breakpoint: 0,
+      smooth: true,
+    },
+    tablet: {
+      breakpoint: 0,
+      smooth: true,
+    },
   });
   scroller.on("scroll", (args: any) => {
     // do something
