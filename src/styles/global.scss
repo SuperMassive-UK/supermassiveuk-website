@@ -1,0 +1,57 @@
+
+@import "@fontsource-variable/tilt-warp";
+@import "@fontsource/shippori-antique-b1";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+	@font-face {
+    font-family: Panton;
+    font-weight: 400;
+    src: url(/fonts/Panton/Panton-Trial-Bold.woff) format("woff");
+  }
+
+	@font-face {
+    font-family: Panton;
+    font-weight: 700;
+    src: url(/fonts/Panton/Panton-Trial-ExtraBold.woff) format("woff");
+  }
+	@font-face {
+    font-family: Panton;
+    font-weight: 900;
+    src: url(/fonts/Panton/Panton-Trial-Black.woff) format("woff");
+  }
+ html {
+	margin: 0;
+	padding: 0;
+	background-color: black;
+	color: white;
+	 }
+
+	h1,h2,h3,h4,h5,h6 {
+		@apply font-heading
+	}
+ 
+}
+
+
+@layer utilities {
+	.nav-hover {
+
+		:before {
+			@apply w-0 content-[""] h-1 block absolute left-[50%] duration-150 bottom-[-10%] 
+		}
+		:before:hover {
+				@apply w-full left-0
+		}
+
+	}
+
+	.nav-active {
+		:before {
+			@apply w-full content-[""] h-1 block absolute left-0 duration-150 bottom-[-10%] 
+		}
+	}
+}

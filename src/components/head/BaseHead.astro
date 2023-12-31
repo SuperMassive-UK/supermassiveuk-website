@@ -1,0 +1,46 @@
+---
+import { SEO } from "astro-seo";
+import "@fontsource-variable/tilt-warp";
+import "@fontsource/shippori-antique-b1";
+import "../../styles/global.scss";
+import "../../styles/locomotive-scroll.css";
+
+const { title = "", description = "", type = "website" } = Astro.props;
+const social_image = "";
+---
+
+<head>
+  <title>{title}</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <meta property="description" content={description} />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <SEO
+    title={title}
+    description={description}
+    openGraph={{
+      basic: {
+        title: title,
+        type: type,
+        image: social_image,
+      },
+    }}
+    ,
+    extend={{
+      meta: [
+        {
+          property: "twitter:image",
+          content: social_image,
+        },
+        {
+          property: "og:image",
+          content: social_image,
+        },
+        {
+          property: "og:description",
+          content: description,
+        },
+      ],
+    }}
+  />
+</head>

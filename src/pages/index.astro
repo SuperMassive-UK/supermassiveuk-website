@@ -1,0 +1,169 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import FullScreenRow from "@/components/rows/FullScreenRow.astro";
+import Nephex from "@/assets/images/nephex-4.png";
+import CloudOrganAdults from "@/assets/images/cloud-organ-adults.jpg";
+import Blob1 from "@/assets/images/blob-1.svg?raw";
+import Blob2 from "@/assets/images/blob-2.svg?raw";
+import Blob3 from "@/assets/images/blob-3.svg?raw";
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import BentoGrid from "@/components/sections/BentoGrid.astro";
+
+const { data: bentoImages } = await getEntry("bentos", "homepage");
+---
+
+<BaseLayout
+  title="SuperMassive"
+  description="Discover SUPERMASSIVE. We create mind-bending experiences that blur the boundaries between story, spectacle and activity."
+>
+  <FullScreenRow
+    class="relative bg-[radial-gradient(ellipse_at_left_top,rgba(60,28,49,1)_0%,rgba(0,0,0,1)_50%)] overflow-hidden"
+  >
+    <div
+      class="max-w-lg md:max-w-2xl px-6 md:px-10 z-40"
+      data-scroll
+      data-scroll-speed="10"
+    >
+      <h2 class="drop-shadow-custom">
+        <div class="text-4xl md:text-6xl uppercase font-bold">Calling all</div>
+        <div
+          class="text-7xl md:text-9xl uppercase font-black
+        bg-[linear-gradient(97deg,#FF5C00_-13.38%,#F06_57.93%,#FFBA00_79.2%)] inline-block text-transparent bg-clip-text"
+        >
+          curious minds
+        </div>
+      </h2>
+      <p class="max-w-lg md:max-w-lg text-xl md:text-2xl font-bold">
+        Discover SUPERMASSIVE. We create mind-bending experiences that blur the
+        boundaries between story, spectacle and activity.
+      </p>
+    </div>
+    <div
+      class="absolute right-[-20%] 2xl:right-[-10%] top-0 md:bottom-0 z-20 m-auto
+      max-w-full w-[500px] h-[500px] md:w-[750px] md:h-[750px] xl:w-[1000px] xl:h-[1000px]"
+    >
+      <Image
+        src={Nephex}
+        alt="SUPERMASSIVE logo"
+        class="brightness-[0.9]"
+        data-scroll-id="nephex"
+        data-scroll
+        data-scroll-speed="-8"
+        data-scroll-position="top"
+      />
+    </div>
+    <div
+      class="absolute bottom-[20%] right-[30%] z-10 blur-sm"
+      data-scroll
+      data-scroll-speed="4"
+      data-scroll-position="top"
+      data-scroll-direction="horizontal"
+    >
+      <Fragment set:html={Blob1} />
+    </div>
+    <div
+      class="absolute bottom-[10%] right-0 z-30"
+      data-scroll
+      data-scroll-speed="8"
+      data-scroll-position="top"
+      data-scroll-direction="horizontal"
+    >
+      <Fragment set:html={Blob3} />
+    </div>
+    <div
+      class="absolute top-[5%] right-[50%] z-0 blur-md"
+      data-scroll
+      data-scroll-speed="-4"
+      data-scroll-direction="horizontal"
+    >
+      <Fragment set:html={Blob2} />
+    </div>
+  </FullScreenRow>
+  <section
+    class="flex w-full max-w-full gap-4 px-4 max-h-[2000px]"
+    data-scroll-section
+  >
+    <div
+      class="hidden md:block z-50 w-1/2"
+      data-scroll
+      data-scroll-speed="10"
+      data-scroll-position="top"
+      data-scroll-repeat
+    >
+      <BentoGrid>
+        {
+          bentoImages.map(({ src, alt, class: customClass }) => (
+            <Image
+              src={src}
+              alt={alt}
+              class:list={[customClass, `w-full h-full rounded-xl`]}
+            />
+          ))
+        }
+      </BentoGrid>
+    </div>
+    <div
+      class="flex flex-col gap-4 w-full md:w-1/2"
+      data-scroll
+      data-scroll-speed="1"
+      data-scroll-repeat
+      data-scroll-position="top"
+    >
+      <article
+        class="bg-[linear-gradient(144deg,#F72585_21%,#FFBA00_103.76%)] flex flex-col justify-center items-start rounded-xl
+        h-full z-50"
+      >
+        <div class="max-w-lg px-5">
+          <h2 class="text-7xl uppercase font-bold">Fully Immersive</h2>
+          <p class="text-2xl font-bold">
+            “Characterised by a deep absorption into an activity or a real or
+            artificial environment”
+          </p>
+        </div>
+      </article>
+      <Image
+        src={CloudOrganAdults}
+        alt="Adults playing the Cloud Organ"
+        class="h-[500px] object-cover object-center rounded-xl"
+      />
+      <article
+        class="bg-[linear-gradient(151deg,#4361EE_23.08%,#4361EE_23.09%,#000_102.15%)] flex flex-col justify-center items-start rounded-xl
+        h-[400px]"
+      >
+        <div
+          class="px-12 py-5 text-2xl font-bold flex flex-col gap-8 items-center"
+        >
+          <p>
+            We create, curate and promote high-tech interactive art that blurs
+            the boundaries between story, spectacle and activity.
+          </p>
+          <p>Many of our individual installations are available for hire.</p>
+          <button
+            class="uppercase font-extrabold bg-white text-black px-4 py-2 rounded-md font-heading"
+            >Work with us</button
+          >
+        </div>
+      </article>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import LocomotiveScroll from "locomotive-scroll";
+
+  const scroller = new LocomotiveScroll({
+    el: document.querySelector("[data-scroll-container]"),
+    smooth: true,
+  });
+  scroller.on("scroll", (args: any) => {
+    // do something
+    const nephex = args.currentElements["nephex"];
+    if (typeof nephex === "object") {
+      let progress = nephex.progress;
+      nephex.el.style.transform = `rotate(${(progress - 0.5) * 0.1}turn)`;
+      // ouput log example: 0.34
+      // gsap example : myGsapAnimation.progress(progress);
+    }
+  });
+</script>
