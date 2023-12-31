@@ -70,7 +70,7 @@ const navData = await getEntry("data", "nav");
             {!item.children && (
               <div class="relative">
                 <div
-                  class="nav-hover transition"
+                  class="hover:scale-125 transition"
                   class:list={[
                     {
                       "nav-active": item.url === Astro.url.pathname,

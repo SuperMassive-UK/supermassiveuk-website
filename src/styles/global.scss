@@ -38,20 +38,20 @@
 
 
 @layer utilities {
-	.nav-hover {
+	// .nav-hover {
 
-		:before {
-			@apply w-0 content-[""] h-1 block absolute left-[50%] duration-150 bottom-[-10%] 
-		}
-		:before:hover {
-				@apply w-full left-0
-		}
+	// 	:before {
+	// 		@apply w-0 content-[""] h-1 block absolute left-[50%] duration-150 bottom-[-10%] 
+	// 	}
+	// 	:before:hover {
+	// 			@apply w-full left-0
+	// 	}
 
-	}
+	// }
 
-	.nav-active {
-		:before {
-			@apply w-full content-[""] h-1 block absolute left-0 duration-150 bottom-[-10%] 
-		}
-	}
+	// .nav-active {
+	// 	:before {
+	// 		@apply w-full content-[""] h-1 block absolute left-0 duration-150 bottom-[-10%] 
+	// 	}
+	// }
 }
