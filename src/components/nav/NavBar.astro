@@ -4,7 +4,7 @@
 import Dropdown from "./Dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 import { Image } from "astro:assets";
-import Logo from "../../assets/images/logo-transparent.png";
+import Logo from "../../assets/images/logo-transparent-cropped.png";
 import { getEntry } from "astro:content";
 
 const navData = await getEntry("data", "nav");
@@ -12,16 +12,16 @@ const navData = await getEntry("data", "nav");
 
 <header
   class="nav-container absolute w-full flex flex-col md:flex-row justify-between
-  items-bottom bg-background py-6 px-6 md:px-10 z-50 max-w-6xl left-0 right-0 m-auto"
+  items-top bg-background py-6 px-6 md:px-10 z-50 max-w-6xl left-0 right-0 m-auto"
   data-scroll-section
 >
   <div
-    class="flex w-full md:w-auto items-center justify-between"
+    class="flex w-full md:w-auto items-top justify-between"
     data-scroll
-    data-scroll-speed="4"
+    data-scroll-speed="10"
     data-scroll-position="top"
   >
-    <a href="/" class="text-lg w-[150px]"
+    <a href="/" class="text-lg w-[200px] pt-4"
       ><Image src={Logo} alt="SUPERMASSIVE logo" /></a
     >
     <div class="block md:hidden">
@@ -79,7 +79,7 @@ const navData = await getEntry("data", "nav");
                 >
                   <a
                     href={item.url}
-                    class="flex py-2 text-inherit no-underline"
+                    class="flex py-1 text-inherit no-underline"
                   >
                     {item.label}
                   </a>
