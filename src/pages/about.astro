@@ -1,0 +1,116 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import FullScreenRow from "@/components/rows/FullScreenRow.astro";
+import Nephex from "@/assets/images/nephex-4.png";
+import CloudOrganAdults from "@/assets/images/cloud-organ-adults.jpg";
+import Blob1 from "@/assets/images/blob-1.svg?raw";
+import Blob2 from "@/assets/images/blob-2.svg?raw";
+import Blob3 from "@/assets/images/blob-3.svg?raw";
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import BentoGrid from "@/components/sections/BentoGrid.astro";
+
+const { data: bentoImages } = await getEntry("bentos", "homepage");
+---
+
+<BaseLayout
+  title="SuperMassive | About Us"
+  description="SuperMassive is an immersive experience production company based in Manchester, UK. We are a multi-disciplinary team of creatives, each with our own unique tools of the trade"
+>
+  <FullScreenRow rowClass="relative" containerClass="max-w-6xl">
+    <div
+      class="max-w-6xl z-40 mr-auto mt-16"
+      data-scroll
+      data-scroll-speed="10"
+    >
+      <h2 class="sr-only">Who we are</h2>
+      <div class="flex flex-wrap gap-x-6">
+        <div
+          class="text-7xl sm:text-8xl md:text-8xl lg:text-[10rem] uppercase font-black
+        text-transparent bg-clip-text text-white drop-shadow-custom font-heading lg:w-full"
+          aria-hidden
+        >
+          WHO WE
+        </div>
+        <div
+          class="text-7xl sm:text-8xl md:text-8xl lg:text-[10rem] uppercase font-black
+      bg-[linear-gradient(95deg,#4CC9F0_24.31%,#F06_91.7%)] text-transparent bg-clip-text drop-shadow-custom font-heading"
+          aria-hidden
+        >
+          ARE
+        </div>
+        <span
+          class="font-bold font-body text-md sm:text-lg md:text-xl lg:text-2xl pt-2 flex-1 max-w-2xl lg:max-w-xl basis-full lg:basis-auto"
+        >
+          SuperMassive is an immersive experience production company based in
+          Manchester, UK. We are a multi-disciplinary team of creatives, each
+          with our own unique tools of the trade
+        </span>
+      </div>
+    </div>
+  </FullScreenRow>
+  <FullScreenRow rowClass="relative" containerClass="max-w-6xl">
+    <div
+      class="max-w-6xl z-40 mr-auto mt-16"
+      data-scroll
+      data-scroll-speed="10"
+    >
+      <h2 class="sr-only">What makes us us</h2>
+      <div class="flex flex-wrap justify-end gap-x-6 text-right">
+        <div
+          class="text-7xl sm:text-8xl md:text-8xl lg:text-[10rem] uppercase font-black
+        text-transparent bg-clip-text text-white drop-shadow-custom font-heading basis-auto lg:basis-full"
+          aria-hidden
+        >
+          What<br /> makes us
+        </div>
+        <span
+          class="font-bold font-body text-md sm:text-lg md:text-xl lg:text-2xl pt-2 flex-1 max-w-2xl lg:max-w-2xl basis-full lg:basis-auto order-3 lg:order-2"
+        >
+          We’re bound together by a passion for crafting fun and a belief that
+          immersion is about more than just oversized screens. We make art
+          interactive and accessible, and aim to encourage everyone find joy in
+          creative expression.
+        </span>
+        <div
+          class="text-7xl sm:text-8xl lg:text-8xl lg:text-[10rem] uppercase font-black
+      bg-[linear-gradient(103deg,#4CC9F0_-13.54%,#3A0CA3_59%,#F06_185.95%)] text-transparent bg-clip-text drop-shadow-custom font-heading basis-full order-2 lg:basis-auto lg:order-3"
+          aria-hidden
+        >
+          us
+        </div>
+      </div>
+    </div>
+  </FullScreenRow>
+  <FullScreenRow rowClass="relative" containerClass="max-w-6xl">
+    <div
+      class="max-w-6xl z-40 mr-auto mt-16"
+      data-scroll
+      data-scroll-speed="10"
+    >
+      <h2 class="sr-only">Why we exist</h2>
+      <div class="flex flex-wrap gap-x-6">
+        <div
+          class="text-7xl sm:text-8xl md:text-8xl lg:text-[10rem] uppercase font-black
+        text-transparent bg-clip-text text-white drop-shadow-custom font-heading lg:w-full"
+          aria-hidden
+        >
+          Why we
+        </div>
+        <div
+          class="text-7xl sm:text-8xl md:text-8xl lg:text-[10rem] uppercase font-black
+      bg-[linear-gradient(95deg,#4CC9F0_24.31%,#F06_91.7%)] text-transparent bg-clip-text drop-shadow-custom font-heading"
+          aria-hidden
+        >
+          exist
+        </div>
+        <span
+          class="font-bold font-body text-md sm:text-lg md:text-xl lg:text-2xl pt-2 flex-1 max-w-2xl lg:max-w-lg basis-full lg:basis-auto"
+        >
+          We believe that creative play and exploration should be a goal in and
+          of itself. We invite participants to be both spectators and creators.
+        </span>
+      </div>
+    </div>
+  </FullScreenRow>
+</BaseLayout>

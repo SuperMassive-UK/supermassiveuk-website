@@ -2,7 +2,6 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import FullScreenRow from "@/components/rows/FullScreenRow.astro";
 import Nephex from "@/assets/images/nephex-4.png";
-import CloudOrganAdults from "@/assets/images/cloud-organ-adults.jpg";
 import Blob1 from "@/assets/images/blob-1.svg?raw";
 import Blob2 from "@/assets/images/blob-2.svg?raw";
 import Blob3 from "@/assets/images/blob-3.svg?raw";
@@ -10,20 +9,29 @@ import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
 import BentoGrid from "@/components/sections/BentoGrid.astro";
 
-const { data: bentoImages } = await getEntry("bentos", "homepage");
+const { data } = await getEntry("pages", "homepage");
+const {
+  bentos,
+  subtitle,
+  about_text,
+  what_we_dos,
+  meta_title,
+  meta_description,
+  scroll_speeds,
+} = data;
+console.log(what_we_dos);
 ---
 
-<BaseLayout
-  title="SuperMassive"
-  description="Discover SUPERMASSIVE. We create mind-bending experiences that blur the boundaries between story, spectacle and activity."
->
+<BaseLayout title={meta_title} description={meta_description}>
   <FullScreenRow
-    class="relative bg-[radial-gradient(ellipse_at_left_top,rgba(60,28,49,1)_0%,rgba(0,0,0,1)_50%)]"
+    rowClass="relative bg-[radial-gradient(ellipse_at_left_top,rgba(60,28,49,1)_0%,rgba(0,0,0,1)_50%)]"
+    containerClass="max-w-6xl"
+    isScrollSection={true}
   >
     <div
       class="max-w-sm sm:max-w-md md:max-w-2xl z-40 mr-auto mt-16"
       data-scroll
-      data-scroll-speed="10"
+      data-scroll-speed={scroll_speeds.hero}
     >
       <h2 class="drop-shadow-custom">
         <div class="text-4xl sm:text-6xl lg:text-8xl uppercase font-bold">
@@ -39,8 +47,7 @@ const { data: bentoImages } = await getEntry("bentos", "homepage");
       <p
         class="max-w-full md:max-w-lg text-lg sm:text-2xl md:text-3xl font-bold"
       >
-        Discover SUPERMASSIVE. We create mind-bending experiences that blur the
-        boundaries between story, spectacle and activity.
+        {subtitle}
       </p>
     </div>
     <div
@@ -53,160 +60,241 @@ const { data: bentoImages } = await getEntry("bentos", "homepage");
         class="brightness-[0.9]"
         data-scroll-id="nephex"
         data-scroll
-        data-scroll-speed="-8"
+        data-scroll-speed={scroll_speeds.furry_boi}
         data-scroll-position="top"
+        data-scroll-direction="vertical"
       />
     </div>
     <div
       class="absolute bottom-[-5%] right-[30%] z-10 blur-sm"
       data-scroll
-      data-scroll-speed="8"
+      data-scroll-speed={scroll_speeds.blob_1}
       data-scroll-position="top"
       data-scroll-direction="horizontal"
     >
       <Fragment set:html={Blob1} />
     </div>
     <div
+      class="absolute top-[5%] right-[50%] z-0 blur-md"
+      data-scroll
+      data-scroll-speed={scroll_speeds.blob_2}
+      data-scroll-direction="horizontal"
+    >
+      <Fragment set:html={Blob2} />
+    </div>
+    <div
       class="absolute bottom-[5%] right-0 z-30"
       data-scroll
-      data-scroll-speed="4"
+      data-scroll-speed={scroll_speeds.blob_3}
       data-scroll-position="top"
       data-scroll-direction="horizontal"
     >
       <Fragment set:html={Blob3} />
     </div>
-    <div
-      class="absolute top-[5%] right-[50%] z-0 blur-md"
-      data-scroll
-      data-scroll-speed="-4"
-      data-scroll-direction="horizontal"
-    >
-      <Fragment set:html={Blob2} />
-    </div>
   </FullScreenRow>
   <section
-    class="md:flex md:flex-row-reverse w-full max-w-6xl px-6 md:px-10 mx-auto gap-4 md:max-h-[2000px] bg-transparent"
-    data-scroll-section
+    class="flex flex-col items-center md:flex-row-reverse md:items-stretch w-full max-w-6xl px-6 md:px-10 mx-auto gap-4 bg-transparent"
+    id="about-text-target"
   >
     <div
       class="flex flex-col gap-4 w-full md:w-1/2 max-w-full"
-      data-scroll
-      data-scroll-speed="1  "
-      data-scroll-repeat
-      data-scroll-position="top"
+      data-scroll-section
     >
       <article
-        class="bg-[linear-gradient(144deg,#F72585_21%,#FFBA00_103.76%)] flex flex-col justify-center items-start rounded-xl
-        z-50"
+        class="flex flex-col justify-start items-start rounded-xl
+        z-50 gap-4"
+        id="about"
+        data-scroll
+        data-scroll-sticky
+        data-scroll-speed={scroll_speeds.about_text}
+        data-scroll-repeat
+        data-scroll-offset="-25%,25%"
+        data-scroll-target="#about-text-target"
       >
-        <div class="px-8 md:px-16 py-48">
-          <h2 class="text-4xl sm:text-5xl md:text-7xl uppercase font-bold">
-            Fully Immersive
-          </h2>
-          <p class="text-md sm:text-lg md:text-2xl font-bold">
-            “Characterised by a deep absorption into an activity or a real or
-            artificial environment”
-          </p>
-        </div>
-      </article>
-      <Image
-        src={CloudOrganAdults}
-        alt="Adults playing the Cloud Organ"
-        class="h-[500px] object-cover object-center rounded-xl"
-      />
-      <article
-        class="bg-[linear-gradient(151deg,#4361EE_23.08%,#4361EE_23.09%,#000_102.15%)] flex flex-col justify-center items-start rounded-xl"
-      >
-        <div
-          class="px-8 md:px-16 py-48 text-lg sm:text-xl md:text-2xl font-bold flex flex-col gap-8 items-center"
+        <h2 class="text-4xl xs:text-5xl lg:text-7xl font-bold uppercase mb-4">
+          {about_text}
+        </h2>
+        <button
+          class="hidden md:block bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase py-1 px-12"
+          >See more</button
         >
-          <p>
-            We create, curate and promote high-tech interactive art that blurs
-            the boundaries between story, spectacle and activity.
-          </p>
-          <p>Many of our individual installations are available for hire.</p>
-          <button
-            class="uppercase font-extrabold bg-white text-black px-4 py-2 rounded-md font-heading"
-            >Work with us</button
-          >
-        </div>
       </article>
     </div>
-    <div
-      class="block z-50 w-full md:w-1/2"
-      id="bento"
-      data-scroll
-      data-scroll-speed="10"
-      data-scroll-position="top"
-      data-scroll-offset="-100"
-      data-scroll-repeat
+    <div class="block z-50 w-full md:w-1/2" data-scroll-section>
+      <div
+        id="bento"
+        data-scroll
+        data-scroll-speed={scroll_speeds.bento}
+        data-scroll-sticky
+        data-scroll-repeat
+        data-scroll-target="#about-text-target"
+      >
+        <BentoGrid>
+          {
+            bentos.map(({ src, alt, class: customClass }) => (
+              <Image
+                src={src}
+                alt={alt}
+                class:list={[customClass, `w-full h-full rounded-xl`]}
+              />
+            ))
+          }
+        </BentoGrid>
+      </div>
+    </div>
+    <button
+      class="block md:hidden bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase mt-8 py-1 px-12"
+      >See more</button
     >
-      <h2 class="md:hidden block text-center py-16 text-5xl font-bold">
-        Our Work
-      </h2>
-      <BentoGrid>
+  </section>
+  <section
+    class="mt-56 mb-36 w-full max-w-6xl px-6 md:px-10 mx-auto gap-4 bg-transparent"
+    data-scroll-section
+  >
+    <h2
+      class="text-white text-8xl md:text-9xl font-heading uppercase max-w-sm sm:max-w-full mb-8 font-black"
+    >
+      What we do
+    </h2>
+    <div
+      class="relative w-full block md:grid md:grid-cols-2 place-items-stretch"
+    >
+      <aside class="relative hidden md:block mb-12 mr-8">
         {
-          bentoImages.map(({ src, alt, class: customClass }) => (
-            <Image
-              src={src}
-              alt={alt}
-              class:list={[customClass, `w-full h-full rounded-xl`]}
-            />
-          ))
+          what_we_dos.map(
+            (
+              { title, text, image: { src, alt, class: imageClass } },
+              index
+            ) => (
+              <Image
+                src={src}
+                alt={alt}
+                data-hover-index={index}
+                data-hovered={index === 0}
+                class:list={[
+                  `object-cover h-full rounded-xl hidden md:block absolute transition-opacity duration-500 md:data-[hovered]:opacity-100 opacity-0`,
+                  imageClass,
+                ]}
+              />
+            )
+          )
         }
-      </BentoGrid>
+      </aside>
+      <div class="">
+        {
+          what_we_dos.map(
+            (
+              { title, text, image: { src, alt, class: imageClass } },
+              index
+            ) => (
+              <article
+                class="mb-12 pointer-events-auto cursor-pointer origin-left group"
+                data-hover-target={index}
+              >
+                <h3
+                  class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-heading font-bold inline-block font-body uppercase 
+                  bg-[linear-gradient(96deg,#FF401F_16.97%,#F06_70.59%)] text-transparent bg-clip-text
+                  md:bg-none md:text-white md:bg-clip-[unset]
+                  md:data-[hovered]:bg-[linear-gradient(96deg,#FF401F_16.97%,#F06_70.59%)]
+                  md:data-[hovered]:text-transparent 
+                  md:data-[hovered]:bg-clip-text"
+                  data-hover-index={index}
+                  data-hovered={index === 0}
+                >
+                  {title}
+                </h3>
+                <p class="text-lg xs:text-xl md:text-2xl mb-8">{text}</p>
+                <Image
+                  src={src}
+                  alt={alt}
+                  class:list={[
+                    `md:hidden w-full object-cover rounded-xl aspect-square block rounded-xl`,
+                    imageClass,
+                  ]}
+                />
+              </article>
+            )
+          )
+        }
+      </div>
     </div>
   </section>
 </BaseLayout>
 <script>
-  import LocomotiveScroll from "locomotive-scroll";
+  import scroller from "../lib/scroller";
 
-  const scroller = new LocomotiveScroll({
-    el: document.querySelector("[data-scroll-container]"),
-    smooth: true,
-    reloadOnContextChange: true,
-    touchMultiplier: 4,
-    smartphone: {
-      breakpoint: 0,
-      smooth: true,
-    },
-    tablet: {
-      breakpoint: 0,
-      smooth: true,
-    },
-  });
   scroller.on("scroll", (args: any) => {
     // do something
     const nephex = args.currentElements["nephex"];
     if (typeof nephex === "object") {
       let progress = nephex.progress;
       nephex.el.style.transform = `rotate(${(progress - 0.5) * 0.1}turn)`;
-      // ouput log example: 0.34
-      // gsap example : myGsapAnimation.progress(progress);
     }
   });
-  let breakpoint = 960;
-  let element = document.getElementById("fixed-sidenav");
+  let breakpoint = 768;
   let bento = document.getElementById("bento");
-  document.addEventListener("DOMContentLoaded", () => {
+  let about = document.getElementById("about");
+
+  const responsiveListener = () => {
     let currentWidth = window.innerWidth;
     if (currentWidth > breakpoint) {
       bento?.setAttribute("data-scroll-speed", "10");
+      bento?.toggleAttribute("data-scroll-sticky", true);
+      bento?.toggleAttribute("data-scroll-sticky", true);
     } else {
       bento?.setAttribute("data-scroll-speed", "1");
+      bento?.toggleAttribute("data-scroll-sticky", false);
+      about?.toggleAttribute("data-scroll-sticky", false);
     }
     scroller.update();
-  });
+  };
+  // document.addEventListener("DOMContentLoaded", responsiveListener);
+  // window.addEventListener("resize", responsiveListener);
+</script>
+<script>
+  const hoverItems = document.querySelectorAll("[data-hover-index]");
+  const hoverTargets = document.querySelectorAll("[data-hover-target]");
 
-  window.addEventListener("resize", () => {
-    let width = window.innerWidth;
-    if (width > breakpoint) {
-      // add data-scroll-sticky to sticky navigation element
-      console.log("bigger than 960");
-      bento?.setAttribute("data-scroll-speed", "10");
-    } else {
-      // remove data-scroll-sticky from sticky navigation element
-      bento?.setAttribute("data-scroll-speed", "1");
-    }
+  let slideIndex = 0;
+
+  const createTimer = () => {
+    return setInterval(() => {
+      if (slideIndex >= hoverTargets.length) {
+        slideIndex = 0;
+      }
+      toggleHoverIndex(`${slideIndex}`);
+      slideIndex += 1;
+    }, 5000);
+  };
+  let timer = createTimer();
+
+  const elementArray = [...hoverItems];
+  const toggleHoverIndex = (index: string) => {
+    const show = elementArray.filter(
+      (el) => el.getAttribute("data-hover-index") === index
+    );
+
+    show.forEach((el) => {
+      el.toggleAttribute("data-hovered", true);
+    });
+
+    const hide = elementArray.filter(
+      (el) => el.getAttribute("data-hover-index") !== index
+    );
+    hide.forEach((el) => {
+      el.toggleAttribute("data-hovered", false);
+    });
+  };
+
+  const hoverListener = (event: any) => {
+    const index = event.target.dataset.hoverTarget;
+    clearInterval(timer);
+    toggleHoverIndex(index);
+    slideIndex = Number(index);
+    timer = createTimer();
+  };
+
+  hoverTargets.forEach((textEl) => {
+    textEl.addEventListener("mouseenter", hoverListener);
   });
 </script>

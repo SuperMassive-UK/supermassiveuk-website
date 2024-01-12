@@ -3,11 +3,16 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    screens: {
+      xs: "475px",
+      ...defaultTheme.screens,
+    },
     extend: {
       fontFamily: {
         heading: ["'Panton', sans-serif;"],
         primary: ["'Shippori Antique B1', sans-serif"],
       },
+
       dropShadow: {
         custom: ["0px 2px 2px rgba(0, 0, 0, 0.8)"],
         "3xl": "0 35px 35px rgba(0, 0, 0, 0.25)",
