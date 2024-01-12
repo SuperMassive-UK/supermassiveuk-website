@@ -1,16 +1,6 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import FullScreenRow from "@/components/rows/FullScreenRow.astro";
-import Nephex from "@/assets/images/nephex-4.png";
-import CloudOrganAdults from "@/assets/images/cloud-organ-adults.jpg";
-import Blob1 from "@/assets/images/blob-1.svg?raw";
-import Blob2 from "@/assets/images/blob-2.svg?raw";
-import Blob3 from "@/assets/images/blob-3.svg?raw";
-import { Image } from "astro:assets";
-import { getEntry } from "astro:content";
-import BentoGrid from "@/components/sections/BentoGrid.astro";
-
-const { data: bentoImages } = await getEntry("bentos", "homepage");
 ---
 
 <BaseLayout
