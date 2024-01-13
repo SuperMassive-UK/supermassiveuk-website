@@ -1,12 +1,14 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import FullScreenRow from "@/components/rows/FullScreenRow.astro";
-import Nephex4 from "@/assets/images/nephex-4.png";
-import Nephex5 from "@/assets/images/nephex-5.png";
-import Nephex6 from "@/assets/images/nephex-6.png";
 import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
 import BentoGrid from "@/components/sections/BentoGrid.astro";
+import * as path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const isDev = import.meta.env.DEV;
 
 const { data } = await getEntry("pages", "homepage");
 const {
@@ -17,20 +19,20 @@ const {
   meta_title,
   meta_description,
   scroll_speeds,
-  blobs: blobsData,
+  blobs,
   furries,
 } = data;
 
-const blobFiles: any[] = [];
-for (const blob of blobsData) {
-  const src = blob.src.replace("../", "");
-  blobFiles.push(await import(src));
-}
+// const blobFiles: any[] = [];
+// for (const blob of blobsData) {
+//   const src = blob.src.replace("../../", isDev ? "../" : "../../../src/");
+//   blobFiles.push(import(src));
+// }
 
-const blobs = blobsData.map((blob: any, index: number) => ({
-  ...blob,
-  file: blobFiles[index].default,
-}));
+// const blobs = blobsData.map((blob: any, index: number) => ({
+//   ...blob,
+//   file: blobFiles[index].default,
+// }));
 console.log(blobs);
 ---
 
@@ -219,7 +221,7 @@ console.log(blobs);
           data-scroll-direction="horizontal"
           data-scroll-target="#page"
         >
-          <Fragment set:html={blob.file} />
+          <Image alt="" src={blob.src} />
         </div>
       ))
     }

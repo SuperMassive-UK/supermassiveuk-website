@@ -36,6 +36,13 @@ const pages = defineCollection({
             scroll_speed: z.number(),
           })
         ),
+        blobs: z.array(
+          z.object({
+            src: image(),
+            class: z.string(),
+            scroll_speed: z.number(),
+          })
+        ),
       })
       .catchall(z.any()),
 });

@@ -67,22 +67,22 @@ scroll_speeds:
   about_text: 1
   bento: 10
 blobs:
-  - src: ../../assets/images/blob-1.svg?raw
+  - src: ../../assets/images/blob-1.svg
     class: z-0 blur-sm top-[10%] right-[30%]
     scroll_speed: 8
-  - src: ../../assets/images/blob-2.svg?raw
+  - src: ../../assets/images/blob-2.svg
     class:  z-0 blur-md top-[2%] left-[5%] md:left-[40%]
     scroll_speed: -4
-  - src: ../../assets/images/blob-3.svg?raw
+  - src: ../../assets/images/blob-3.svg
     class: z-30 top-[9%] hidden sm:block md:top-[12%] right-[10%] 
     scroll_speed: 4
-  - src: ../../assets/images/blob-4.svg?raw
+  - src: ../../assets/images/blob-4.svg
     class: z-10 top-[20%] right-[20%] md:right-[-40%] 
     scroll_speed: 3
-  - src: ../../assets/images/blob-5.svg?raw
+  - src: ../../assets/images/blob-5.svg
     class: z-10 top-[90%] md:top-[40%] right-[30%] md:left-[-40%] md:right-auto blur-sm 
     scroll_speed: -4
-  - src: ../../assets/images/blob-6.svg?raw
+  - src: ../../assets/images/blob-6.svg
     class: z-10 top-[68%] md:top-[60%] left-[50%] md:right-[-50%] md:left-auto
     scroll_speed: 4
 furries:
