@@ -1,4 +1,3 @@
-import { imageConfig } from "astro:assets";
 import { z, defineCollection, reference } from "astro:content";
 
 const data = defineCollection({

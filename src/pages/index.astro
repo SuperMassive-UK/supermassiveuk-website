@@ -4,11 +4,6 @@ import FullScreenRow from "@/components/rows/FullScreenRow.astro";
 import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
 import BentoGrid from "@/components/sections/BentoGrid.astro";
-import * as path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
-
-const isDev = import.meta.env.DEV;
 
 const { data } = await getEntry("pages", "homepage");
 const {
@@ -22,18 +17,6 @@ const {
   blobs,
   furries,
 } = data;
-
-// const blobFiles: any[] = [];
-// for (const blob of blobsData) {
-//   const src = blob.src.replace("../../", isDev ? "../" : "../../../src/");
-//   blobFiles.push(import(src));
-// }
-
-// const blobs = blobsData.map((blob: any, index: number) => ({
-//   ...blob,
-//   file: blobFiles[index].default,
-// }));
-console.log(blobs);
 ---
 
 <BaseLayout title={meta_title} description={meta_description}>
@@ -129,7 +112,7 @@ console.log(blobs);
     >
   </section>
   <section
-    class="mt-96 md:mt-[36rem] mb-36 w-full max-w-6xl px-6 md:px-10 mx-auto gap-4 bg-transparent z-20 relative"
+    class="mt-96 md:mt-[36rem] mb-36 w-full max-w-6xl px-6 md:px-10 mx-auto gap-4 bg-transparent z-20 relative overflow-hidden"
   >
     <h2
       class="text-white text-8xl md:text-9xl font-heading uppercase max-w-sm sm:max-w-full mb-8 font-black"
@@ -142,10 +125,7 @@ console.log(blobs);
       <aside class="relative hidden md:block mb-12 mr-8">
         {
           what_we_dos.map(
-            (
-              { title, text, image: { src, alt, class: imageClass } },
-              index
-            ) => (
+            ({ image: { src, alt, class: imageClass } }, index) => (
               <Image
                 src={src}
                 alt={alt}
