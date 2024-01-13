@@ -1,10 +1,9 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import FullScreenRow from "@/components/rows/FullScreenRow.astro";
-import Nephex from "@/assets/images/nephex-4.png";
-import Blob1 from "@/assets/images/blob-1.svg?raw";
-import Blob2 from "@/assets/images/blob-2.svg?raw";
-import Blob3 from "@/assets/images/blob-3.svg?raw";
+import Nephex4 from "@/assets/images/nephex-4.png";
+import Nephex5 from "@/assets/images/nephex-5.png";
+import Nephex6 from "@/assets/images/nephex-6.png";
 import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
 import BentoGrid from "@/components/sections/BentoGrid.astro";
@@ -18,19 +17,32 @@ const {
   meta_title,
   meta_description,
   scroll_speeds,
+  blobs: blobsData,
+  furries,
 } = data;
-console.log(what_we_dos);
+
+const blobFiles: any[] = [];
+for (const blob of blobsData) {
+  const src = blob.src.replace("../", "");
+  blobFiles.push(await import(src));
+}
+
+const blobs = blobsData.map((blob: any, index: number) => ({
+  ...blob,
+  file: blobFiles[index].default,
+}));
+console.log(blobs);
 ---
 
 <BaseLayout title={meta_title} description={meta_description}>
   <FullScreenRow
-    rowClass="relative bg-[radial-gradient(ellipse_at_left_top,rgba(60,28,49,1)_0%,rgba(0,0,0,1)_50%)]"
+    rowClass="bg-[radial-gradient(ellipse_at_left_top,rgba(60,28,49,1)_0%,rgba(0,0,0,0)_50%)] relative z-30"
     containerClass="max-w-6xl"
-    isScrollSection={true}
   >
     <div
-      class="max-w-sm sm:max-w-md md:max-w-2xl z-40 mr-auto mt-16"
+      class="max-w-sm sm:max-w-md md:max-w-2xl mr-auto mt-16 z-40"
       data-scroll
+      data-scroll-repeat
       data-scroll-speed={scroll_speeds.hero}
     >
       <h2 class="drop-shadow-custom">
@@ -39,7 +51,7 @@ console.log(what_we_dos);
         </div>
         <div
           class="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] uppercase font-black
-        bg-[linear-gradient(97deg,#FF5C00_-13.38%,#F06_57.93%,#FFBA00_79.2%)] inline-block text-transparent bg-clip-text"
+    bg-[linear-gradient(97deg,#FF5C00_-13.38%,#F06_57.93%,#FFBA00_79.2%)] inline-block text-transparent bg-clip-text"
         >
           curious minds
         </div>
@@ -50,56 +62,23 @@ console.log(what_we_dos);
         {subtitle}
       </p>
     </div>
-    <div
-      class="absolute right-[-10%] 2xl:right-[-30%] top-[0%] md:bottom-0 z-20 m-auto
-      max-w-full w-[500px] h-[500px] md:w-[750px] md:h-[750px] xl:w-[1000px] xl:h-[1000px]"
-    >
+    <div class:list={[furries.hero.class]}>
       <Image
-        src={Nephex}
-        alt="SUPERMASSIVE logo"
+        src={furries.hero.src}
+        alt=""
         class="brightness-[0.9]"
-        data-scroll-id="nephex"
+        data-scroll-id="nephex-hero"
         data-scroll
-        data-scroll-speed={scroll_speeds.furry_boi}
-        data-scroll-position="top"
-        data-scroll-direction="vertical"
+        data-scroll-speed={furries.hero.scroll_speed}
+        data-scroll-direction="horizontal"
       />
-    </div>
-    <div
-      class="absolute bottom-[-5%] right-[30%] z-10 blur-sm"
-      data-scroll
-      data-scroll-speed={scroll_speeds.blob_1}
-      data-scroll-position="top"
-      data-scroll-direction="horizontal"
-    >
-      <Fragment set:html={Blob1} />
-    </div>
-    <div
-      class="absolute top-[5%] right-[50%] z-0 blur-md"
-      data-scroll
-      data-scroll-speed={scroll_speeds.blob_2}
-      data-scroll-direction="horizontal"
-    >
-      <Fragment set:html={Blob2} />
-    </div>
-    <div
-      class="absolute bottom-[5%] right-0 z-30"
-      data-scroll
-      data-scroll-speed={scroll_speeds.blob_3}
-      data-scroll-position="top"
-      data-scroll-direction="horizontal"
-    >
-      <Fragment set:html={Blob3} />
     </div>
   </FullScreenRow>
   <section
-    class="flex flex-col items-center md:flex-row-reverse md:items-stretch w-full max-w-6xl px-6 md:px-10 mx-auto gap-4 bg-transparent"
+    class="mt-16 flex flex-col items-center md:flex-row-reverse md:items-stretch w-full max-w-6xl px-6 md:px-10 mx-auto gap-4 bg-transparent z-30 relative"
     id="about-text-target"
   >
-    <div
-      class="flex flex-col gap-4 w-full md:w-1/2 max-w-full"
-      data-scroll-section
-    >
+    <div class="flex flex-col gap-4 w-full md:w-1/2 max-w-full">
       <article
         class="flex flex-col justify-start items-start rounded-xl
         z-50 gap-4"
@@ -120,7 +99,7 @@ console.log(what_we_dos);
         >
       </article>
     </div>
-    <div class="block z-50 w-full md:w-1/2" data-scroll-section>
+    <div class="block z-50 w-full md:w-1/2">
       <div
         id="bento"
         data-scroll
@@ -148,8 +127,7 @@ console.log(what_we_dos);
     >
   </section>
   <section
-    class="mt-56 mb-36 w-full max-w-6xl px-6 md:px-10 mx-auto gap-4 bg-transparent"
-    data-scroll-section
+    class="mt-96 md:mt-[36rem] mb-36 w-full max-w-6xl px-6 md:px-10 mx-auto gap-4 bg-transparent z-20 relative"
   >
     <h2
       class="text-white text-8xl md:text-9xl font-heading uppercase max-w-sm sm:max-w-full mb-8 font-black"
@@ -217,39 +195,65 @@ console.log(what_we_dos);
           )
         }
       </div>
+      <div class:list={[furries.what_we_do.class]}>
+        <Image
+          src={furries.what_we_do.src}
+          alt=""
+          class="brightness-[0.9]"
+          data-scroll-id="nephex-about"
+          data-scroll
+          data-scroll-speed={furries.what_we_do.scroll_speed}
+          data-scroll-direction="horizontal"
+        />
+      </div>
     </div>
   </section>
+  <div>
+    {
+      blobs.map((blob: any) => (
+        <div
+          class:list={["absolute", blob.class]}
+          data-scroll
+          data-scroll-speed={blob.scroll_speed}
+          data-scroll-position="top"
+          data-scroll-direction="horizontal"
+          data-scroll-target="#page"
+        >
+          <Fragment set:html={blob.file} />
+        </div>
+      ))
+    }
+  </div>
+  <div class:list={[furries.footer.class]}>
+    <Image
+      src={furries.footer.src}
+      alt=""
+      class="brightness-[0.9] overflow-hidden"
+      data-scroll-id="nephex-footer"
+      data-scroll
+      data-scroll-speed={furries.footer.scroll_speed}
+      data-scroll-position="bottom"
+      data-scroll-direction="vertical"
+    />
+  </div>
 </BaseLayout>
+
 <script>
   import scroller from "../lib/scroller";
 
   scroller.on("scroll", (args: any) => {
     // do something
-    const nephex = args.currentElements["nephex"];
-    if (typeof nephex === "object") {
-      let progress = nephex.progress;
-      nephex.el.style.transform = `rotate(${(progress - 0.5) * 0.1}turn)`;
+    const nephexHero = args.currentElements["nephex-hero"];
+    const nephexAbout = args.currentElements["nephex-about"];
+    if (typeof nephexHero === "object") {
+      let progress = nephexHero.progress;
+      nephexHero.el.style.rotate = `${(progress - 0.5) * 0.1}turn`;
+    }
+    if (typeof nephexAbout === "object") {
+      let progress = nephexAbout.progress;
+      nephexAbout.el.style.rotate = `${(progress - 0.5) * 0.1}turn`;
     }
   });
-  let breakpoint = 768;
-  let bento = document.getElementById("bento");
-  let about = document.getElementById("about");
-
-  const responsiveListener = () => {
-    let currentWidth = window.innerWidth;
-    if (currentWidth > breakpoint) {
-      bento?.setAttribute("data-scroll-speed", "10");
-      bento?.toggleAttribute("data-scroll-sticky", true);
-      bento?.toggleAttribute("data-scroll-sticky", true);
-    } else {
-      bento?.setAttribute("data-scroll-speed", "1");
-      bento?.toggleAttribute("data-scroll-sticky", false);
-      about?.toggleAttribute("data-scroll-sticky", false);
-    }
-    scroller.update();
-  };
-  // document.addEventListener("DOMContentLoaded", responsiveListener);
-  // window.addEventListener("resize", responsiveListener);
 </script>
 <script>
   const hoverItems = document.querySelectorAll("[data-hover-index]");

@@ -1,3 +1,4 @@
+import { imageConfig } from "astro:assets";
 import { z, defineCollection, reference } from "astro:content";
 
 const data = defineCollection({
@@ -26,6 +27,13 @@ const pages = defineCollection({
               alt: z.string(),
               class: z.string(),
             }),
+          })
+        ),
+        furries: z.record(
+          z.object({
+            src: image(),
+            class: z.string(),
+            scroll_speed: z.number(),
           })
         ),
       })

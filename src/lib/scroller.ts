@@ -6,7 +6,7 @@ export default new LocomotiveScroll({
   reloadOnContextChange: true,
   touchMultiplier: 2,
   tablet: {
-    breakpoint: 768, // <---- Fixes The Issue 🎉
+    breakpoint: 768,
     smooth: false,
   },
 });
