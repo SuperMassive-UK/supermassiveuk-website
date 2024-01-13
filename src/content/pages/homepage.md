@@ -92,7 +92,7 @@ furries:
     scroll_speed: 1
   what_we_do:
     src: ../../assets/images/nephex-5.png
-    class: absolute -z-20 m-auto top-[-600px] left-[0%] right-0 md:top-[-48rem] md:left-[60%] w-[400px] sm:w-[500px] md:w-[700px] xl:w-[700px] aspect-square overflow-hidden
+    class: absolute m-auto top-[-600px] left-[0%] right-0 md:top-[-48rem] md:left-[60%] w-[400px] sm:w-[500px] md:w-[700px] xl:w-[700px] aspect-square overflow-hidden
     scroll_speed: 2
   footer:
     src: ../../assets/images/nephex-6.png
