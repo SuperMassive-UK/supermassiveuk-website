@@ -43,7 +43,24 @@ const pages = defineCollection({
           })
         ),
       })
-      .catchall(z.any()),
+      .catchall(z.any())
+      .or(
+        z.record(
+          z.object({
+            gradient: z.string(),
+            scroll_speed: z.number(),
+            text: z.string(),
+            bentos: z.array(
+              z.object({
+                src: image().optional(),
+                alt: z.string(),
+                class: z.string(),
+              })
+            ),
+          })
+        )
+      )
+      .or(z.any()),
 });
 
 // Expose your defined collection to Astro

@@ -7,6 +7,8 @@ import { Image } from "astro:assets";
 import Logo from "../../assets/images/logo-transparent-cropped.png";
 import { getEntry } from "astro:content";
 
+const { scroll_speed } = Astro.props;
+
 const navData = await getEntry("data", "nav");
 ---
 
@@ -18,7 +20,7 @@ const navData = await getEntry("data", "nav");
   <div
     class="flex w-full md:w-auto items-top justify-between"
     data-scroll
-    data-scroll-speed="0.1"
+    data-scroll-speed={scroll_speed}
     data-scroll-repeat
     data-scroll-position="top"
   >

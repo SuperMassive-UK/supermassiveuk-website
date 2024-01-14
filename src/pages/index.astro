@@ -19,7 +19,11 @@ const {
 } = data;
 ---
 
-<BaseLayout title={meta_title} description={meta_description}>
+<BaseLayout
+  title={meta_title}
+  description={meta_description}
+  scroll_speeds={scroll_speeds}
+>
   <FullScreenRow
     rowClass="bg-[radial-gradient(ellipse_at_left_top,rgba(60,28,49,1)_0%,rgba(0,0,0,0)_50%)] relative z-30"
     containerClass="max-w-6xl"
@@ -95,7 +99,7 @@ const {
       >
         <BentoGrid>
           {
-            bentos.map(({ src, alt, class: customClass }) => (
+            bentos.map(({ src, alt, class: customClass }: any) => (
               <Image
                 src={src}
                 alt={alt}
@@ -125,7 +129,10 @@ const {
       <aside class="relative hidden md:block mb-12 mr-8">
         {
           what_we_dos.map(
-            ({ image: { src, alt, class: imageClass } }, index) => (
+            (
+              { image: { src, alt, class: imageClass } }: any,
+              index: Number
+            ) => (
               <Image
                 src={src}
                 alt={alt}
@@ -144,8 +151,8 @@ const {
         {
           what_we_dos.map(
             (
-              { title, text, image: { src, alt, class: imageClass } },
-              index
+              { title, text, image: { src, alt, class: imageClass } }: any,
+              index: Number
             ) => (
               <article
                 class="mb-12 pointer-events-auto cursor-pointer origin-left group"
@@ -154,6 +161,7 @@ const {
                 <h3
                   class="text-4xl xs:text-5xl sm:text-6xl lg:text-7xl font-heading font-bold inline-block font-body uppercase 
                   bg-[linear-gradient(96deg,#FF401F_16.97%,#F06_70.59%)] text-transparent bg-clip-text
+                  transition-all duration-500
                   md:bg-none md:text-white md:bg-clip-[unset]
                   md:data-[hovered]:bg-[linear-gradient(96deg,#FF401F_16.97%,#F06_70.59%)]
                   md:data-[hovered]:text-transparent 

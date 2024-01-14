@@ -63,9 +63,11 @@ what_we_dos:
       alt: Popping a smokey bubble from the Cloud Chamber
       class: ""
 scroll_speeds:
+  nav: 1
   hero: 1
   about_text: 1
   bento: 10
+  footer: 1
 blobs:
   - src: ../../assets/images/blob-1.svg
     class: z-0 blur-sm top-[10%] right-[30%]
