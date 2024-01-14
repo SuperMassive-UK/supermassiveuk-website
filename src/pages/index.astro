@@ -51,7 +51,7 @@ const {
         {subtitle}
       </p>
     </div>
-    <div class:list={[furries.hero.class]}>
+    <div class:list={["mx-auto", furries.hero.class]}>
       <Image
         src={furries.hero.src}
         alt=""
@@ -201,15 +201,16 @@ const {
   <div>
     {
       blobs.map((blob: any) => (
-        <div
-          class:list={["absolute", blob.class]}
-          data-scroll
-          data-scroll-speed={blob.scroll_speed}
-          data-scroll-position="top"
-          data-scroll-direction="horizontal"
-          data-scroll-target="#page"
-        >
-          <Image alt="" src={blob.src} />
+        <div class:list={["absolute max-w-6xl w-full mx-auto", blob.class]}>
+          <div
+            data-scroll
+            data-scroll-speed={blob.scroll_speed}
+            data-scroll-position="top"
+            data-scroll-direction="horizontal"
+            data-scroll-target="#page"
+          >
+            <Image alt="" src={blob.src} />
+          </div>
         </div>
       ))
     }
