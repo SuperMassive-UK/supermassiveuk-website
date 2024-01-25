@@ -64,7 +64,7 @@ what_we_dos:
       class: ""
 scroll_speeds:
   nav: 1
-  hero: 1
+  hero: 4
   about_text: 1
   bento: 10
   footer: 1
@@ -98,6 +98,6 @@ furries:
     scroll_speed: 2
   footer:
     src: ../../assets/images/nephex-6.png
-    class: absolute m-auto bottom-[-500px] left-0 xl:left-[10%] w-[200px] sm:w-[250px] md:w-[350px] aspect-square overflow-hidden
+    class: absolute m-auto bottom-[-500px] left-0  w-[200px] sm:w-[250px] md:w-[350px] aspect-square overflow-hidden
     scroll_speed: 4
 ---

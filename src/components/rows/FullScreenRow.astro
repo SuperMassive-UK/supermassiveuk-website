@@ -2,7 +2,12 @@
 const { rowClass, containerClass } = Astro.props;
 ---
 
-<section class:list={["min-h-[800px] max-w-screen overflow-hidden", rowClass]}>
+<section
+  class:list={[
+    "min-h-[800px] absolute ml-[min(calc(0px_-_((100vw_-_72rem)_/_2)),0px)] w-screen",
+    rowClass,
+  ]}
+>
   <div
     class:list={[
       "flex flex-col justify-center items-start h-screen min-h-[800px] px-6 md:px-10 mx-auto",
