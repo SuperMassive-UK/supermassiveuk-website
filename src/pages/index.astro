@@ -28,7 +28,11 @@ const {
     {
       blobs.map((blob: any) => (
         <div class:list={["absolute max-w-6xl w-full mx-auto", blob.class]}>
-          <div data-scroll>
+          <div
+            data-scroll
+            data-scroll-event-progress="blob"
+            data-blob-speed={blob.scroll_speed}
+          >
             <Image alt="" src={blob.src} />
           </div>
         </div>
@@ -44,9 +48,10 @@ const {
         src={furries.hero.src}
         alt=""
         class="brightness-[0.9]"
-        data-scroll-id="nephex-hero"
+        loading="eager"
         data-scroll
-        data-scroll-direction="horizontal"
+        data-scroll-event-progress="furry"
+        data-furry-speed={furries.hero.scroll_speed}
       />
     </div>
     <div
@@ -100,6 +105,7 @@ const {
               <Image
                 src={src}
                 alt={alt}
+                width={600}
                 class:list={[customClass, `w-full h-full rounded-xl`]}
               />
             ))
@@ -137,6 +143,7 @@ const {
                 alt={alt}
                 data-hover-index={index}
                 data-hovered={index === 0}
+                width={800}
                 class:list={[
                   `object-cover h-full rounded-xl hidden md:block absolute transition-opacity duration-500 md:data-[hovered]:opacity-100 opacity-0`,
                   imageClass,
@@ -208,37 +215,27 @@ const {
       src={furries.footer.src}
       alt=""
       class="brightness-[0.9] overflow-hidden"
-      data-scroll-id="nephex-footer"
       data-scroll
       data-scroll-speed={furries.footer.scroll_speed}
       data-scroll-position="bottom"
-      data-scroll-direction="vertical"
     />
   </div>
 
   <script>
     import scroller from "../lib/scroller";
 
-    scroller.on("scroll", (args: any) => {
-      // do something
-      if (
-        /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        ) ||
-        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
-      ) {
-        return;
-      }
-      const nephexHero = args.currentElements["nephex-hero"];
-      const nephexAbout = args.currentElements["nephex-about"];
-      if (typeof nephexHero === "object") {
-        let progress = nephexHero.progress;
-        nephexHero.el.style.rotate = `${(progress - 0.5) * 0.1}turn`;
-      }
-      if (typeof nephexAbout === "object") {
-        let progress = nephexAbout.progress;
-        nephexAbout.el.style.rotate = `${(progress - 0.5) * 0.1}turn`;
-      }
+    window.addEventListener("blob", (e: any) => {
+      const { target, progress } = e.detail;
+      const speed = Number(target.getAttribute("data-blob-speed"));
+      console.log(target, progress, speed);
+      target.style.translate = `${-progress * speed * 120}px 0px `;
+    });
+
+    window.addEventListener("furry", (e: any) => {
+      const { target, progress } = e.detail;
+      const speed = Number(target.getAttribute("data-blob-speed"));
+      console.log(target, progress, speed);
+      target.style.translate = `${-progress * speed * 120}px 0px `;
     });
   </script>
   <script>
