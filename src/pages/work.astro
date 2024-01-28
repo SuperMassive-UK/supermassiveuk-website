@@ -1,0 +1,139 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import FullScreenRow from "@/components/rows/FullScreenRow.astro";
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import BentoGrid from "@/components/sections/BentoGrid.astro";
+
+const { data } = await getEntry("pages", "work");
+const { bentos, meta_title, meta_description, scroll_speeds, furries } = data;
+---
+
+<BaseLayout
+  title={meta_title}
+  description={meta_description}
+  scroll_speeds={{ nav: 1, footer: 1 }}
+>
+  <div
+    class="block z-50 w-full px-6 md:px-10 pt-16"
+    data-scroll
+    data-scroll-speed={1}
+  >
+    <h1
+      class="text-7xl sm:text-8xl md:text-8xl lg:text-[10rem] uppercase font-black
+    text-transparent bg-clip-text text-white drop-shadow-custom font-heading lg:w-full max-w-xl mx-auto text-center"
+    >
+      Check it out
+    </h1>
+    <p
+      class="font-bold font-body text-md sm:text-lg md:text-lg lg:text-xl pt-2 flex-1 lg:max-w-2xl basis-full lg:basis-auto lg:mb-0 mx-auto text-center pb-16"
+    >
+      We work with many independent artists, bringing the amazing things
+      happening at the intersection of art and technology to as many people as
+      possible.
+    </p>
+    <BentoGrid>
+      {
+        bentos.map(({ src, alt, class: customClass }: any) => (
+          <Image
+            src={src}
+            alt={alt}
+            class:list={[customClass, `w-full h-full rounded-xl`]}
+          />
+        ))
+      }
+    </BentoGrid>
+  </div>
+  <button
+    class="block md:hidden bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase mt-8 py-1 px-12"
+    >See more</button
+  >
+  <div class:list={[furries.footer.class]}>
+    <Image
+      src={furries.footer.src}
+      alt=""
+      class="brightness-[0.9] overflow-hidden"
+      data-scroll-id="nephex-footer"
+      data-scroll
+      data-scroll-speed={furries.footer.scroll_speed}
+      data-scroll-position="bottom"
+      data-scroll-direction="vertical"
+    />
+  </div>
+</BaseLayout>
+
+<script>
+  import scroller from "../lib/scroller";
+
+  scroller.on("scroll", (args: any) => {
+    // do something
+    const nephexHero = args.currentElements["nephex-hero"];
+    const nephexAbout = args.currentElements["nephex-about"];
+    if (typeof nephexHero === "object") {
+      let progress = nephexHero.progress;
+      nephexHero.el.style.rotate = `${(progress - 0.5) * 0.1}turn`;
+    }
+    if (typeof nephexAbout === "object") {
+      let progress = nephexAbout.progress;
+      nephexAbout.el.style.rotate = `${(progress - 0.5) * 0.1}turn`;
+    }
+  });
+
+  // Wait 2 seconds then calculate the new page height
+  document.addEventListener("DOMContentLoaded", function () {
+    function ScrollUpdateDelay() {
+      setTimeout(function () {
+        scroller.update();
+      }, 500);
+    }
+
+    ScrollUpdateDelay();
+  });
+</script>
+<script>
+  const hoverItems = document.querySelectorAll("[data-hover-index]");
+  const hoverTargets = document.querySelectorAll("[data-hover-target]");
+
+  let slideIndex = 0;
+
+  const createTimer = () => {
+    return setInterval(() => {
+      if (slideIndex >= hoverTargets.length) {
+        slideIndex = 0;
+      }
+      toggleHoverIndex(`${slideIndex}`);
+      slideIndex += 1;
+    }, 5000);
+  };
+  let timer = createTimer();
+
+  const elementArray = [...hoverItems];
+  const toggleHoverIndex = (index: string) => {
+    const show = elementArray.filter(
+      (el) => el.getAttribute("data-hover-index") === index
+    );
+
+    show.forEach((el) => {
+      el.toggleAttribute("data-hovered", true);
+    });
+
+    const hide = elementArray.filter(
+      (el) => el.getAttribute("data-hover-index") !== index
+    );
+    hide.forEach((el) => {
+      el.toggleAttribute("data-hovered", false);
+    });
+  };
+
+  const hoverListener = (event: any) => {
+    const index = event.target.dataset.hoverTarget;
+    clearInterval(timer);
+    toggleHoverIndex(index);
+    slideIndex = Number(index);
+    timer = createTimer();
+  };
+
+  hoverTargets.forEach((textEl) => {
+    textEl.addEventListener("mouseenter", hoverListener);
+  });
+</script>

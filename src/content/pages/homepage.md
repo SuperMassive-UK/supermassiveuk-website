@@ -76,7 +76,7 @@ blobs:
     class:  z-0 blur-md top-[2%] left-[5%] md:left-[40%]
     scroll_speed: -4
   - src: ../../assets/images/blob-3.png
-    class: z-30 top-[9%] hidden sm:block md:top-[12%] left-[60%] 
+    class: z-30 top-[9%] hidden md:block md:top-[12%] left-[60%] 
     scroll_speed: 4
   - src: ../../assets/images/blob-4.png
     class: z-10 top-[20%] right-[20%] md:right-[-40%] 
@@ -90,11 +90,11 @@ blobs:
 furries:
   hero:
     src: ../../assets/images/nephex-4.png
-    class: absolute top-[-1%] right-[-20%] lg:right-[-10%] xl:left-[30%] -z-20 max-w-full mx-auto w-[600px] md:w-[750px] xl:w-[1000px] aspect-square 
+    class: absolute top-[-1%] right-[-20%] lg:right-[-10%] xl:left-[30%] -z-50 max-w-full mx-auto w-[600px] md:w-[750px] xl:w-[1000px] aspect-square 
     scroll_speed: 1
   what_we_do:
     src: ../../assets/images/nephex-5.png
-    class: absolute m-auto top-[-600px] left-[0%] right-0 md:top-[-48rem] md:left-[60%] w-[400px] sm:w-[500px] md:w-[700px] xl:w-[700px] aspect-square 
+    class: absolute m-auto top-[-600px] left-[0%] right-0 md:top-[-48rem] -z-20  md:left-[60%] w-[400px] sm:w-[500px] md:w-[700px] xl:w-[700px] aspect-square 
     scroll_speed: 2
   footer:
     src: ../../assets/images/nephex-6.png

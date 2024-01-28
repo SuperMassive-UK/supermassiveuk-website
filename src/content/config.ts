@@ -45,20 +45,49 @@ const pages = defineCollection({
       })
       .catchall(z.any())
       .or(
-        z.record(
-          z.object({
-            gradient: z.string(),
-            scroll_speed: z.number(),
-            text: z.string(),
-            bentos: z.array(
-              z.object({
-                src: image().optional(),
-                alt: z.string(),
-                class: z.string(),
-              })
-            ),
-          })
-        )
+        z.object({
+          meta_title: z.string(),
+          meta_description: z.string(),
+          sections: z.record(
+            z.object({
+              gradient: z.string(),
+              scroll_speed: z.number(),
+              text: z.string(),
+              bentos: z.array(
+                z.object({
+                  src: image().optional(),
+                  alt: z.string(),
+                  class: z.string(),
+                })
+              ),
+            })
+          ),
+          furries: z.record(
+            z.object({
+              src: image(),
+              class: z.string(),
+              scroll_speed: z.number(),
+            })
+          ),
+        })
+      )
+      .or(
+        z.object({
+          bentos: z.array(
+            z.object({
+              src: image(),
+              alt: z.string(),
+              class: z.string(),
+            })
+          ),
+          furries: z.record(
+            z.object({
+              src: image(),
+              class: z.string(),
+              scroll_speed: z.number(),
+            })
+          ),
+        })
       )
       .or(z.any()),
 });
