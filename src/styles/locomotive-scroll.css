@@ -11,6 +11,7 @@
     bottom: 0;  
   inset: 0;
   backface-visibility: hidden;
+	transform: translateZ(0);
 }
 
 
