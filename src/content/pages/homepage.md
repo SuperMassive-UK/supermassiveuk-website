@@ -76,16 +76,16 @@ blobs:
     class:  z-0 blur-md top-[2%] left-[5%] md:left-[40%]
     scroll_speed: -4
   - src: ../../assets/images/blob-3.png
-    class: z-30 top-[9%] hidden md:block md:top-[12%] left-[60%] 
+    class: z-50 top-[9%] hidden md:block md:top-[12%] left-[60%] 
     scroll_speed: 4
   - src: ../../assets/images/blob-4.png
-    class: z-10 top-[20%] right-[20%] md:right-[-40%] 
+    class: z-0 top-[20%] right-[20%] md:right-[-40%] 
     scroll_speed: 6
   - src: ../../assets/images/blob-5.png
-    class: z-10 top-[90%] md:top-[40%] right-[30%] md:left-[-40%] md:right-auto
+    class: z-0 top-[90%] md:top-[40%] right-[30%] md:left-[-40%] md:right-auto blur-sm
     scroll_speed: -4
   - src: ../../assets/images/blob-6.png
-    class: z-10 top-[68%] md:top-[60%] left-[50%] md:right-[-50%] md:left-auto
+    class: z-0 top-[68%] md:top-[60%] left-[50%] md:right-[-50%] md:left-auto
     scroll_speed: 4
 furries:
   hero:

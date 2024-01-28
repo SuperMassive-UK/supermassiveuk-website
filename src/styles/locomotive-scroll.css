@@ -22,9 +22,12 @@ html.has-scroll-dragging {
 
 .has-scroll-smooth [data-scroll-container] {
   perspective: 1px;
+  min-height: 100vh; 
+}
 
-  
-  min-height: 100vh; }
+.has-scroll-smooth [data-scroll-section] {
+  will-change: 'transform';
+}
 
 [data-scroll-direction="horizontal"] [data-scroll-container] {
   height: 100vh;
@@ -37,6 +40,8 @@ html.has-scroll-dragging {
   will-change: 'transform';
   white-space: nowrap;
   height: 100%; }
+
+
 
 .c-scrollbar {
   position: absolute;

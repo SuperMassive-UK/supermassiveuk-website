@@ -20,7 +20,7 @@ const {
   description={meta_description}
   scroll_speeds={{ nav: 1, footer: 1 }}
 >
-  <div class="relative pt-56 max-w-6xl mx-auto mb-56 mt-16">
+  <div class="relative pt-56 max-w-6xl mx-auto mb-56 mt-16" data-scroll-section>
     <div class:list={["mx-auto", furries.who_we_are.class]}>
       <Image
         src={furries.who_we_are.src}
@@ -78,7 +78,7 @@ const {
       </div>
     </div>
   </div>
-  <div class="relative max-w-6xl mx-auto mb-56">
+  <div class="relative max-w-6xl mx-auto mb-56" data-scroll-section>
     <div class:list={["mx-auto", furries.what_makes_us.class]}>
       <Image
         src={furries.what_makes_us.src}
@@ -136,12 +136,12 @@ const {
       </div>
     </div>
   </div>
-  <div
-    class="relative max-w-6xl mx-auto mb-24"
-    data-scroll
-    data-scroll-speed={what_makes_us.scroll_speed}
-  >
-    <div class="z-40 mr-auto px-6 md:px-10">
+  <div class="relative max-w-6xl mx-auto mb-24" data-scroll-section>
+    <div
+      class="z-40 mr-auto px-6 md:px-10"
+      data-scroll
+      data-scroll-speed={what_makes_us.scroll_speed}
+    >
       <h2 class="sr-only">Why we exist</h2>
       <div class="flex flex-wrap gap-x-6">
         <div
