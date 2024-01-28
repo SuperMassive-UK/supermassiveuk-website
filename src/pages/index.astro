@@ -256,6 +256,10 @@ const {
 
     ScrollUpdateDelay();
   });
+  window.addEventListener("load", function () {
+    var resizeEvent = new Event("resize");
+    window.dispatchEvent(resizeEvent);
+  });
 </script>
 <script>
   const hoverItems = document.querySelectorAll("[data-hover-index]");
