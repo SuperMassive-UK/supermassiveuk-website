@@ -6,6 +6,6 @@ export default new LocomotiveScroll({
   touchMultiplier: 2,
   tablet: {
     breakpoint: 768,
-    smooth: true,
+    smooth: false,
   },
 });
