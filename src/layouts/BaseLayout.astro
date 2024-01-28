@@ -24,7 +24,7 @@ const { title, description, type = "website", scroll_speeds } = Astro.props;
     <div>
       <NavBar scroll_speed={scroll_speeds.nav} />
       <main
-        class="max-w-6xl mx-auto mt-0 pt-0 w-full relative overflow-visible"
+        class="max-w-6xl mx-auto mt-0 pt-0 w-full relative overflow-hidden md:overflow-visible"
         id="page"
         data-scroll-section
       >
