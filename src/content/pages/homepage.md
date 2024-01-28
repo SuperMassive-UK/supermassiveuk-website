@@ -63,11 +63,11 @@ what_we_dos:
       alt: Popping a smokey bubble from the Cloud Chamber
       class: ""
 scroll_speeds:
-  nav: 1
-  hero: 4
-  about_text: 1
-  bento: 10
-  footer: 1
+  nav: 0.1
+  hero: 0.5
+  about_text: 0
+  bento: 0
+  footer: 0.1
 blobs:
   - src: ../../assets/images/blob-1.png
     class: z-0 blur-sm top-[10%] left-[40%]
@@ -91,13 +91,13 @@ furries:
   hero:
     src: ../../assets/images/nephex-4.png
     class: absolute top-[-1%] right-[-20%] lg:right-[-10%] xl:left-[30%] -z-50 max-w-full mx-auto w-[600px] md:w-[750px] xl:w-[1000px] aspect-square 
-    scroll_speed: 1
+    scroll_speed: 0
   what_we_do:
     src: ../../assets/images/nephex-5.png
     class: absolute m-auto top-[-600px] left-[0%] right-0 md:top-[-48rem] -z-20  md:left-[60%] w-[400px] sm:w-[500px] md:w-[700px] xl:w-[700px] aspect-square 
-    scroll_speed: 2
+    scroll_speed: 0
   footer:
     src: ../../assets/images/nephex-6.png
     class: absolute m-auto bottom-[-500px] md:bottom-[-500px] left-0 md:left-[-100px]  w-[200px] sm:w-[250px] md:w-[350px] aspect-square overflow-hidden
-    scroll_speed: 4
+    scroll_speed: 0
 ---

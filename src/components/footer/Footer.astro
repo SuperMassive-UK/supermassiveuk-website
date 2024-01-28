@@ -9,11 +9,9 @@ const { data: navData } = await getEntry("data", "nav");
 const { data: footerData } = await getEntry("data", "footer");
 ---
 
-<div data-scroll-section class="mt-auto">
+<div class="mt-auto" data-scroll data-scroll-speed={scroll_speed}>
   <footer
     class="relative z-50 py-6 px-6 md:px-10 max-w-6xl mx-auto flex justify-between items-end mb-16"
-    data-scroll
-    data-scroll-speed={scroll_speed}
   >
     <div class="flex flex-col-reverse md:flex-row items-start md:items-end">
       <ul

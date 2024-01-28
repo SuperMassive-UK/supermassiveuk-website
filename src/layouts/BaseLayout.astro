@@ -22,12 +22,9 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en" data-scroll-wrapper>
+<html lang="en">
   <BaseHead title={title} description={description} type={type} />
-  <body
-    class="min-h-screen w-screen overflow-x-hidden p-0"
-    data-scroll-container
-  >
+  <body class="min-h-screen w-screen overflow-x-hidden p-0">
     <NavBar scroll_speed={scroll_speeds.nav} />
     <main class="max-w-6xl mx-auto mt-0 pt-0 w-full relative" id="page">
       <slot />
@@ -35,22 +32,6 @@ const {
     {footer && <Footer scroll_speed={scroll_speeds.footer} />}
     <script>
       import scroller from "../lib/scroller";
-      document.addEventListener("DOMContentLoaded", function () {
-        function ScrollUpdateDelay() {
-          setTimeout(function () {
-            console.log(scroller);
-
-            scroller.update();
-          }, 500);
-        }
-
-        ScrollUpdateDelay();
-      });
-      window.addEventListener("load", function () {
-        var resizeEvent = new Event("resize");
-        window.dispatchEvent(resizeEvent);
-      });
-      console.log(scroller);
     </script>
   </body>
 </html>

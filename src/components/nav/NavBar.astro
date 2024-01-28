@@ -15,15 +15,11 @@ const navData = await getEntry("data", "nav");
 <header
   class="nav-container absolute z-50 flex flex-col md:flex-row justify-between
   items-top bg-background py-6 px-6 md:px-10 max-w-6xl left-0 right-0 m-auto"
-  data-scroll-section
+  data-scroll
+  data-scroll-speed={scroll_speed}
+  data-scroll-repeat
 >
-  <div
-    class="flex w-full md:w-auto items-top justify-between"
-    data-scroll
-    data-scroll-speed={scroll_speed}
-    data-scroll-repeat
-    data-scroll-position="top"
-  >
+  <div class="flex w-full md:w-auto items-top justify-between">
     <a href="/" class="text-lg w-[200px] pt-4"
       ><Image src={Logo} alt="SUPERMASSIVE logo" /></a
     >
@@ -55,10 +51,6 @@ const navData = await getEntry("data", "nav");
   <MenuItems class="hidden w-full md:w-auto mt-2 md:flex font-medium">
     <ul
       class="flex flex-col items-end text-md text-white uppercase font-heading"
-      data-scroll
-      data-scroll-repeat=""
-      data-scroll-speed="4"
-      data-scroll-position="top"
     >
       {
         navData.data.map((item: any, index: number) => (
