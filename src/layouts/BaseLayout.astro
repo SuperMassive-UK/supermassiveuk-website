@@ -39,15 +39,10 @@ const {
     {footer && <Footer scroll_speed={scroll_speeds.footer} />}
     <script>
       import scroller from "../lib/scroller";
-      console.log("scroller", scroller);
-      document.addEventListener("DOMContentLoaded", function () {
-        function ScrollUpdateDelay() {
-          setTimeout(function () {
-            scroller.update();
-          }, 500);
-        }
 
-        ScrollUpdateDelay();
+      window.addEventListener("load", function () {
+        var resizeEvent = new Event("resize");
+        window.dispatchEvent(resizeEvent);
       });
     </script>
   </body>
