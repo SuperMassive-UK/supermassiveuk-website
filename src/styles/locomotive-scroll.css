@@ -23,9 +23,7 @@ html.has-scroll-dragging {
   overflow: hidden; }
 
 .has-scroll-smooth [data-scroll-container] {
-      transform: perspective(1px);
-
-  transform-style: preserve-3d; will-change: transform;
+  
   min-height: 100vh; }
 
 [data-scroll-direction="horizontal"] [data-scroll-container] {
