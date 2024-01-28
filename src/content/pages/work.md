@@ -38,6 +38,6 @@ bentos:
 furries:
   footer:
     src: ../../assets/images/nephex-6.png
-    class: absolute m-auto bottom-[-500px] md:bottom-[-500px] left-0 md:left-[-100px]  w-[200px] sm:w-[250px] md:w-[350px] aspect-square overflow-hidden
+    class: absolute m-auto bottom-[-200px] md:bottom-[-200px] left-0 md:left-[-100px]  w-[200px] sm:w-[250px] md:w-[350px] aspect-square overflow-hidden
     scroll_speed: 4
 ---
