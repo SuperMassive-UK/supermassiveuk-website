@@ -6,7 +6,6 @@ html.has-scroll-smooth {
   right: 0;
   top: 0;
   bottom: 0;  
-  overflow: hidden; 
   backface-visibility: hidden;
 	transform: translateZ(0);
 }
@@ -21,7 +20,6 @@ html.has-scroll-dragging {
   overflow: hidden; }
 
 .has-scroll-smooth [data-scroll-container] {
-  perspective: 1px;
   min-height: 100vh; 
 }
 
