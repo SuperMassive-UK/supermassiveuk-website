@@ -6,7 +6,10 @@ html.has-scroll-smooth {
   right: 0;
   top: 0;
   bottom: 0;  
-  overflow: hidden; }
+  overflow: hidden; 
+  backface-visibility: hidden;
+	transform: translateZ(0);
+}
 
 html.has-scroll-dragging {
   -webkit-user-select: none;
@@ -18,11 +21,13 @@ html.has-scroll-dragging {
   overflow: hidden; }
 
 .has-scroll-smooth [data-scroll-container] {
+  perspective: 1px;
+
+  
   min-height: 100vh; }
 
 [data-scroll-direction="horizontal"] [data-scroll-container] {
   height: 100vh;
-  perspective: 1px;
   display: inline-block;
   white-space: nowrap; }
 
