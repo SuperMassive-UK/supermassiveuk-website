@@ -82,9 +82,9 @@ const {
         <h2 class="text-4xl xs:text-5xl lg:text-7xl font-bold uppercase mb-4">
           {about_text}
         </h2>
-        <button
-          class="hidden md:block bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase py-1 px-12"
-          >See more</button
+        <a
+          class="hidden md:block bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase mt-8 py-1 px-12 hover:bg-white hover:bg-opacity-100 hover:text-black transition-colors duration-300"
+          href="/work">See more</a
         >
       </article>
     </div>
@@ -110,9 +110,9 @@ const {
         </BentoGrid>
       </div>
     </div>
-    <button
-      class="block md:hidden bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase mt-8 py-1 px-12"
-      >See more</button
+    <a
+      class="block md:hidden bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase mt-8 py-1 px-12 hover:bg-white hover:bg-opacity-100 hover:text-black transition-colors duration-300"
+      href="/work">See more</a
     >
   </section>
   <section
@@ -244,21 +244,6 @@ const {
       let progress = nephexAbout.progress;
       nephexAbout.el.style.rotate = `${(progress - 0.5) * 0.1}turn`;
     }
-  });
-
-  // Wait 2 seconds then calculate the new page height
-  document.addEventListener("DOMContentLoaded", function () {
-    function ScrollUpdateDelay() {
-      setTimeout(function () {
-        scroller.update();
-      }, 500);
-    }
-
-    ScrollUpdateDelay();
-  });
-  window.addEventListener("load", function () {
-    var resizeEvent = new Event("resize");
-    window.dispatchEvent(resizeEvent);
   });
 </script>
 <script>

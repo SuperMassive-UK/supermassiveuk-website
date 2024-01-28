@@ -10,9 +10,16 @@ interface Props {
   description: string;
   type?: string;
   scroll_speeds: Record<string, number>;
+  footer?: boolean;
 }
 
-const { title, description, type = "website", scroll_speeds } = Astro.props;
+const {
+  title,
+  description,
+  type = "website",
+  scroll_speeds,
+  footer = true,
+} = Astro.props;
 ---
 
 <html lang="en">
@@ -21,20 +28,27 @@ const { title, description, type = "website", scroll_speeds } = Astro.props;
     class="min-h-screen w-screen overflow-x-hidden p-0"
     data-scroll-container
   >
-    <div>
-      <NavBar scroll_speed={scroll_speeds.nav} />
-      <main
-        class="max-w-6xl mx-auto mt-0 pt-0 w-full relative overflow-hidden md:overflow-visible"
-        id="page"
-        data-scroll-section
-      >
-        <slot />
-      </main>
-      <Footer scroll_speed={scroll_speeds.footer} />
-    </div>
+    <NavBar scroll_speed={scroll_speeds.nav} />
+    <main
+      class="max-w-6xl mx-auto mt-0 pt-0 w-full relative overflow-hidden md:overflow-visible"
+      id="page"
+      data-scroll-section
+    >
+      <slot />
+    </main>
+    {footer && <Footer scroll_speed={scroll_speeds.footer} />}
     <script>
       import scroller from "../lib/scroller";
       console.log("scroller", scroller);
+      document.addEventListener("DOMContentLoaded", function () {
+        function ScrollUpdateDelay() {
+          setTimeout(function () {
+            scroller.update();
+          }, 500);
+        }
+
+        ScrollUpdateDelay();
+      });
     </script>
   </body>
 </html>

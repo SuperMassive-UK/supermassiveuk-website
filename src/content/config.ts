@@ -73,6 +73,8 @@ const pages = defineCollection({
       )
       .or(
         z.object({
+          meta_title: z.string(),
+          meta_description: z.string(),
           bentos: z.array(
             z.object({
               src: image(),
@@ -85,6 +87,18 @@ const pages = defineCollection({
               src: image(),
               class: z.string(),
               scroll_speed: z.number(),
+            })
+          ),
+        })
+      )
+      .or(
+        z.object({
+          meta_title: z.string(),
+          meta_description: z.string(),
+          furries: z.array(
+            z.object({
+              src: image(),
+              class: z.string(),
             })
           ),
         })
