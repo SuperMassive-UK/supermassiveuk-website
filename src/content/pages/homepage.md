@@ -69,22 +69,22 @@ scroll_speeds:
   bento: 10
   footer: 1
 blobs:
-  - src: ../../assets/images/blob-1.svg
+  - src: ../../assets/images/blob-1.png
     class: z-0 blur-sm top-[10%] left-[40%]
     scroll_speed: 8
-  - src: ../../assets/images/blob-2.svg
+  - src: ../../assets/images/blob-2.png
     class:  z-0 blur-md top-[2%] left-[5%] md:left-[40%]
     scroll_speed: -4
-  - src: ../../assets/images/blob-3.svg
+  - src: ../../assets/images/blob-3.png
     class: z-30 top-[9%] hidden sm:block md:top-[12%] left-[60%] 
     scroll_speed: 4
-  - src: ../../assets/images/blob-4.svg
+  - src: ../../assets/images/blob-4.png
     class: z-10 top-[20%] right-[20%] md:right-[-40%] 
     scroll_speed: 6
-  - src: ../../assets/images/blob-5.svg
+  - src: ../../assets/images/blob-5.png
     class: z-10 top-[90%] md:top-[40%] right-[30%] md:left-[-40%] md:right-auto
     scroll_speed: -4
-  - src: ../../assets/images/blob-6.svg
+  - src: ../../assets/images/blob-6.png
     class: z-10 top-[68%] md:top-[60%] left-[50%] md:right-[-50%] md:left-auto
     scroll_speed: 4
 furries:
@@ -98,6 +98,6 @@ furries:
     scroll_speed: 2
   footer:
     src: ../../assets/images/nephex-6.png
-    class: absolute m-auto bottom-0 md:bottom-[-500px] left-[-100px]  w-[200px] sm:w-[250px] md:w-[350px] aspect-square overflow-hidden
+    class: absolute m-auto bottom-[-500px] md:bottom-[-500px] left-0 md:left-[-100px]  w-[200px] sm:w-[250px] md:w-[350px] aspect-square overflow-hidden
     scroll_speed: 4
 ---
