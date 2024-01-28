@@ -215,7 +215,7 @@ const {
       ))
     }
   </div>
-  <!-- <div class:list={[furries.footer.class]}>
+  <div class:list={[furries.footer.class]}>
     <Image
       src={furries.footer.src}
       alt=""
@@ -226,7 +226,7 @@ const {
       data-scroll-position="bottom"
       data-scroll-direction="vertical"
     />
-  </div> -->
+  </div>
 </BaseLayout>
 
 <script>
@@ -244,6 +244,17 @@ const {
       let progress = nephexAbout.progress;
       nephexAbout.el.style.rotate = `${(progress - 0.5) * 0.1}turn`;
     }
+  });
+
+  // Wait 2 seconds then calculate the new page height
+  document.addEventListener("DOMContentLoaded", function () {
+    function ScrollUpdateDelay() {
+      setTimeout(function () {
+        scroller.update();
+      }, 2000);
+    }
+
+    ScrollUpdateDelay();
   });
 </script>
 <script>
