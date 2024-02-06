@@ -38,12 +38,6 @@ bentos:
     alt: Paul Friedlander's Spinning Cosmos kinetic sculpture 
     class: col-span-1 row-span-1 object-cover object-center order-11
 what_we_dos:
-  - title: Collider
-    text: Learn more about COLLIDER, the SuperMassive creative hub in Manchester - containing a first of its kind immersive cafe, exhibition spaces, workshops and artist studios
-    image:
-      src: ../../assets/images/light-puzzle.jpg
-      alt: Solving a light puzzle 
-      class: ""
   - title: Promotion
     text: We champion independent artists at the art-tech nexus and connect them the growing demand for immersive entertainment
     image:
