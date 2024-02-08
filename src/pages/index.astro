@@ -105,7 +105,7 @@ const {
               <Image
                 src={src}
                 alt={alt}
-                width={600}
+                width={1250}
                 class:list={[customClass, `w-full h-full rounded-xl`]}
               />
             ))
@@ -143,7 +143,7 @@ const {
                 alt={alt}
                 data-hover-index={index}
                 data-hovered={index === 0}
-                width={800}
+                width={1250}
                 class:list={[
                   `object-cover h-full rounded-xl hidden md:block absolute transition-opacity duration-500 md:data-[hovered]:opacity-100 opacity-0`,
                   imageClass,
@@ -182,7 +182,7 @@ const {
                 >
                   {title}
                 </h3>
-                <p class="text-lg xs:text-xl md:text-2xl mb-8">{text}</p>
+                <p class="text-lg xs:text-xl md:text-2xl mb-8 font-bold">{text}</p>
                 <Image
                   src={src}
                   alt={alt}

@@ -7,21 +7,21 @@ sections:
     gradient: bg-[linear-gradient(95deg,#4CC9F0_24.31%,#F06_91.7%)]
     text: SuperMassive is an immersive experience production company based in Manchester, UK. We are a multi-disciplinary team of creatives, each with our own unique tools of the trade
     bentos: 
-      - src: ../../assets/images/wave-function.jpg
-        class: col-span-1 row-span-3 object-cover object-center order-1
-        alt: Paul Friedlander's Wave Function kinetic light sculpture
-      - src: ../../assets/images/amazed-kids.png
-        class: col-span-2 row-span-1 object-cover object-center order-2
-        alt: Children watching the dancing fountain installation
-      - src: ../../assets/images/smokey-tunnel-man.jpg
+      - src: ../../assets/images/claire-mushrooms.jpg
+        class: col-span-1 row-span-2 object-cover object-center order-2
+        alt: Mushroom sculpture
+      - src: ../../assets/images/dancing-fountain-crowd.webp
         class: col-span-2 row-span-2 object-cover object-center order-3
-        alt: Smokey tunnel man
+        alt: Crowd around illuminated fountain
+      - src: ../../assets/images/teamphoto.jpg
+        class: col-span-3 row-span-2 object-cover object-center order-1
+        alt: Team on site
   what_makes_us:
     scroll_speed: 0    
     gradient: bg-[linear-gradient(103deg,#4CC9F0_-13.54%,#3A0CA3_59%,#F06_185.95%)]
     text: We’re bound together by a passion for crafting fun and a belief that immersion is about more than just oversized screens. We make art interactive and accessible, and aim to encourage everyone find joy in creative expression.
     bentos: 
-      - src: ../../assets/images/wave-function.jpg
+      - src: ../../assets/images/light-pipe-necklace.jpg
         class: col-span-1 row-span-3 object-cover object-center order-1
         alt: Paul Friedlander's Wave Function kinetic light sculpture
       - src: ../../assets/images/amazed-kids.png
