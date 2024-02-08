@@ -41,8 +41,7 @@ sections:
       - src: ../../assets/images/amazed-kids.png
         class: col-span-2 row-span-1 object-cover object-center order-2
         alt: Children watching the dancing fountain installation
-      - class: col-span-1 row-span-1 order-3
-        alt: Our creative platform echoes this ethos, nurturing innovation, promoting collaboration and ensuring fair remuneration. We want to enable rewarding long-term dedication to the creative journeys of everyone involved. 
+
       - src: ../../assets/images/smokey-tunnel-man.jpg
         class: col-span-2 row-span-2 object-cover object-center order-4
         alt: Smokey tunnel man
