@@ -7,7 +7,7 @@ bentos:
   - src: ../../assets/images/concept-windows.png
     alt: Paul Friedlander's Wave Function kinetic light sculpture
     class: col-span-1 row-span-1 object-cover object-center order-2
-  - src: ../../assets/images/amazed-kids.png
+  - src: ../../assets/images/looking-up-at-smokey-bubbles.jpg
     alt: Children watching the dancing fountain installation
     class: col-span-3 row-span-1 object-cover object-center order-1
   - src: ../../assets/images/hologon-portal-glasses.jpg
@@ -41,8 +41,8 @@ what_we_dos:
   - title: Promotion
     text: We champion independent artists at the art-tech nexus and connect them the growing demand for immersive entertainment
     image:
-      src: ../../assets/images/wave-function.jpg
-      alt: Paul Friedlander's Spinning Cosmos kinetic sculpture 
+      src: ../../assets/images/jamie-house-hand.jpg
+      alt: Crystal hand illuminated 
       class: ""
   - title: Events
     text: We develop and curate high-quality immersive sound and light installations. SuperMassive has exhibited work at many of the country’s largest festivals and events
@@ -53,7 +53,7 @@ what_we_dos:
   - title: Experiences
     text: Keep an eye out for what comes next! We are developing a series of story-driven interactive and immersive experiences
     image: 
-      src: ../../assets/images/cloud-organ-bubble-pop.jpg
+      src: ../../assets/images/concept-wavy-floor.png
       alt: Popping a smokey bubble from the Cloud Chamber
       class: ""
 scroll_speeds:
