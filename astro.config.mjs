@@ -4,12 +4,14 @@ import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 const isDev = import.meta.env.DEV;
 
-
 // https://astro.build/config
 export default defineConfig({
-  site: "https://louisjmorgan.github.io",
-  base: isDev ? "/" : "/supermassiveuk",
-  integrations: [tailwind({
-    applyBaseStyles: false
-  }), icon(), sitemap()]
+  site: "https://www.supermassive.uk",
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    icon(),
+    sitemap(),
+  ],
 });
