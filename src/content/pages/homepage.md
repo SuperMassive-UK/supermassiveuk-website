@@ -66,10 +66,10 @@ blobs:
   - src: ../../assets/images/blob-2.svg
     class:  z-0 blur-md top-[2%] left-[5%] md:left-[40%]
     scroll_speed: -0.5
-  - src: ../../assets/images/blob-3.png
+  - src: ../../assets/images/blob-3.svg
     class: z-50 top-[9%] md:top-[12%] left-[60%] blur-md
     scroll_speed: 4
-  - src: ../../assets/images/blob-1.png
+  - src: ../../assets/images/blob-1.svg
     class: z-0 blur-sm top-[10%] left-[40%]
     scroll_speed: 8
   - src: ../../assets/images/blob-7.png
@@ -78,7 +78,7 @@ blobs:
   - src: ../../assets/images/blob-9.png
     class: z-0 top-[18%] right-[10%] md:right-[-20%] blur-sm md:top-[20%]
     scroll_speed: -8
-  - src: ../../assets/images/blob-6.png
+  - src: ../../assets/images/blob-6.svg
     class: z-0 top-[68%] md:top-[65%] left-[20%] md:right-[20%] md:left-auto blur-sm hidden md:block
     scroll_speed: 4
 furries:

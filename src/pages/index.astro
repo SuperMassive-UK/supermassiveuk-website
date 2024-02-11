@@ -50,6 +50,7 @@ const {
         class="brightness-[0.9]"
         loading="eager"
         data-scroll
+        width={750}
         data-scroll-event-progress="furry"
         data-furry-speed={furries.hero.scroll_speed}
       />
@@ -92,8 +93,9 @@ const {
           {about_text}
         </h2>
         <a
-          class="hidden md:block bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase mt-8 py-1 px-12 hover:bg-white hover:bg-opacity-100 hover:text-black transition-colors duration-300"
-          href="/work">See more</a
+          class="hidden md:block bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase mt-8 py-1 px-12 hover:bg-white hover:bg-opacity-100 hover:text-black transition-colors duration-300 text-center"
+          href="/work"
+          aria-label="View more work from SuperMassive">See more of our work</a
         >
       </article>
     </div>
@@ -114,8 +116,9 @@ const {
       </div>
     </div>
     <a
-      class="block md:hidden bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase mt-8 py-1 px-12 hover:bg-white hover:bg-opacity-100 hover:text-black transition-colors duration-300"
-      href="/work">See more</a
+      class="block md:hidden bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase mt-8 py-1 px-12 hover:bg-white hover:bg-opacity-100 hover:text-black transition-colors duration-300 text-center"
+      href="/work"
+      aria-label="View more work from SuperMassive">See more of our work</a
     >
   </section>
   <section
@@ -182,7 +185,9 @@ const {
                 >
                   {title}
                 </h3>
-                <p class="text-lg xs:text-xl md:text-2xl mb-8 font-bold">{text}</p>
+                <p class="text-lg xs:text-xl md:text-2xl mb-8 font-bold">
+                  {text}
+                </p>
                 <Image
                   src={src}
                   alt={alt}
@@ -201,6 +206,7 @@ const {
           src={furries.what_we_do.src}
           alt=""
           class="brightness-[0.9]"
+          width={750}
           data-scroll-id="nephex-about"
           data-scroll
           data-scroll-speed={furries.what_we_do.scroll_speed}
@@ -215,6 +221,7 @@ const {
       src={furries.footer.src}
       alt=""
       class="brightness-[0.9] overflow-hidden"
+      width={750}
       data-scroll
       data-scroll-speed={furries.footer.scroll_speed}
       data-scroll-position="bottom"
