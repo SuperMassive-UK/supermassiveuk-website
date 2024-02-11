@@ -1,5 +1,7 @@
 social_links:
   - icon: "ri:instagram-line"
+    label: SuperMassive Instgram
     url: https://www.instagram.com/supermassiveuk/
   - icon: "ri:linkedin-fill"
-    url: ""
+    label: SuperMassive LinkedIn
+    url: https://www.linkedin.com/company/supermassive-uk/

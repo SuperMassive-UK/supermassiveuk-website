@@ -19,7 +19,7 @@ const { data: footerData } = await getEntry("data", "footer");
       >
         {
           navData.map((item: any) => (
-            <div class="">
+            <li class="">
               <div
                 class="hover:scale-125 transition origin-left "
                 class:list={[
@@ -30,19 +30,20 @@ const { data: footerData } = await getEntry("data", "footer");
               >
                 <a
                   href={item.url}
-                  class="flex py-1 text-inherit no-underline text-right"
+                  class="flex py-2 text-inherit no-underline text-right"
                 >
                   {item.label}
                 </a>
               </div>
-            </div>
+            </li>
           ))
         }
       </ul>
       <a
         href="/"
         class="text-lg w-[100px] sm:w-[150px] md:w-[200px] pt-4 mb-2 md:mb-[-4px] md:ml-4"
-        ><Image src={Logo} alt="SUPERMASSIVE logo" /></a
+        aria-label="Return to homepage"
+        ><Image src={Logo} alt="SUPERMASSIVE logo" /></
       >
     </div>
     <div class="flex flex-col items-end gap-2">
@@ -52,7 +53,7 @@ const { data: footerData } = await getEntry("data", "footer");
       <div class="flex gap-2 items-center">
         {
           footerData.social_links.map((social_link: any) => (
-            <a class="cursor-pointer" href={social_link.url}>
+            <a class="cursor-pointer" href={social_link.url} aria-label={social_link.label}>
               <Icon name={social_link.icon} class="text-xl md:text-3xl" />
             </a>
           ))

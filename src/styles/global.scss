@@ -11,17 +11,20 @@
     font-family: Panton;
     font-weight: 400;
     src: url(/fonts/Panton/Panton-Trial-Bold.woff) format("woff");
+		font-display: swap
   }
 
 	@font-face {
     font-family: Panton;
     font-weight: 700;
     src: url(/fonts/Panton/Panton-Trial-ExtraBold.woff) format("woff");
+		font-display: swap
   }
 	@font-face {
     font-family: Panton;
     font-weight: 900;
     src: url(/fonts/Panton/Panton-Trial-Black.woff) format("woff");
+		font-display: swap
   }
  html {
 	

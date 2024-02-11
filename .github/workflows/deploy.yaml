@@ -23,8 +23,8 @@ jobs:
           npm install
           npm run build --if-present
           npm run test --if-present
-        # run: echo www.mikeloganaudio.com > ./dist/CNAME
-      # - name: move cname to dist
+      - name: move cname to dist
+        run: echo www.supermassive.uk > ./dist/CNAME
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
