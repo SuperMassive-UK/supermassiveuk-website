@@ -88,7 +88,7 @@ furries:
     scroll_speed: -10
   what_we_do:
     src: ../../assets/images/nephex-5.png
-    class: absolute m-auto top-[-600px] left-[0%] right-0 md:top-[-48rem] -z-20  md:left-[60%] w-[400px] sm:w-[500px] md:w-[700px] xl:w-[700px] aspect-square 
+    class: absolute m-auto top-[-600px] left-[0%] right-0 md:top-[-48rem] -z-20  md:left-[60%] w-[400px] sm:w-[500px] md:w-[700px] xl:w-[700px] aspect-square pointer-events-none 
     scroll_speed: 0
   footer:
     src: ../../assets/images/nephex-6.png
