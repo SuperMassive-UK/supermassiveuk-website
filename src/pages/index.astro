@@ -230,18 +230,20 @@ const {
 
   <script>
     import scroller from "../lib/scroller";
-
+    // Chrome 1 - 79
+    var isChromium = !!window.chrome;
+    console.log("is chrome", isChromium);
+    // Edge (based on chromium) detection
     window.addEventListener("blob", (e: any) => {
+      if (isChromium) return;
       const { target, progress } = e.detail;
       const speed = Number(target.getAttribute("data-blob-speed"));
-      console.log(target, progress, speed);
       target.style.translate = `${-progress * speed * 120}px 0px `;
     });
 
     window.addEventListener("furry", (e: any) => {
       const { target, progress } = e.detail;
       const speed = Number(target.getAttribute("data-blob-speed"));
-      console.log(target, progress, speed);
       target.style.translate = `${-progress * speed * 120}px 0px `;
     });
   </script>
