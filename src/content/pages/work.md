@@ -20,9 +20,6 @@ bentos:
   - src: ../../assets/images/dancing-fountain-crowd.webp
     alt: A crowd enjoying the Dancing Fountain installation
     class: col-span-3 row-span-2 object-cover object-center order-6
-  - src: ../../assets/images/dancing-fountain-1.jpg
-    alt: The Dancing Fountain installation
-    class: col-span-2 row-span-3 object-cover object-center order-7
   - src: ../../assets/images/forest-lights.jpg
     alt: Lights in the forest
     class: col-span-1 row-span-2 object-cover object-center order-8
@@ -31,7 +28,7 @@ bentos:
     class: col-span-2 row-span-1 object-cover object-center order-9
   - src: ../../assets/images/cloud-organ-green.png
     alt: The Cloud Chamber illuminated in green light
-    class: col-span-2 row-span-2 object-cover object-center order-10
+    class: col-span-2 row-span-1 object-cover object-center order-10
 
 furries:
   footer:
