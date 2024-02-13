@@ -5,6 +5,9 @@ export default {
   theme: {
     screens: {
       xs: "475px",
+      "custom-height-sticky": {
+        raw: "((min-width: 768px) and (max-height: 850px))",
+      },
       ...defaultTheme.screens,
     },
     extend: {
