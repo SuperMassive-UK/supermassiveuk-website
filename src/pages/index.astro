@@ -231,7 +231,7 @@ const {
   <script>
     import scroller from "../lib/scroller";
     // Chrome 1 - 79
-    var isChromium = !!window.chrome;
+    var isChromium = !!(window as any).chrome;
     console.log("is chrome", isChromium);
     // Edge (based on chromium) detection
     window.addEventListener("blob", (e: any) => {
