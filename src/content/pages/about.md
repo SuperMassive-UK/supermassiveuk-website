@@ -42,7 +42,7 @@ sections:
         class: col-span-2 row-span-2 object-cover object-center order-2
         alt: Children watching the dancing fountain installation
       - src: ../../assets/images/winter-lights.jpg
-        class: col-span-2 row-span-2 object-cover object-center order-4
+        class: col-span-2 row-span-3 md:row-span-2 object-cover object-center order-4
         alt: Smokey tunnel man
 furries:
   who_we_are:
