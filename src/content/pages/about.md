@@ -36,7 +36,7 @@ sections:
     text:  We believe that creative play and exploration should be a goal in and of itself. We invite participants to be both spectators and creators.
     bentos: 
       - src: ../../assets/images/concept-light-ladder.png
-        class: col-span-1 row-span-4 object-cover object-center order-1
+        class: col-span-1 row-span-5 object-cover object-center order-1
         alt: Paul Friedlander's Wave Function kinetic light sculpture
       - src: ../../assets/images/piano-man.jpg
         class: col-span-2 row-span-2 object-cover object-center order-2

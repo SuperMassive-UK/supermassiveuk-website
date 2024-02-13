@@ -14,7 +14,7 @@ const { bentos, meta_title, meta_description, scroll_speeds, furries } = data;
   scroll_speeds={{ nav: 0, footer: 0 }}
 >
   <div
-    class="block z-50 w-full px-6 md:px-10 pt-36 md:pt-24"
+    class="block z-50 w-full px-6 md:px-10 pt-36 md:pt-24 mb-24"
     data-scroll-section
   >
     <h1
@@ -42,10 +42,7 @@ const { bentos, meta_title, meta_description, scroll_speeds, furries } = data;
       }
     </BentoGrid>
   </div>
-  <button
-    class="block md:hidden bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase mt-8 py-1 px-12"
-    >See more</button
-  >
+
   <div class:list={[furries.footer.class]}>
     <Image
       src={furries.footer.src}

@@ -53,15 +53,4 @@ text-transparent bg-clip-text text-white drop-shadow-custom font-heading lg:w-fu
       </div>
     </div>
   </FullScreenRow>
-  <div>
-    {
-      furries.map((furry: any) => (
-        <div class:list={["absolute max-w-6xl w-full mx-auto", furry.class]}>
-          <div>
-            <Image alt="" src={furry.src} />
-          </div>
-        </div>
-      ))
-    }
-  </div>
 </BaseLayout>
