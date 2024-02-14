@@ -1,6 +1,6 @@
 ---
 meta_title: SuperMassive
-meta_description:  Discover SUPERMASSIVE. We create mind-bending experiences that blur the boundaries between story, spectacle and activity.
+meta_description:  Immersive experience production company combining interactive digital technologies and set design into mind-blowing experiences. Tickets for the first experience available soon.
 subtitle:   Discover SUPERMASSIVE. We create mind-bending experiences that blur the boundaries between story, spectacle and activity.
 about_text:   We build immersive worlds - where sound, light, and environment converge.
 bentos:

@@ -1,6 +1,6 @@
 ---
 meta_title: SuperMassive | Work
-meta_description:  Discover SUPERMASSIVE. We create mind-bending experiences that blur the boundaries between story, spectacle and activity.
+meta_description:  SuperMassive works with independent artists working on unique projects at the intersection of art and technology. See more of the artists' work.
 bentos:
   - src: ../../assets/images/piano-man.jpg
     class: col-span-1 row-span-3 object-cover object-center order-1

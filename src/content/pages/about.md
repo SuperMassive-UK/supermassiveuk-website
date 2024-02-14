@@ -1,6 +1,6 @@
 ---
 meta_title: SuperMassive | About
-meta_description: SuperMassive is an immersive experience production company based in Manchester, UK. We are a multi-disciplinary team of creatives, each with our own unique tools of the trade
+meta_description: Based in Manchester. High-tech creatives with a broad range of skills including digital content, AI, micro-controllers, haptic feedback, audio-visual integration.
 sections:
   who_we_are:
     scroll_speed: 0  
