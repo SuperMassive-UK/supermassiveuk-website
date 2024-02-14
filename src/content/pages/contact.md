@@ -1,6 +1,6 @@
 ---
 meta_title: SuperMassive | Contact
-meta_description:  Discover SUPERMASSIVE. We create mind-bending experiences that blur the boundaries between story, spectacle and activity.
+meta_description:  Contact the team via email, phone, instagram, linkedin
 furries:
   - src: ../../assets/images/nephex-1.png
     class: absolute m-auto right-0 top-0 left-0 bottom-0 scale-50  w-[20px] sm:w-[250px] md:w-[350px] aspect-square overflow-hidden
