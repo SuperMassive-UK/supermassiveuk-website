@@ -19,7 +19,7 @@ bentos:
     class: col-span-1 row-span-2 object-cover object-center order-5
   - src: ../../assets/images/dancing-fountain-crowd.webp
     alt: A crowd enjoying the Dancing Fountain installation
-    class: col-span-3 row-span-2 object-cover object-center order-6
+    class: col-span-3 row-span-2 object-cover object-center order-6al
 furries:
   footer:
     src: ../../assets/images/nephex-6.png
