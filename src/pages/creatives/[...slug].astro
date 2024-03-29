@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const creatives = await getCollection("creatives");
+  return creatives.map((artist) => ({
+    params: { slug: artist.slug },
+    props: { artist },
+  }));
+}
+
+const {
+  artist: {
+    data: { name, description, bentos, website },
+    render,
+  },
+} = Astro.props;
+const { Content } = await render();
+---
+
+<BaseLayout
+  title={name}
+  description={description ??
+    `Artist showcase for ${name}, one of SuperMassive's collaborating creatives.`}
+  scroll_speeds={{ nav: 0, footer: 0 }}
+>
+  <div class="pt-56 max-w-6xl px-6 md:px-10 mx-auto">
+    <h1
+      class="uppercase text-center text-5xl sm:text-7xl md:text-9xl font-bold mb-16"
+    >
+      {name}
+    </h1>
+
+    <div class="grid auto-rows-[150px] grid-cols-3 gap-4 bg-transparent">
+      {
+        bentos.map(({ src, alt, class: customClass }: any) => (
+          <Image
+            src={src}
+            alt={alt}
+            width={1250}
+            class:list={[`w-full h-full rounded-xl`, customClass]}
+          />
+        ))
+      }
+    </div>
+    <article
+      class="prose text-white max-w-full text-2xl my-12 t md:text-justify"
+    >
+      <Content />
+    </article>
+    {
+      website && (
+        <a
+          class="block sm:mx-auto xs:mx-8 sm:w-[25ch] bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase py-1 px-12 hover:bg-white hover:bg-opacity-100 hover:text-black transition-colors duration-300 text-center my-24"
+          href={website}
+          target="_blank"
+          aria-label="Visit this artist's website"
+        >
+          Go to website
+        </a>
+      )
+    }
+  </div>
+</BaseLayout>

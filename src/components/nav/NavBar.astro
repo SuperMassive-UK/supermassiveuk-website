@@ -4,7 +4,7 @@
 import Dropdown from "./Dropdown.astro";
 import { MenuItems } from "astro-navbar";
 import { Image } from "astro:assets";
-import Logo from "../../assets/images/logo-transparent-cropped.png";
+import Logo from "../../assets/images/logo-transparent-cropped.svg";
 import { getEntry } from "astro:content";
 
 const { scroll_speed } = Astro.props;
@@ -19,7 +19,7 @@ const navData = await getEntry("data", "nav");
   data-scroll-speed={scroll_speed}
 >
   <div class="flex w-full md:w-auto items-top justify-between">
-    <a href="/" class="text-lg w-[200px] pt-4"
+    <a href="/" class="text-lg w-[180px] pt-4"
       ><Image src={Logo} alt="SUPERMASSIVE logo" /></a
     >
     <div class="block md:hidden">

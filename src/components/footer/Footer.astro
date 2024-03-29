@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Logo from "../../assets/images/logo-transparent-cropped.png";
+import Logo from "../../assets/images/logo-transparent-cropped.svg";
 import { getEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 
@@ -41,7 +41,7 @@ const { data: footerData } = await getEntry("data", "footer");
       </ul>
       <a
         href="/"
-        class="text-lg w-[100px] sm:w-[150px] md:w-[200px] pt-4 mb-2 md:mb-[-4px] md:ml-4"
+        class="text-lg w-[100px] sm:w-[150px] md:w-[180px] pt-4 mb-2 md:mb-[-4px] md:ml-4"
         ><Image src={Logo} alt="SUPERMASSIVE logo" /></a
       >
     </div>

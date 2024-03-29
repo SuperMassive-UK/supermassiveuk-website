@@ -106,9 +106,31 @@ const pages = defineCollection({
       .or(z.any()),
 });
 
+const creatives = defineCollection({
+  type: "content",
+  schema: ({ image }) =>
+    z.object({
+      name: z.string(),
+      description: z.string().optional(),
+      website: z.string().optional(),
+      cover_image: z.object({
+        src: image(),
+        alt: z.string(),
+      }),
+      bentos: z.array(
+        z.object({
+          src: image(),
+          alt: z.string(),
+          class: z.string(),
+        })
+      ),
+    }),
+});
+
 // Expose your defined collection to Astro
 // with the `collections` export
 export const collections = {
   data,
   pages,
+  creatives,
 };

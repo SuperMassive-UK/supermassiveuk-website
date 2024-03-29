@@ -1,0 +1,82 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { getEntries, getEntry } from "astro:content";
+
+const { data } = await getEntry("pages", "creatives");
+const { meta_title, meta_description, furries } = data;
+const artists = await getCollection("creatives");
+---
+
+<BaseLayout
+  title={meta_title}
+  description={meta_description}
+  scroll_speeds={{ nav: 0, footer: 0 }}
+>
+  <div
+    class="block z-50 w-full px-6 md:px-10 pt-36 md:pt-24 mb-24"
+    data-scroll-section
+  >
+    <h1
+      class="text-7xl sm:text-8xl md:text-8xl lg:text-[10rem] uppercase font-black
+    text-transparent bg-clip-text text-white drop-shadow-custom font-heading lg:w-full max-w-xl mx-auto text-center mt-24"
+    >
+      Art Meets Tech
+    </h1>
+    <div
+      class="font-bold font-body text-md sm:text-lg md:text-xl lg:text-2xl pt-2 flex-1 lg:max-w-2xl basis-full lg:basis-auto lg:mb-0 mx-auto text-center pb-16"
+    >
+      <p>
+        We work with incredible independent artists developing immersive and
+        interactive installations at the intersection of art and technology
+      </p>
+    </div>
+    <ul class="flex flex-col gap-8">
+      {
+        artists.map(({ data: { cover_image, name }, slug }) => {
+          return (
+            <a href={`/creatives/${slug}`}>
+              <li class="relative w-full  h-[20rem] lg:h-[40rem] hover:scale-105 duration-200 cursor-pointer">
+                <Image
+                  src={cover_image.src}
+                  alt={cover_image.alt}
+                  class:list={[
+                    `absolute w-full h-full rounded-xl z-0 object-cover `,
+                  ]}
+                />
+                <div class=" relative w-full h-full flex justify-center items-center bg-black bg-opacity-40 pointer-events-none">
+                  <h2 class="relative text-white text-5xl z-50 uppercase font-bold text-center">
+                    {name}
+                  </h2>
+                </div>
+              </li>
+            </a>
+          );
+        })
+      }
+    </ul>
+    <p class="mt-12 text-2xl font-heading text-center px-2 md:px-8 py-8">
+      We are a growing community. If you would like to have your work shown and
+      promoted by SuperMassive, please get in touch.
+    </p>
+    <a
+      class="block sm:mx-auto xs:mx-8 sm:w-[15ch] bg-zinc-300 bg-opacity-0 rounded-2xl border-8 border-white font-heading font-bold text-3xl uppercase py-1 px-12 hover:bg-white hover:bg-opacity-100 hover:text-black transition-colors duration-300 text-center"
+      href="/contact"
+      aria-label="Contact SuperMassive">Contact us</a
+    >
+  </div>
+
+  <div class:list={[furries.footer.class]}>
+    <Image
+      src={furries.footer.src}
+      alt=""
+      class="brightness-[0.9] overflow-hidden"
+      data-scroll-id="nephex-footer"
+      data-scroll
+      data-scroll-speed={furries.footer.scroll_speed}
+      data-scroll-position="bottom"
+      data-scroll-direction="vertical"
+    />
+  </div>
+</BaseLayout>

@@ -14,4 +14,7 @@ export default defineConfig({
     icon(),
     sitemap(),
   ],
+  redirects: {
+    "/work": "/creatives",
+  },
 });
