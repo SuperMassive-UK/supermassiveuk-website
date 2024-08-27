@@ -1,5 +1,5 @@
 ---
-name: Hologon Collective
+name: Tom Lambert
 website: https://www.hologon.info/
 cover_image:
   src: ../../assets/images/hologon-collective-1.png
