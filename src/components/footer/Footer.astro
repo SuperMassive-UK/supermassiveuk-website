@@ -1,12 +1,9 @@
 ---
-import { Image } from "astro:assets";
-import Logo from "../../assets/images/logo.svg";
 import { getEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 
 const { scroll_speed } = Astro.props;
-const { data: navData } = await getEntry("data", "nav");
-const { data: footerData } = await getEntry("data", "footer");
+const { data: footerData } = await getEntry("data", "footer") as {data: any};
 ---
 
 <div class="mt-auto" data-scroll data-scroll-speed={scroll_speed}>

@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getEntry } from "astro:content";
 import DownArrow from "../assets/images/down_arrow.svg";
 import Logo from "../assets/images/logo.svg";
 import DepotLogo from "../assets/images/depot_mayfield_logo.svg";
@@ -9,6 +8,7 @@ import SandpitBackground from "../assets/images/sandpit-background.jpg";
 import SandpitBackground2 from "../assets/images/sandpit-background-2.png";
 import PortalBackground from "../assets/images/portal-background.jpg";
 import PortalPerson from "../assets/images/portal-person.jpg";
+import PipesPerson from "../assets/images/person-pipes.jpg"
 import Stars from "../assets/images/stars.png";
 import BroadwickLogo from "../assets/images/broadwick-logo.png";
 import MitihLogo from "../assets/images/mitih-logo.png";
@@ -18,11 +18,9 @@ import UkriLogo from "../assets/images/ukri-logo.png";
 import { Image } from "astro:assets";
 import FAQ from "@/components/sections/FAQ.astro";
 
-const { data } = await getEntry("pages", "homepage");
-const { meta_title, meta_description } = data;
 ---
 
-<BaseLayout title={meta_title} description={meta_description}>
+<BaseLayout title={"SuperMassive"} description={"Manchester's Digital Playground."}>
   <section class="relative h-[200vh] min-h-[70rem] sm:min-h-[140rem]">
     <div class="sticky top-0 h-[100vh] min-h-[35rem] sm:min-h-[70rem] w-full z-0">
       <video autoplay muted loop playsinline class="w-full h-full object-cover">
@@ -250,7 +248,7 @@ const { meta_title, meta_description } = data;
           <p class="text-3xl">14 June - 13 September</p>
         </div>
         <Image
-          src={CableGame}
+          src={PipesPerson}
           alt="child playing with rgb cables"
           class="rounded-xl h-full object-cover hidden lg:block lg:col-span-1 lg:row-span-3"
         />
