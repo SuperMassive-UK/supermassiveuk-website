@@ -97,14 +97,18 @@ class="font-heading font-bold italic uppercase rounded-full border border-white 
   });
 
 
-function scrollFunction() {
-if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-  
-  document.querySelector(".navbar").style.background = "black";
-} else {
- 
-  document.querySelector(".navbar").style.background = "none";
-}
+  function scrollFunction(): void {
+  const navbar = document.querySelector(".navbar") as HTMLElement | null;
+
+  if (!navbar) return;
+
+  const scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+
+  if (scrollTop > 20) {
+    navbar.style.background = "black";
+  } else {
+    navbar.style.background = "none";
+  }
 }
 </script>
 <!-- 
