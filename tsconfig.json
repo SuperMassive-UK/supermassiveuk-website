@@ -7,5 +7,5 @@
     "paths": {
       "@/*": ["src/*"]
     }
-  }
+  },"exclude":["sst.config.ts"]
 }
