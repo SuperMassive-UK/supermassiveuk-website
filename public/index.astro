@@ -1,0 +1,58 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
+import Logo from "../assets/images/logo.svg"
+
+const { data } = await getEntry("pages", "homepage");
+const {
+  meta_title,
+  meta_description,
+} = data;
+---
+ <!-- Outer Scroll Container -->
+ <div class="relative h-[200vh]">
+
+  <!-- Sticky Video (sticks during the scroll container) -->
+  <div class="sticky top-0 h-screen w-full z-0">
+    <video autoplay muted loop class="object-cover w-full h-full">
+      <source src="supermassive_homepage_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Scrollable Overlay Text -->
+  <div class="absolute top-0 left-0 w-full h-[200vh] z-10 pointer-events-none bg-black">
+    <!-- First section (mask text) -->
+    <div class="h-screen flex items-center justify-center mask-svg">
+      <h1 class="font-bold text-6xl sr-only">
+        SuperMassive
+      </h1>
+      <Logo aria-hidden="true"/>
+    </div>
+
+    <!-- Second section (revealed on scroll) -->
+    <div class="h-screen flex items-center justify-center">
+      <h2 class="text-4xl font-semibold">Now Revealing the Next Section</h2>
+    </div>
+  </div>
+
+</div>
+<style>
+  .mask-svg {
+  mask-image: url('/mask.svg');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  -webkit-mask-image: url('/mask.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+</style>
+<BaseLayout
+  title={meta_title}
+  description={meta_description}
+>
+  </div>
+</BaseLayout>

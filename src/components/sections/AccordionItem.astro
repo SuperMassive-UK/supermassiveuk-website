@@ -1,0 +1,49 @@
+---
+const { title, bg, text, index } = Astro.props;
+---
+
+<div class:list={[`rounded-lg mb-4 break-inside-avoid`, bg]}>
+  <h2 class="mb-0" id={`heading-${index}`}>
+    <button
+      class:list={[
+        "group relative flex w-full items-center rounded-lg border-0 px-5 py-4 text-left text-white text-base transition [overflow-anchor:none] hover:z-[2] focus:z-[3] focus:outline-none",
+        bg,
+      ]}
+      type="button"
+      data-twe-collapse-init
+      data-twe-collapse-collapsed
+      data-twe-target={`#collapse-${index}`}
+      aria-expanded="false"
+      aria-controls={`#collapse-${index}`}
+    >
+      <span class="text-3xl">{title}</span>
+      <span
+        class="-me-1 ms-auto h-5 w-5 shrink-0 rotate-[-180deg] transition-transform duration-200 ease-in-out group-data-[twe-collapse-collapsed]:me-0 group-data-[twe-collapse-collapsed]:rotate-0 motion-reduce:transition-none [&>svg]:h-6 [&>svg]:w-6"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+        </svg>
+      </span>
+    </button>
+  </h2>
+  <div
+    id={`collapse-${index}`}
+    class="!visible hidden"
+    data-twe-collapse-collapsed
+    data-twe-collapse-item
+    aria-labelledby={`heading-${index}`}
+  >
+    <div class="px-5 py-4 text-2xl">
+      <slot />
+    </div>
+  </div>
+</div>
