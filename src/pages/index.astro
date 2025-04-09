@@ -1,6 +1,5 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import DownArrow from "../assets/images/down_arrow.svg";
 import Logo from "../assets/images/logo.svg";
 import DepotLogo from "../assets/images/depot_mayfield_logo.svg";
 import CableGame from "../assets/images/kid-cable-game.jpg";
@@ -23,49 +22,58 @@ import FAQ from "@/components/sections/FAQ.astro";
   title={"SuperMassive"}
   description={"Manchester's Digital Playground."}
 >
-  <section class="relative h-[200vh] min-h-[70rem] sm:min-h-[140rem]">
+  <section class="relative h-[200vh] min-h-[60rem] sm:min-h-[120rem]">
     <div
-      class="sticky top-0 h-[100vh] min-h-[35rem] sm:min-h-[70rem] w-full z-0"
+      class="sticky top-0 h-[100vh] min-h-[30rem] sm:min-h-[60rem] w-full z-0"
     >
       <video autoplay muted loop playsinline class="w-full h-full object-cover">
-        <!-- <source src="supermassive_homepage_video.webm" type="video/webm" /> -->
+        <source src="supermassive_homepage_video.webm" type="video/webm" />
         <source src="supermassive_homepage_video.mp4" type="video/mp4" />
       </video>
     </div>
 
     <div
-      class="absolute top-0 left-0 w-full h-[200vh] min-h-[70rem] sm:min-h-[140rem] font-[Obviously] overflow-hidden"
+      class="absolute top-0 left-0 w-full h-[200vh] min-h-[60rem] sm:min-h-[120rem] font-[Obviously] overflow-hidden"
     >
+  
       <div
-        class="w-full h-[100vh] min-h-[35rem] sm:min-h-[70rem] px-8 text-2xl lg:py-24 overflow-hidden flex flex-col justify-center lg:justify-end"
+        class="w-full h-[100vh] min-h-[30rem] sm:min-h-[60rem] px-8 text-2xl py-24 overflow-hidden flex flex-col justify-between"
       >
-      <div class="flex flex-col justify-center xl:flex-row xl:justify-center gap-2 lg:gap-24 items-center lg:mb-24">
-        <Logo class="max-w-full" width={500}  />
-        <p class="uppercase font-bold italic text-5xl my-8 lg:my-12">At</p>
-        <DepotLogo class="max-w-full" />
+      <p
+      class="w-full text-2xl sm:text-5xl text-center font-bold text-3xl sm:text-5xl xl:text-7xl md:mt-8 mb-24 uppercase italic"
+    >
+      Coming Summer 2025
+    </p>
+      <div class="flex flex-col justify-center xl:flex-row xl:justify-center gap-2 xl:gap-24 items-center ">
+     
+        <Logo class="h-32 sm:h-auto max-w-full"   />
+        <p class="uppercase font-bold italic text-2xl sm:text-5xl md:my-8">At</p>
+        <DepotLogo class="h-20 sm:h-auto max-w-full" />
+      
       </div>
+     
     </div>
 
       <div
-        class="w-full h-[100vh] min-h-[35rem] sm:min-h-[70rem] px-8 text-2xl lg:py-24 overflow-hidden flex flex-col justify-center lg:justify-end"
+        class="w-full h-[100vh] min-h-[30rem] sm:min-h-[60rem] px-8 text-2xl lg:py-24 overflow-hidden flex flex-col justify-center lg:justify-end"
       >
-      <div class="flex flex-col justify-start gap-12 items-center lg:mb-24">
-        <p class="uppercase font-bold italic leading-[1.125] text-[2.5rem] sm:text-5xl lg:text-9xl my-8 lg:my-12">Bigger!</p>
-        <p class="uppercase font-bold italic leading-[1.125] text-[2.5rem] sm:text-5xl lg:text-9xl my-8 lg:my-12">Better!</p>
-        <p class="uppercase font-bold italic leading-[1.125] text-[2.5rem] sm:text-5xl lg:text-9xl my-8 lg:my-12 max-w-[10ch] text-center">More interactive!</p>
+      <div class="flex flex-col justify-start items-center lg:mb-24 text-[10vw] lg:text-9xl">
+        <p class="uppercase font-bold italic leading-[1.125] ">Bigger!</p>
+        <p class="uppercase font-bold italic leading-[1.125] ">Better!</p>
+        <p class="uppercase font-bold italic leading-[1.125]  max-w-[10ch] text-center">More interactive!</p>
       </div>
     </div>
   </section>
   <section
-    class="max-w-6xl mx-auto mb-0 mt-24 px-2 xs:px-8 min-h-[60rem] flex flex-col justify-center items-center"
+    class="max-w-6xl mx-auto mt-56 mb-0 md:mt-96 px-6  flex flex-col justify-center items-center"
   >
     <div
       class="bg-sm-md-purple grid p-4 xs:p-8 rounded-xl grid-cols-1 lg:grid-cols-2 relative z-10"
     >
       <p
-        class="absolute left-0 top-[-20%] lg:left-[-10%] lg:top-[-25%] xl:left-[-15%] font-heading italic max-w-2xl text-6xl xs:text-7xl font-bold z-10 rotate-[-15deg] z-20 uppercase text-center"
+        class="absolute left-[-10%] top-[-15%] md:left-[-5%] lg:left-[-3%] lg:top-[-25%] xl:left-[-5%] font-heading italic max-w-[10ch] text-4xl xs:text-5xl sm:text-6xl font-bold z-10 rotate-[-15deg] z-20 uppercase text-center"
       >
-        Sign ups <span class="text-7xl xs:text-8xl">open!</span>
+        Sign ups <span class="text-6xl xs:text-7xl sm:text-8xl lg:text-9xl">open!</span>
       </p>
       <Image
         src={PortalPerson}
@@ -73,71 +81,75 @@ import FAQ from "@/components/sections/FAQ.astro";
         class="slanted right rounded--t-xl lg:rounded-none lg:rounded-l-xl h-full object-cover"
       />
       <div
-        class="slanted left rounded-b-xl lg:rounded-none lg:rounded-r-xl bg-sm-dark-purple p-8 pt-16 lg:p-12 lg:pl-24 text-xl sm:text-2xl lg:text-4xl"
+        class="slanted left rounded-b-xl lg:rounded-none lg:rounded-r-xl bg-sm-dark-purple p-4 pt-12 lg:p-12 lg:pl-24 text-xl sm:text-2xl lg:text-4xl mt-[-1.5rem] lg:mt-0"
       >
         <p class="leading-[1.125]">
           <span class="font-heading italic bold uppercase">Sign up now</span> and
-          be the first to hear about tickets, get entered in our prize competition
+          be the first to hear about tickets, get entered into our prize competition
           and receive a <span class="font-heading italic bold uppercase"
             >20%</span
           >
-          <span>discount</span>
+          <span>discount</span> 
+          <button
+          class="relative block   mx-auto font-heading font-bold italic uppercase rounded-full border border-white border-4 py-4 px-8  text-3xl lg:text-4xl mt-4 lg:mt-8 cursor-pointer vrlps-trigger col-span-full"
+          onclick={`ViralLoops.getCampaign().then((campaign) => {
+          if (campaign) {
+            campaign.customButtonTrigger();
+          }
+    });`}>Sign me up</button
+        >
         </p>
       </div>
+     
     </div>
-    <button
-      class="mx-auto font-heading font-bold italic uppercase rounded-full border border-white border-8 py-4 px-8 text-3xl sm:text-5xl mt-12 cursor-pointer vrlps-trigger"
-      onclick={`ViralLoops.getCampaign().then((campaign) => {
-      if (campaign) {
-        campaign.customButtonTrigger();
-      }
-});`}>Sign me up</button
-    >
+   
     <form-widget
       component="customButton"
       ucid="e9xz4agONxBxkGnd7pUojPlnY4Y"
       mode="popup"></form-widget>
   </section>
-  <section class="mx-auto my-56">
-    <div class="sandpit-bg w-full bg-cover py-36">
+  <section class="mx-auto mt-32 mb-56 relative h-[100vh] min-h-[60rem]">
+    <div class="sandpit-bg w-full bg-cover py-36 h-full flex flex-col justify-center">
       <p
         class="font-heading font-bold uppercase text-4xl xs:text-5xl lg:text-9xl text-center max-w-9xl mx-auto px-4"
       >
         “THE BEST THING I DID IN MANCHESTER ALL YEAR”
       </p>
-      <p class="mx-auto text-2xl xs:text-5xl text-center mt-24">
+      <p class="mx-auto text-2xl xs:text-4xl text-center mt-24">
         - Zack Hipps -
       </p>
     </div>
   </section>
-  <section class="max-w-7xl mx-auto my-24 px-2 xs:px-8 min-h-[60rem] sm:mb-36">
-    <h2
-      class="uppercase font-bold  text-4xl xs:text-5xl lg:text-7xl text-center mb-16"
-    >
-      Callng all <p class="text-6xl lg:text-9xl">curious minds</p>
-    </h2>
+  <section class="relative max-w-7xl mx-auto my-32 md:mt-96  px-6 ">
+   
     <div
-      class="bg-sm-blue grid p-4 xs:p-8 rounded-xl grid-cols-1 lg:grid-cols-2 relative z-10"
+      class="bg-sm-blue grid p-4 xs:p-8 rounded-xl grid-cols-1 lg:grid-cols-2 relative overflow-visible "
     >
+   
       <Image
         src={CableGame}
         alt="child playing with rgb cables"
-        class="slanted right rounded--t-xl lg:rounded-none lg:rounded-l-xl h-full object-cover"
+        class="slanted right rounded-t-xl lg:rounded-none lg:rounded-l-xl h-full object-cover"
       />
       <div
-        class="slanted left rounded-b-xl lg:rounded-none lg:rounded-r-xl bg-sm-dark-purple p-8 pt-16 lg:p-12 lg:pl-24 text-xl sm:text-2xl lg:text-4xl"
+        class="slanted left rounded-b-xl lg:rounded-none lg:rounded-r-xl bg-sm-dark-purple p-4 pt-12 lg:p-12 lg:pl-24 text-xl sm:text-2xl lg:text-4xl mt-[-1.5rem] lg:mt-0"
       >
-        <p class="mb-8 lg:mb-12 leading-[1.125]">
+        <p class="mb-4 lg:mb-8 leading-[1.125]">
           SuperMassive isn't a place or product – it's a living system waiting
           for you to activate it.
         </p>
         <p class="leading-[1.125]">
           Enter and feel the system stir. The world reacts not to a passive
-          observer, but to a necessary variable:
+          observer, but to a necessary variable
         </p>
       </div>
+      <h2
+      class="absolute left-[-20%]  top-[-20%] xs:left-[-15%] xs:top-[-25%] lg:top-[-40%] rotate-[-15deg] uppercase font-bold italic text-3xl xs:text-5xl sm:text-6xl  text-center mb-16"
+    >
+      Calling all <p class="text-5xl xs:text-7xl sm:text-8xl lg:text-9xl italic max-w-[10ch] z-100">curious minds</p>
+    </h2>
       <p
-        class="absolute right-0 bottom-[-10%] xs:bottom-[-10%] lg:bottom-[-5%] xl:right-[-8%] font-heading italic text-8xl xs:text-9xl font-bold z-10 rotate-[-15deg] z-20 uppercase"
+        class="absolute bottom-[-5%] right-2 sm:bottom-[-7%] lg:bottom-[-8%]  xl:right-[-3%] font-heading italic text-5xl xs:text-7xl sm:text-8xl lg:text-9xl font-bold z-10 rotate-[-15deg] z-20 uppercase"
       >
         you!
       </p>
@@ -146,7 +158,7 @@ import FAQ from "@/components/sections/FAQ.astro";
   
   
   <section
-    class="mx-auto pt-12 pb-56 sandpit-bg-2 bg-no-repeat bg-bottom bg-cover"
+    class="relative mx-auto pb-36 sandpit-bg-2 bg-no-repeat bg-bottom bg-cover"
   >
     <div class="w-full bg-sm-dark-purple py-8 px-4 md:px-24 lg:px-48">
       <ul class="max-w-8xl mx-auto flex flex-wrap gap-8 justify-around">
@@ -214,38 +226,33 @@ import FAQ from "@/components/sections/FAQ.astro";
       </li>
     </ul>
   </section>
-  <section class="portal-bg py-24">
+  <section class="relative py-12 mt-24">
     <div
-      class="max-w-6xl mx-auto mb-0 mt-24 px-2 xs:px-8 flex flex-col gap-12 justify-center items-center"
+      class="max-w-7xl mx-auto mb-0 px-6 flex flex-col gap-12 justify-center items-center"
     >
-      <h2
-        class="font-heading font-bold text-5xl md:text-7xl lg:text-8xl text-center uppercase"
-      >
-        Practical Info
-      </h2>
+      
       <div
-        class="bg-sm-blue grid p-4 xs:p-8 rounded-xl grid-cols-1 lg:grid-cols-2 relative z-10 gap-8"
+        class="bg-sm-blue grid p-4 xs:p-8 rounded-xl grid-cols-1 lg:grid-cols-2 relative z-10 gap-8 w-full"
       >
-        <div
-          class="slanted bottom rounded-t-xl bg-sm-md-purple p-8 pb-16 lg:row-span-1 col-span-1"
-        >
-          <h3
-            class="mb-8 lg:mb-12 uppercase font-heading font-bold italic text-3xl lg:text-4cl"
-          >
-            2025 dates
-          </h3>
-          <p class="text-3xl lg:text-4xl font-bold">14 June - 13 September</p>
-        </div>
+     <div class="rounded-xl object-cover hidden lg:block  pipes-bg bg-cover">
+<!--         
         <Image
           src={PipesPerson}
           alt="child playing with rgb cables"
-          class="rounded-xl h-full object-cover hidden lg:block lg:col-span-1 lg:row-span-3"
-        />
+          class="rounded-xl object-cover hidden lg:block lg:col-span-1"
+        /> -->
+      </div>
         <div
-          class="slanted top rounded-b-xl lg:rounded-none lg:rounded-b-xl bg-sm-md-purple p-8 pt-12 row-span-2 col-span-1 mt-[-1rem]"
+          class="rounded-xl bg-sm-md-purple p-4 pt-12 col-span-1"
         >
+        <h3
+        class="mb-4 uppercase font-heading font-bold italic text-3xl lg:text-4xl"
+      >
+        2025 dates
+      </h3>
+      <p class="text-lg sm:text-xl font-bold">13 June - 13 September</p>
           <h3
-            class="mb-8 uppercase font-heading font-bold italic text-3xl lg:text-4xl"
+            class="mb-4 mt-8 uppercase font-heading font-bold italic text-3xl lg:text-4xl"
           >
             Tickets
           </h3>
@@ -260,16 +267,16 @@ import FAQ from "@/components/sections/FAQ.astro";
           <p class="text-lg sm:text-xl mt-4">Tickets for signups release 28 April 2025</p>
           <p class="text-lg sm:text-xl">General release on 1 May 2025</p>
           <button
-            class="mx-auto font-heading font-bold italic uppercase rounded-full border border-white border-8 py-4 px-8 text-4xl mt-12 cursor-pointer vrlps-trigger"
+            class="mx-auto font-heading font-bold italic uppercase rounded-full border border-white border-4 py-4 px-8 text-3xl lg:text-4xl mt-12 cursor-pointer vrlps-trigger block w-72"
             onclick={`ViralLoops.getCampaign().then((campaign) => {
   campaign.customButtonTrigger();
 });`}>Sign up</button
           >
         </div>
         <div
-          class="bg-sm-dark-purple col-span-1 lg:col-span-2 row-span-1 p-8 slanted bottom rounded-t-xl"
+          class="bg-sm-dark-purple col-span-1 lg:col-span-2 row-span-1 p-4 slanted bottom rounded-t-xl"
         >
-          <div class="flex-col lg:flex-row flex justify-between">
+          <div class="flex-col lg:flex-row flex justify-between"> 
             <div class="flex flex-col items-start">
               <h3
                 class="mb-8 uppercase font-heading font-bold italic text-3xl lg:text-4xl lg:h-[4.5rem]"
@@ -301,12 +308,17 @@ import FAQ from "@/components/sections/FAQ.astro";
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
-          class="w-full slanted top lg:col-span-2 rounded-b-xl mt-[-1rem]"
+          class="relative w-full slanted top lg:col-span-2 rounded-b-xl mt-[-1rem]"
         ></iframe>
+        <h2
+        class=" absolute rotate-[-15deg] top-[-2.5%] sm:top-[-4%]  left-[-3%] lg:left-[-1%] md:top-[-7%] xl:left-[-5%] font-heading font-bold italic text-5xl xs:text-7xl sm:text-8xl lg:text-9xl text-center uppercase"
+      >
+       Info
+      </h2>
       </div>
     </div>
   </section>
-  <section class="max-w-7xl mx-auto my-24">
+  <section class="max-w-7xl mx-auto my-24 relative">
     <h2
       class="text-5xl md:text-7xl lg:text-8xl text-center font-heading font-bold max-w-6xl mx-auto"
     >
@@ -322,6 +334,8 @@ import FAQ from "@/components/sections/FAQ.astro";
     sandpitBackground: `url(${SandpitBackground.src})`,
     sandpitBackground2: `url(${SandpitBackground2.src})`,
     portalBackground: `url(${PortalBackground.src})`,
+    pipesBackground: `url(${PipesPerson.src})`,
+
   }}
 >
   .sandpit-bg {
@@ -340,5 +354,10 @@ import FAQ from "@/components/sections/FAQ.astro";
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       var(--portalBackground);
+  }
+
+  .pipes-bg {
+    background-image:
+      var(--pipesBackground);
   }
 </style>
