@@ -46,7 +46,9 @@ const { scroll_speed } = Astro.props;
     </div> -->
     <button class="bg-sm-turquoise font-heading uppercase text-black px-4 py-2 pt-4 h-12 md:h-16 font-bold slanted top cursor-pointer"
     onclick={`ViralLoops.getCampaign().then((campaign) => {
-      campaign.customButtonTrigger();
+    if (campaign) {
+        campaign.customButtonTrigger();
+      }
     });`}
     >Sign Up</button>
   </div>
