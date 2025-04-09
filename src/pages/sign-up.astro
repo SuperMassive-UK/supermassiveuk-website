@@ -1,13 +1,15 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Logo from "@/assets/images/logo-black.svg";
+import SandpitBackground from "../assets/images/sandpit-background.jpg";
+import SandpitBackground2 from "../assets/images/sandpit-background-2.png";
 ---
 
 <BaseLayout
   title="SuperMassive | Sign Up"
   description="Sign up page to get the latest updates on SuperMassive's immersive experience shows"
 >
-  <section class="mt-24">
+  <section class="sandpit-bg pb-24 pt-36 h-screen">
     <div
       data-vl-campaign-id="e9xz4agONxBxkGnd7pUojPlnY4Y"
       class="bg-white mx-auto rounded-xl text-black p-8 max-w-xl"
@@ -67,5 +69,28 @@ import Logo from "@/assets/images/logo-black.svg";
       >
         <form-widget ucid="e9xz4agONxBxkGnd7pUojPlnY4Y"></form-widget>
       </div>
+      <a href="/" class="mx-auto text-center block underline text-2xl mt-24">Return to homepage</a>
   </section>
 </BaseLayout>
+<style
+  define:vars={{
+    sandpitBackground: `url(${SandpitBackground.src})`,
+    sandpitBackground2: `url(${SandpitBackground2.src})`,
+
+  }}
+>
+  .sandpit-bg {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      var(--sandpitBackground);
+  }
+
+  .sandpit-bg-2 {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      var(--sandpitBackground2);
+  }
+
+
+</style>
+

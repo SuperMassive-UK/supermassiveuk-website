@@ -33,7 +33,7 @@ import FAQ from "@/components/sections/FAQ.astro";
     </div>
 
     <div
-      class="absolute top-0 left-0 w-full h-[200vh] min-h-[60rem] sm:min-h-[120rem] font-[Obviously] overflow-hidden"
+      class="absolute top-0 left-0 w-full h-[200vh] min-h-[60rem] sm:min-h-[120rem]  overflow-hidden"
     >
   
       <div
@@ -67,24 +67,24 @@ import FAQ from "@/components/sections/FAQ.astro";
         class="w-full h-[100vh] min-h-[35rem] sm:min-h-[70rem] flex flex-col justify-center items-center overflow-hidden"
       >
         <p
-          class="w-full  text-center flex items-end justify-center font-bold text-[2rem] text-3xl sm:text-5xl xl:text-7xl pb-2 sm:pb-4 px-2"
+          class="w-full  text-center flex items-end justify-center font-bold text-[2rem] text-2xl xl:text-5xl pb-2 sm:pb-4 px-2 max-w-[15ch]"
         >
-          Manchester's
+          Manchester's first fully immersive
         </p>
         <div
-          class="text-9xl font-bold uppercase pointer-events-none  w-full text-center pb-2 sm:pb-4"
+          class="text-9xl font-bold uppercase pointer-events-none  w-full text-center pb-2 sm:pb-4 font-heading italic"
         >
           <p
-            class="max-w-[12ch] mx-auto text-6xl sm:text-9xl xl:text-[14rem] xl:mb-[-2rem]"
+            class="max-w-[12ch] mx-auto text-6xl sm:text-7xl md:text-8xl xl:text-[10rem] xl:mb-[-2rem] italic"
           >
             Digital
           </p>
-          <p class="max-w-[12ch] mx-auto text-4xl xs:text-5xl sm:text-7xl xl:text-[10rem] px-2">
+          <p class="max-w-[12ch] mx-auto text-6xl sm:text-7xl md:text-8xl xl:text-[10rem] px-2 italic">
             Playground
           </p>
         </div>
         <p
-          class="w-full  text-center flex items-start justify-center font-bold text-3xl sm:text-5xl xl:text-7xl"
+          class="w-full  text-center flex items-start justify-center font-bold text-2xl xl:text-5xl "
         >
           Coming This Summer
         </p>
@@ -150,7 +150,7 @@ import FAQ from "@/components/sections/FAQ.astro";
         “THE BEST THING I DID IN MANCHESTER ALL YEAR”
       </p>
       <p class="mx-auto text-2xl xs:text-4xl text-center mt-24">
-        - Zack Hipps -
+        - <a href="https://www.instagram.com/p/DCrUmMwt_AI/" target="_blank" class="underline">Zack Hipps</a> -
       </p>
     </div>
   </section>
@@ -169,12 +169,10 @@ import FAQ from "@/components/sections/FAQ.astro";
         class="slanted left rounded-b-xl lg:rounded-none lg:rounded-r-xl bg-sm-dark-purple p-4 pt-12 lg:p-12 lg:pl-24 text-xl sm:text-2xl lg:text-4xl mt-[-1.5rem] lg:mt-0"
       >
         <p class="mb-4 lg:mb-8 leading-[1.125]">
-          SuperMassive isn't a place or product – it's a living system waiting
-          for you to activate it.
+          SuperMassive is a living system. A futuristic open-world adventure filled with interactive games, multi-sensory art, and responsive characters.
         </p>
         <p class="leading-[1.125]">
-          Enter and feel the system stir. The world reacts not to a passive
-          observer, but to a necessary variable
+          It doesn’t run without you. You’re not a visitor. <span class="font-heading font-bold italic block mt-4">YOU’RE A VARIABLE.</span>
         </p>
       </div>
       <h2
@@ -182,11 +180,11 @@ import FAQ from "@/components/sections/FAQ.astro";
     >
       Calling all <p class="text-5xl xs:text-7xl sm:text-8xl lg:text-9xl italic max-w-[10ch] z-100">curious minds</p>
     </h2>
-      <p
+      <!-- <p
         class="absolute bottom-[-5%] right-2 sm:bottom-[-7%] lg:bottom-[-8%]  xl:right-[-3%] font-heading italic text-5xl xs:text-7xl sm:text-8xl lg:text-9xl font-bold z-10 rotate-[-15deg] z-20 uppercase"
       >
         you!
-      </p>
+      </p> -->
     </div>
   </section>
   
@@ -244,19 +242,21 @@ import FAQ from "@/components/sections/FAQ.astro";
     </h2>
     <ul class="flex flex-wrap gap-8 max-w-6xl mx-auto justify-around px-8">
       <li>
+        <a href="https://www.ukri.org/councils/innovate-uk/" target="_blank">
         <Image src={UkriLogo} alt="UKRI logo" />
+      </a>
       </li>
       <li>
-        <Image src={BroadwickLogo} alt="Broadwick logo" />
+        <a href="https://broadwick.com/" target="_blank"><Image src={BroadwickLogo} alt="Broadwick logo" /></a>
       </li>
       <li>
-        <Image src={MitihLogo} alt="MITIH logo" />
+        <a href="https://www.mediacityuk.co.uk/immersive-technologies-innovation-hub/" target="_blank"><Image src={MitihLogo} alt="MITIH logo" /></a>
       </li>
       <li>
-        <Image src={TgcLogo} alt="The Growth Company logo" />
+        <a href="https://www.growthco.uk/" target="_blank"><Image src={TgcLogo} alt="The Growth Company logo" /></a>
       </li>
       <li>
-        <Image src={MustartMediaLogo} alt="Mustard Media logo" />
+        <a href="https://www.mustardmedia.co.uk/" target="_blank"><Image src={MustartMediaLogo} alt="Mustard Media logo" /></a>
       </li>
     </ul>
   </section>
@@ -298,8 +298,8 @@ import FAQ from "@/components/sections/FAQ.astro";
             <li>Child (3–15): £12.50</li>
             <li>Concession: £14.00</li>
           </ul>
-          <p class="text-lg sm:text-xl mt-4">Tickets for signups release 28 April 2025</p>
-          <p class="text-lg sm:text-xl">General release on 1 May 2025</p>
+          <p class="text-lg sm:text-xl mt-4">Tickets for signups: 28 April 2025</p>
+          <p class="text-lg sm:text-xl">General release: 1 May 2025</p>
           <a 
           class="relative block max-w-sm mx-auto font-heading font-bold italic uppercase rounded-full border border-white border-4 py-4 px-8  text-3xl lg:text-4xl mt-4 lg:mt-8 cursor-pointer vrlps-trigger col-span-full text-center"
           
@@ -378,7 +378,6 @@ import FAQ from "@/components/sections/FAQ.astro";
 
   .sandpit-bg-2 {
     background-image:
-      linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       var(--sandpitBackground2);
   }
 
