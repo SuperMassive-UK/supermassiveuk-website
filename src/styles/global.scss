@@ -1,6 +1,10 @@
 
 @import "@fontsource-variable/tilt-warp";
 @import "@fontsource/shippori-antique-b1";
+@import "@fontsource-variable/lexend";
+@import "@fontsource/lexend";
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,34 +12,80 @@
 
 @layer base {
 	@font-face {
-    font-family: Panton;
+    font-family: Obviously;
     font-weight: 400;
-    src: url(/fonts/Panton/Panton-Trial-Bold.woff) format("woff");
+    src: url(/fonts/Obviously/Obviously-Regular.woff2) format("woff2");
 		font-display: swap
   }
 
 	@font-face {
-    font-family: Panton;
+    font-family: Obviously;
     font-weight: 700;
-    src: url(/fonts/Panton/Panton-Trial-ExtraBold.woff) format("woff");
+    src: url(/fonts/Obviously/Obviously-Black.woff2) format("woff2");
 		font-display: swap
   }
-	@font-face {
-    font-family: Panton;
-    font-weight: 900;
-    src: url(/fonts/Panton/Panton-Trial-Black.woff) format("woff");
-		font-display: swap
+
+  @font-face {
+	font-family: Obviously;
+	font-weight: 700;
+	font-style: italic;
+	src: url(/fonts/Obviously/Obviously-BlackItalic.woff2) format("woff2");
+	font-display: swap;
   }
+	// @font-face {
+    // font-family: Obviously;
+    // font-weight: 900;
+    // src: url(/fonts/Panton/Panton-Trial-Black.woff) format("woff");
+	// 	font-display: swap
+	//   }
  html {
-	
+	font-family: "Lexend", sans-serif;
 	background-color: black;
 	color: white;
 	 }
 
 	h1,h2,h3,h4,h5,h6 {
-		@apply font-heading
+		@apply font-heading font-bold
 	}
- 
+
+
+	
+	  .slanted {
+		object-fit: cover;
+	  }
+	
+	  .slanted.right {
+		/* clip-path: polygon(0 0, 100% 0%, 93% 100%, 0% 100%); */
+		clip-path: polygon(0 0, 100% 0, calc(100% - 40px) 100%, 0 100%);
+	  }
+	
+	  .slanted.left {
+		/* clip-path: polygon( 7% 0, 100% 0%, 100% 100%, 0% 100%); */
+		clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
+	  }
+	
+	  .slanted.bottom {
+		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 0 100%);
+	  }
+	
+	  .slanted.top {
+		clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%);
+	  }
+
+	  @media (max-width: 1027px) {
+		.slanted.right {
+		  /* Bottom slant */
+		  /* clip-path: polygon(0 0, 100% 0%, 100% 93%, 0% 100%); */
+		  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%);
+		}
+	
+		.slanted.left {
+		  /* Top slant */
+		  /* clip-path: polygon(0 7%, 100% 0, 100% 100%, 0% 100%); */
+		  clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+		}
+	  }
+
 }
 
 

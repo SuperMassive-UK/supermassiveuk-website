@@ -1,51 +1,17 @@
 ---
-import { Image } from "astro:assets";
-import Logo from "../../assets/images/logo-transparent-cropped.svg";
 import { getEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 
 const { scroll_speed } = Astro.props;
-const { data: navData } = await getEntry("data", "nav");
-const { data: footerData } = await getEntry("data", "footer");
+const { data: footerData } = await getEntry("data", "footer") as {data: any};
 ---
 
 <div class="mt-auto" data-scroll data-scroll-speed={scroll_speed}>
   <footer
-    class="relative z-50 py-6 px-6 md:px-10 max-w-6xl mx-auto flex justify-between items-end mb-16"
+    class="relative z-50 py-6 px-6 md:px-10 max-w-6xl mx-auto flex justify-center mb-16"
   >
-    <div class="flex flex-col-reverse md:flex-row items-start md:items-end">
-      <ul
-        class="flex flex-col items-start text-sm md:text-md text-white uppercase font-heading"
-      >
-        {
-          navData.map((item: any) => (
-            <li class="">
-              <div
-                class="hover:scale-125 transition origin-left "
-                class:list={[
-                  {
-                    "nav-active": item.url === Astro.url.pathname,
-                  },
-                ]}
-              >
-                <a
-                  href={item.url}
-                  class="flex py-2 text-inherit no-underline text-right"
-                >
-                  {item.label}
-                </a>
-              </div>
-            </li>
-          ))
-        }
-      </ul>
-      <a
-        href="/"
-        class="text-lg w-[100px] sm:w-[150px] md:w-[180px] pt-4 mb-2 md:ml-4"
-        ><Image src={Logo} alt="SUPERMASSIVE logo" /></a
-      >
-    </div>
-    <div class="flex flex-col items-end gap-2">
+   
+    <div class="flex flex-col items-center gap-2">
       <p class="text-white uppercase font-heading text-sm md:text-md">
         Connect with us
       </p>
@@ -63,9 +29,9 @@ const { data: footerData } = await getEntry("data", "footer");
         }
       </div>
       <p
-        class="text-white uppercase font-heading text-[0.5rem] md:text-xs text-right"
+        class="text-white uppercase font-heading text-[0.5rem] md:text-xs text-center"
       >
-        2024 yesThing LTD. All Rights Reserved
+        2025 yesThing LTD. All Rights Reserved
       </p>
     </div>
   </footer>

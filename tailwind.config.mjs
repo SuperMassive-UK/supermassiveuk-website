@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require('tailwindcss/colors')
 export default {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",  "./node_modules/tw-elements/js/**/*.js"],
   theme: {
     screens: {
       xs: "475px",
@@ -10,10 +11,18 @@ export default {
       },
       ...defaultTheme.screens,
     },
+    colors: {
+      'sm-blue': "#3B56EB",
+      'sm-dark-purple': "#161240",
+      'sm-md-purple': '#330F99',
+      'sm-turquoise': '#4CC9F1',
+      'sm-fuschia': '#7208B7',
+      ...colors
+    },
     extend: {
       fontFamily: {
-        heading: ["'Panton', sans-serif;"],
-        primary: ["'Shippori Antique B1', sans-serif"],
+        heading: ["'Obviously', sans-serif;"],
+        primary: ["'Lexend', sans-serif"],
       },
 
       dropShadow: {
@@ -26,5 +35,5 @@ export default {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("tw-elements/plugin.cjs")],
 };

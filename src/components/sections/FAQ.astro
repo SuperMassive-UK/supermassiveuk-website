@@ -1,0 +1,57 @@
+---
+import AccordionItem from "./AccordionItem.astro";
+---
+
+<div id="accordionExample" class="columns-1 md:columns-2 gap-4 px-4 mx-auto" >
+  <AccordionItem
+    title="Is SuperMassive suitable for all ages?"
+    bg="bg-sm-blue"
+    index={1}
+    ><span class="font-heading font-bold italic">Absolutely</span> - SuperMassive
+    has something for everyone, whether you’re a sugar-enhanced toddler looking to
+    create chaos, or a philosopher looking for an existential argument with mouse.</AccordionItem
+  >
+  <AccordionItem
+    title="Does my child need a ticket?"
+    bg="bg-sm-turquoise text-black"
+    index={2}
+  >
+    Yes, unless your child is a babe in arms, then they can enter for free.
+  </AccordionItem>
+  <AccordionItem title="Is it accessible?" bg="bg-sm-md-purple" index={3}
+    >The experience takes place on a rooftop and is accessed via stairs. We have
+    a stairclimber available, and alternative transport can be arranged for
+    those who need it. If you have accessibility requirements, just get in
+    touch—we’ll do our best to make it work.
+  </AccordionItem>
+  <AccordionItem
+    title="How long is the experience?"
+    bg="bg-sm-fuschia"
+    index={4}
+    >Most visitors stay between 50 and 135 minutes, but it’s totally up to you.
+    The experience is open-world and self-guided—you’re free to move through it
+    at your own pace..
+  </AccordionItem>
+  <AccordionItem
+  title="Are there toilets?"
+  bg="bg-sm-turquoise text-black"
+  index={5}>  Yes, there are toilets inside the experience and additional facilities outside near the dancing fountain.
+</AccordionItem>
+<AccordionItem title="Do I have to pay to enter the rooftop bar / cafe?" bg="bg-sm-blue" index={6}>No, the rooftop and bar / cafe area is free of charge to enter</AccordionItem>
+<AccordionItem title="Where’s the nearest car park?" bg="bg-sm-fuschia" index={7}>Baring Street and Buxton Street.</AccordionItem>
+<AccordionItem title="Where’s the nearest public transport?" bg="bg-sm-md-purple" index={8}><p class="font-bold mb-6">Train</p>
+    We’re across the road from Manchester Piccadilly.
+     Nearby stations also include Oxford Road (15 mins), Victoria and Deansgate (20 mins).
+    <p class="font-bold my-6">Tram</p>
+    <p>The nearest stop is Piccadilly, with frequent services throughout the day.</p>
+    <p> You can also reach us with a 12-minute walk from Piccadilly Gardens.
+     Plan your trip at TfGM.</p>
+
+    <p class="font-bold my-6">Bus</p>
+    Take the free Bus 1 to Piccadilly Station (2 mins from us).
+     Other close routes: 147, 192, 201, 202, 203, 205, 219, 221.
+    
+    </AccordionItem>
+    <AccordionItem title="Is photography / videography allowed?" bg="bg-sm-blue">Photography and videography are encouraged. Snap away, share your experience, and don’t forget to tag us @supermassiveuk. Just be mindful of others, and no flash please.
+    </AccordionItem>
+</div>
