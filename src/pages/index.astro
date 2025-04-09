@@ -223,10 +223,10 @@ import FAQ from "@/components/sections/FAQ.astro";
                 author: "Zack Hipps",
               },
             ].map((review) => (
-              <li class="bg-sm-md-purple w-[18rem] p-6 rounded-xl flex flex-col justify-center gap-4 h-[18rem]">
+              <li class="bg-sm-md-purple w-[18rem] p-6 rounded-xl flex flex-col justify-center gap-4 h-[22rem] text-lg sm:text-xl">
                 “{review.review}”{" "}
                 <>
-                  <p class="text-slate-300">- {review.author}</p>
+                  <p class="text-slate-300">{review.author}</p>
                   <Image src={Stars} alt="5 star review" />
                 </>
               </li>
