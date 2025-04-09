@@ -1,0 +1,70 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Logo from "@/assets/images/logo-black.svg";
+---
+
+<BaseLayout
+  title="SuperMassive | Sign Up"
+  description="Sign up page to get the latest updates on SuperMassive's immersive experience shows"
+>
+  <section class="mt-24">
+    <div
+      data-vl-campaign-id="e9xz4agONxBxkGnd7pUojPlnY4Y"
+      class="bg-white mx-auto rounded-xl text-black p-8 max-w-xl"
+      data-vl-container="join-stage"
+      data-vl-action="join-stage#join"
+      data-vl-redirect-url="https://viral-loops.com"
+    >
+      <Logo class="mx-auto" />
+      <h2 class="italic text-3xl mt-4 text-center">
+        GET FIRST DIBS ON TICKETS
+      </h2>
+      <div class="font-normal">
+        <p class="my-4">
+          Pre-sale tickets, only available to sign-ups, will go on sale 28th
+          April. By signing up, you will also receive access to an exclusive 20%
+          discount and be entered into our competition:
+        </p>
+        <ul class="list-disc ml-8">
+          <li>5 x tickets to SuperMassive at Depot Mayfield</li>
+          <li>5 x queue jump wrist bands for rooftop bar</li>
+          <li>£200 bar tab</li>
+          <li>Exclusive merchandise bundle worth £200</li>
+          <li>Lifetime VIP access to all SuperMassive experiences</li>
+        </ul>
+      </div>
+      <p></p>
+      <form data-vl-action="join-stage#join" class="flex flex-col gap-4 mt-8">
+        <input
+          data-vl-join-stage-target="input.firstname"
+          type="text"
+          placeholder="First Name"
+          class="border border-gray-500 rounded-full px-4 py-2"
+        />
+        <input
+          data-vl-join-stage-target="input.lastname"
+          type="text"
+          placeholder="Last Name"
+          class="border border-gray-500 rounded-full px-4 py-2"
+        />
+        <input
+          data-vl-join-stage-target="input.email"
+          type="email"
+          placeholder="Email*"
+          class="border border-gray-500 rounded-full px-4 py-2"
+        />
+        <input
+          type="submit"
+          class="relative block mx-auto font-heading font-bold italic uppercase rounded-full border border-black border-8 py-4 px-8 text-3xl lg:text-4xl mt-4 lg:mt-8 cursor-pointer vrlps-trigger col-span-full"
+        />
+      </form>
+      
+    </div>
+    <div
+        data-vl-campaign-id="e9xz4agONxBxkGnd7pUojPlnY4Y"
+        data-vl-container="sharing-stage"
+      >
+        <form-widget ucid="e9xz4agONxBxkGnd7pUojPlnY4Y"></form-widget>
+      </div>
+  </section>
+</BaseLayout>

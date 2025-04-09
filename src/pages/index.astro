@@ -134,17 +134,17 @@ import FAQ from "@/components/sections/FAQ.astro";
           if (campaign) {
             campaign.customButtonTrigger();
           }
-    });`}>Sign me up</button
+    });`}><a href="/sign-up" target="_blank">Sign me up</a></button
         >
         </p>
       </div>
      
     </div>
    
-    <form-widget
+    <!-- <form-widget
       component="customButton"
       ucid="e9xz4agONxBxkGnd7pUojPlnY4Y"
-      mode="popup"></form-widget>
+      mode="popup"></form-widget> -->
   </section>
   <section class="mx-auto mt-32 md:mt-56 mb-56 relative h-[100vh] min-h-[60rem]">
     <div class="sandpit-bg w-full bg-cover py-36 h-full flex flex-col justify-center">
@@ -306,9 +306,7 @@ import FAQ from "@/components/sections/FAQ.astro";
           <p class="text-lg sm:text-xl">General release on 1 May 2025</p>
           <button
             class="mx-auto font-heading font-bold italic uppercase rounded-full border border-white border-4 py-4 px-8 text-3xl lg:text-4xl mt-12 cursor-pointer vrlps-trigger block w-72"
-            onclick={`ViralLoops.getCampaign().then((campaign) => {
-  campaign.customButtonTrigger();
-});`}>Sign up</button
+           ><a href="/sign-up" target="_blank">Sign up</a></button
           >
         </div>
         <div

@@ -45,12 +45,9 @@ const { scroll_speed } = Astro.props;
       </button>
     </div> -->
     <button
-    class="font-heading font-bold italic uppercase rounded-full border border-white border-4 py-1 px-3 text-lg cursor-pointer vrlps-trigger"
-    onclick={`ViralLoops.getCampaign().then((campaign) => {
-    if (campaign) {
-      campaign.customButtonTrigger();
-    }
-});`}>Sign up</button
+    class="font-heading font-bold italic uppercase rounded-full border border-white border-4 py-1 px-3 text-lg cursor-pointer"
+
+><a href="/sign-up" target="_blank">Sign up</a></button
   >
   <!-- <MenuItems class="hidden w-full md:w-auto mt-2 md:flex font-medium">
     <ul
