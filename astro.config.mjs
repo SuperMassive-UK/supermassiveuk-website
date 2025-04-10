@@ -4,6 +4,7 @@ import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import favicons from "astro-favicons";
 import aws from "astro-sst";
+import partytown from "@astrojs/partytown";
 const isDev = import.meta.env.DEV;
 
 // https://astro.build/config
@@ -15,6 +16,7 @@ export default defineConfig({
     }),
     icon(),
     sitemap(),
+    partytown({ config: { forward: ["dataLayer.push"] } }),
     favicons(),
   ],
   experimental: {
@@ -24,3 +26,4 @@ export default defineConfig({
   adapter: aws(),
   trailingSlash: "ignore",
 });
+

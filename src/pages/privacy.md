@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/MarkdownLayout.astro
-title: SUPERMASSIVE | Privacy Policy
+title: SUPERMASSIVE | PRIVACY POLICY
 description: The privacy policy for SUPERMASSIVE,Manchester’s first digital playground—an interactive rooftop experience of light, sound, and play. Limited run at Depot Mayfield.
 ---
 

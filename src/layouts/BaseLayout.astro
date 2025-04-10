@@ -20,7 +20,7 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" class="cc--elegant-black">
   <BaseHead title={title} description={description} type={type} />
   <body
     class="min-h-screen w-screen overflow-x-hidden p-0"
@@ -41,6 +41,7 @@ import {
 
 initTWE({ Collapse });
     </script>
+  <script type="module" src="/src/scripts/cookieconsent-config.js"></script>
 
   </body>
 </html>
