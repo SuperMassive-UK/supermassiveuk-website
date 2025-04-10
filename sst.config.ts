@@ -5,7 +5,7 @@ export default $config({
     return {
       name: "supermassiveuk-website",
       // removal: input?.stage === "production" ? "retain" : "remove",
-      protect: ["production"].includes(input?.stage),
+      // protect: ["production"].includes(input?.stage),
       home: "aws",
       providers: {
         aws: {
@@ -40,6 +40,8 @@ export default $config({
         cert: acmCert.value,
         aliases: ["www.supermassive.uk"],
       },
+      warm: 3,
+      regions: ["eu-west-1", "eu-west-2"],
     });
 
     const cloudFrontDomain = astroSite.nodes.cdn?.url; // Replace this!

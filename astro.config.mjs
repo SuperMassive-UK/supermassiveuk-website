@@ -22,9 +22,5 @@ export default defineConfig({
   },
   output: "server",
   adapter: aws(),
-  trailingSlash: "always",
-  // trailingSlash: "ignore", // important!
-  // build: {
-  //   format: "file", // 👈 this makes it `/sign-up.html`
-  // },
+  trailingSlash: "ignore",
 });

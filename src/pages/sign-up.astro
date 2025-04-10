@@ -61,22 +61,37 @@ import SandpitBackground2 from "../assets/images/sandpit-background-2.png";
           class="relative block mx-auto font-heading font-bold italic uppercase rounded-full border border-black border-8 py-2 px-8 text-3xl mt-4 lg:mt-8 cursor-pointer vrlps-trigger col-span-full"
         />
       </form>
-      
+      <div class="text-sm">
+      <p class="mt-8 mb-4">
+        By submitting this form, you agree to receive emails from us. We’ll use
+        your information to send updates, offers, and news. You can unsubscribe
+        at any time. Your data will be handled in accordance with GDPR.
+      </p>
+      <p>
+        We use Viral Loops for our referral campaign. By clicking above to join
+        this campaign you acknowledge that your information will be transferred
+        to Viral Loops for processing in accordance with their <a
+          href="https://viral-loops.com/terms"
+          target="_blank" class="underline">Terms</a
+        > and <a href="https://viral-loops.com/privacy" target="_blank" class="underline">Privacy Policy.</a>
+      </p>
+    </div>
     </div>
     <div
-        data-vl-campaign-id="e9xz4agONxBxkGnd7pUojPlnY4Y"
-        data-vl-container="sharing-stage"
-      >
-        <form-widget ucid="e9xz4agONxBxkGnd7pUojPlnY4Y"></form-widget>
-      </div>
-      <a href="/" class="mx-auto text-center block underline text-2xl mt-24">Return to homepage</a>
+      data-vl-campaign-id="e9xz4agONxBxkGnd7pUojPlnY4Y"
+      data-vl-container="sharing-stage"
+    >
+      <form-widget ucid="e9xz4agONxBxkGnd7pUojPlnY4Y"></form-widget>
+    </div>
+    <a href="/" class="mx-auto text-center block underline text-2xl mt-24"
+      >Return to homepage</a
+    >
   </section>
 </BaseLayout>
 <style
   define:vars={{
     sandpitBackground: `url(${SandpitBackground.src})`,
     sandpitBackground2: `url(${SandpitBackground2.src})`,
-
   }}
 >
   .sandpit-bg {
@@ -90,7 +105,4 @@ import SandpitBackground2 from "../assets/images/sandpit-background-2.png";
       linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
       var(--sandpitBackground2);
   }
-
-
 </style>
-
