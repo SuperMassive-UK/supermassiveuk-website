@@ -5,7 +5,6 @@ import sitemap from "@astrojs/sitemap";
 import favicons from "astro-favicons";
 import aws from "astro-sst";
 import partytown from "@astrojs/partytown";
-const isDev = import.meta.env.DEV;
 
 // https://astro.build/config
 export default defineConfig({

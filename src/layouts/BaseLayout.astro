@@ -2,9 +2,7 @@
 import Footer from "@/components/footer/Footer.astro";
 import BaseHead from "@/components/head/BaseHead.astro";
 import NavBar from "@/components/nav/NavBar.astro";
-import { getEntry } from "astro:content";
-import { navigate } from "astro:transitions/client";
-import '@fontsource-variable/lexend';
+
 
 interface Props {
   title: string;
@@ -20,14 +18,14 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en" class="cc--elegant-black">
+<html lang="en" class="cc--elegant-black h-full">
   <BaseHead title={title} description={description} type={type} />
   <body
-    class="min-h-screen w-screen overflow-x-hidden p-0"
+    class="w-screen overflow-x-hidden p-0 h-full"
   >
     <NavBar />
     <main 
-    id="page">
+    id="page" class=w-full">
       <slot />
     </main>
    <Footer />
@@ -41,7 +39,31 @@ import {
 
 initTWE({ Collapse });
     </script>
-  <script type="module" src="/src/scripts/cookieconsent-config.js"></script>
-
+  <script type="module" src="/scripts/cookieconsent-config.js"></script>
+  <script type="module">
+    function setVh() {
+      const vh = (
+        window.visualViewport?.height || window.innerHeight
+      ) * 0.01;
+  
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      console.log('--vh set to', vh);
+    }
+  
+    // Run on key lifecycle events
+    setVh();
+    window.addEventListener('DOMContentLoaded', setVh);
+    window.addEventListener('load', setVh);
+    window.addEventListener('resize', setVh);
+  
+    // Mobile-specific: track visual viewport changes
+    if (window.visualViewport) {
+      window.visualViewport.addEventListener('resize', setVh);
+      window.visualViewport.addEventListener('scroll', setVh);
+    }
+  
+    // Fallback re-run for late URL bar animations
+    setTimeout(setVh, 500);
+  </script>
   </body>
 </html>

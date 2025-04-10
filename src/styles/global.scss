@@ -1,150 +1,162 @@
-
-@import "@fontsource-variable/tilt-warp";
-@import "@fontsource/shippori-antique-b1";
 @import "@fontsource-variable/lexend";
 @import "@fontsource/lexend";
-
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
-	@font-face {
+  @font-face {
     font-family: Obviously;
     font-weight: 400;
     src: url(/fonts/Obviously/Obviously-Regular.woff2) format("woff2");
-		font-display: swap
-  }
-
-	@font-face {
-    font-family: Obviously;
-    font-weight: 700;
-    src: url(/fonts/Obviously/Obviously-Black.woff2) format("woff2");
-		font-display: swap
+    font-display: swap;
   }
 
   @font-face {
-	font-family: Obviously;
-	font-weight: 700;
-	font-style: italic;
-	src: url(/fonts/Obviously/Obviously-BlackItalic.woff2) format("woff2");
-	font-display: swap;
+    font-family: Obviously;
+    font-weight: 500;
+    src: url(/fonts/Obviously/Obviously-Medium.woff2) format("woff2");
+    font-display: swap;
   }
-	// @font-face {
-    // font-family: Obviously;
-    // font-weight: 900;
-    // src: url(/fonts/Panton/Panton-Trial-Black.woff) format("woff");
-	// 	font-display: swap
-	//   }
- html {
-	font-family: "Lexend", sans-serif;
-	background-color: black;
-	color: white;
-	 }
 
-	h1,h2,h3,h4,h5,h6 {
-		@apply font-heading font-bold
-	}
+  @font-face {
+    font-family: Obviously;
+    font-weight: 700;
+    src: url(/fonts/Obviously/Obviously-Black.woff2) format("woff2");
+    font-display: swap;
+  }
 
+  @font-face {
+    font-family: Obviously;
+    font-weight: 700;
+    font-style: italic;
+    src: url(/fonts/Obviously/Obviously-BlackItalic.woff2) format("woff2");
+    font-display: swap;
+  }
+  // @font-face {
+  // font-family: Obviously;
+  // font-weight: 900;
+  // src: url(/fonts/Panton/Panton-Trial-Black.woff) format("woff");
+  // 	font-display: swap
+  //   }
+  html {
+    font-family: "Lexend", sans-serif;
+    background-color: black;
+    color: white;
+  }
+  
+  
+  
 
-	
-	  .slanted {
-		object-fit: cover;
-	  }
-	
-	  .slanted.right {
-		/* clip-path: polygon(0 0, 100% 0%, 93% 100%, 0% 100%); */
-		clip-path: polygon(0 0, 100% 0, calc(100% - 40px) 100%, 0 100%);
-	  }
-	
-	  .slanted.left {
-		/* clip-path: polygon( 7% 0, 100% 0%, 100% 100%, 0% 100%); */
-		clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
-	  }
-	
-	  .slanted.bottom {
-		clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 0 100%);
-	  }
-	
-	  .slanted.top {
-		clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%);
-	  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold;
+  }
 
-	  @media (max-width: 1027px) {
-		.slanted.right {
-		  /* Bottom slant */
-		  /* clip-path: polygon(0 0, 100% 0%, 100% 93%, 0% 100%); */
-		  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%);
-		}
-	
-		.slanted.left {
-		  /* Top slant */
-		  /* clip-path: polygon(0 7%, 100% 0, 100% 100%, 0% 100%); */
-		  clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
-		}
-	  }
-	  .cc--elegant-black {
-		color-scheme: dark;
-	
-		--cc-bg: #000;
-		--cc-primary-color: rgb(239, 244, 246);
-		--cc-secondary-color: #b1bdc3;
-	
-		--cc-btn-primary-bg: #ffffff;
-		--cc-btn-primary-color: #000;
-		--cc-btn-primary-hover-bg: #ccd4d8;
-		--cc-btn-primary-hover-color: #000;
-	
-		--cc-btn-secondary-bg: rgba(255, 255, 255, 0.039);
-		--cc-btn-secondary-color: var(--cc-primary-color);
-		--cc-btn-secondary-border-color: #252729;
-		--cc-btn-secondary-hover-bg: #252729;
-		--cc-btn-secondary-hover-color: #fff;
-		--cc-btn-secondary-hover-border-color: #252729;
-	
-		--cc-cookie-category-block-bg: #101111;
-		--cc-cookie-category-block-border: #1d1e1f;
-		--cc-cookie-category-block-hover-bg: #151516;
-		--cc-cookie-category-block-hover-border: #1d1e1f;
-		--cc-cookie-category-expanded-block-hover-bg: #1d1e1f;
-		--cc-cookie-category-expanded-block-bg: #101111;
-		--cc-toggle-readonly-bg: #2f3132;
-		--cc-overlay-bg: rgba(0, 0, 0, 0.9)!important;
-	
-		--cc-toggle-on-knob-bg: var(--cc-bg);
-		--cc-toggle-readonly-knob-bg: var( --cc-cookie-category-block-bg);
-	
-		--cc-separator-border-color: #252729;
-	
-		--cc-footer-border-color: #212529;
-		--cc-footer-bg: #000;
-	}
-	
-	.cc--elegant-black #cc-main .cm,
-	.cc--elegant-black #cc-main .pm {
-		border: 1px solid var(--cc-separator-border-color);
-	}
+ 
 
+  
+
+  .slanted {
+    object-fit: cover;
+  }
+
+  .slanted.right {
+    /* clip-path: polygon(0 0, 100% 0%, 93% 100%, 0% 100%); */
+    clip-path: polygon(0 0, 100% 0, calc(100% - 40px) 100%, 0 100%);
+  }
+
+  .slanted.left {
+    /* clip-path: polygon( 7% 0, 100% 0%, 100% 100%, 0% 100%); */
+    clip-path: polygon(40px 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  .slanted.bottom {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), 0 100%);
+  }
+
+  .slanted.top {
+    clip-path: polygon(0 20px, 100% 0, 100% 100%, 0 100%);
+  }
+
+  @media (max-width: 1027px) {
+    .slanted.right {
+      /* Bottom slant */
+      /* clip-path: polygon(0 0, 100% 0%, 100% 93%, 0% 100%); */
+      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), 0 100%);
+    }
+
+    .slanted.left {
+      /* Top slant */
+      /* clip-path: polygon(0 7%, 100% 0, 100% 100%, 0% 100%); */
+      clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+  .cc--elegant-black {
+    --cc-font-family: "Lexend", sans-serif;
+    color-scheme: dark;
+
+    --cc-bg: #000;
+    --cc-primary-color: rgb(239, 244, 246);
+    --cc-secondary-color: #b1bdc3;
+
+    --cc-btn-primary-bg: #ffffff;
+    --cc-btn-primary-color: #000;
+    --cc-btn-primary-hover-bg: #ccd4d8;
+    --cc-btn-primary-hover-color: #000;
+
+    --cc-btn-secondary-bg: rgba(255, 255, 255, 0.039);
+    --cc-btn-secondary-color: var(--cc-primary-color);
+    --cc-btn-secondary-border-color: #252729;
+    --cc-btn-secondary-hover-bg: #252729;
+    --cc-btn-secondary-hover-color: #fff;
+    --cc-btn-secondary-hover-border-color: #252729;
+
+    --cc-cookie-category-block-bg: #101111;
+    --cc-cookie-category-block-border: #1d1e1f;
+    --cc-cookie-category-block-hover-bg: #151516;
+    --cc-cookie-category-block-hover-border: #1d1e1f;
+    --cc-cookie-category-expanded-block-hover-bg: #1d1e1f;
+    --cc-cookie-category-expanded-block-bg: #101111;
+    --cc-toggle-readonly-bg: #2f3132;
+    --cc-overlay-bg: rgba(0, 0, 0, 0.9) !important;
+
+    --cc-toggle-on-knob-bg: var(--cc-bg);
+    --cc-toggle-readonly-knob-bg: var(--cc-cookie-category-block-bg);
+
+    --cc-separator-border-color: #252729;
+    --cc-modal-transition-duration: 1s;
+
+    --cc-footer-border-color: #212529;
+    --cc-footer-bg: #000;
+  }
+
+  .cc--elegant-black #cc-main .cm,
+  .cc--elegant-black #cc-main .pm {
+    border: 1px solid var(--cc-separator-border-color);
+  }
 }
 
-
 @layer utilities {
-	// .nav-hover {
+  // .nav-hover {
 
-	// 	:before {
-	// 		@apply w-0 content-[""] h-1 block absolute left-[50%] duration-150 bottom-[-10%] 
-	// 	}
-	// 	:before:hover {
-	// 			@apply w-full left-0
-	// 	}
+  // 	:before {
+  // 		@apply w-0 content-[""] h-1 block absolute left-[50%] duration-150 bottom-[-10%]
+  // 	}
+  // 	:before:hover {
+  // 			@apply w-full left-0
+  // 	}
 
-	// }
+  // }
 
-	// .nav-active {
-	// 	:before {
-	// 		@apply w-full content-[""] h-1 block absolute left-0 duration-150 bottom-[-10%] 
-	// 	}
-	// }
+  // .nav-active {
+  // 	:before {
+  // 		@apply w-full content-[""] h-1 block absolute left-0 duration-150 bottom-[-10%]
+  // 	}
+  // }
 }

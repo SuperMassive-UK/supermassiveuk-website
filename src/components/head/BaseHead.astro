@@ -1,9 +1,7 @@
 ---
 import { SEO } from "astro-seo";
-import "@fontsource-variable/tilt-warp";
-import "@fontsource/shippori-antique-b1";
 import "../../styles/global.scss";
-import "../../styles/locomotive-scroll.css";
+import "@fontsource-variable/lexend";
 
 const { title = "", description = "", type = "website" } = Astro.props;
 const social_image = "";
@@ -15,38 +13,41 @@ const social_image = "";
   <meta property="description" content={description} />
   <meta
     name="viewport"
-    content="width=device-width, initial-scale=1, minimum-scale=1"
+    content="width=device-width, initial-scale=1.0"
   />
   <meta charset="utf-8" />
 
-    <script is:inline type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-B4RHDV0Y5H"></script>
+  <script
+    is:inline
+    type="text/partytown"
+    src="https://www.googletagmanager.com/gtag/js?id=G-B4RHDV0Y5H"></script>
 
-    <script is:inline type="text/partytown">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-    
-      gtag("consent", "default", {
-          ad_storage: "denied",
-          ad_user_data: "denied",
-          ad_personalization: "denied",
-          analytics_storage: "denied",
+  <script is:inline type="text/partytown">
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("consent", "default", {
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      analytics_storage: "denied",
+    });
+
+    gtag("config", "G-B4RHDV0Y5H");
+  </script>
+  <script is:inline data-category="analytics">
+    function updateConsents() {
+      gtag("consent", "update", {
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
+        analytics_storage: "granted",
       });
-    
-      gtag("config", "G-B4RHDV0Y5H");
-    </script>
-    <script is:inline data-category="analytics">
-      function updateConsents() {
-        gtag('consent', 'update', {
-          ad_storage: 'granted',
-          ad_user_data: 'granted',
-          ad_personalization: 'granted',
-          analytics_storage: 'granted',
-        });
-      }
-    </script>
+    }
+  </script>
   <script
     src="https://app.viral-loops.com/widgetsV2/core/loader.js"
     data-campaign-id="e9xz4agONxBxkGnd7pUojPlnY4Y"
@@ -81,5 +82,8 @@ const social_image = "";
       ],
     }}
   />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"
+  />
 </head>
