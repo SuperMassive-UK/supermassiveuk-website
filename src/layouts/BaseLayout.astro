@@ -3,6 +3,8 @@ import Footer from "@/components/footer/Footer.astro";
 import BaseHead from "@/components/head/BaseHead.astro";
 import NavBar from "@/components/nav/NavBar.astro";
 
+import 'vanilla-cookieconsent/dist/cookieconsent.css';
+
 
 interface Props {
   title: string;
@@ -39,7 +41,12 @@ import {
 
 initTWE({ Collapse });
     </script>
-  <script type="module" src="/scripts/cookieconsent-config.js"></script>
+  <script>
+    import { run } from 'vanilla-cookieconsent';
+    import { config } from '../scripts/CookieConsentConfig';
+  
+    run(config);
+  </script>
   <script type="module">
     function setVh() {
       const vh = (
@@ -47,7 +54,6 @@ initTWE({ Collapse });
       ) * 0.01;
   
       document.documentElement.style.setProperty('--vh', `${vh}px`);
-      console.log('--vh set to', vh);
     }
   
     // Run on key lifecycle events

@@ -11,48 +11,98 @@ const social_image = "";
   <title>{title}</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   <meta property="description" content={description} />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta charset="utf-8" />
 
   <script
     is:inline
-    type="text/partytown"
     src="https://www.googletagmanager.com/gtag/js?id=G-B4RHDV0Y5H"></script>
 
-  <script is:inline type="text/partytown">
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
+  <script>
+    // We need a global definition to avoid type warnings
+    declare global {
+      interface Window {
+        dataLayer: Record<string, any>[];
+        gtag: (...args: any[]) => void;
+      }
     }
-    gtag("js", new Date());
 
-    gtag("consent", "default", {
+    // Initialize dataLayer
+    window.dataLayer = window.dataLayer || [];
+
+    // Define gtag function
+    window.gtag = function gtag(...args: any[]) {
+      window.dataLayer.push(arguments);
+    };
+
+    // Load GA4 with denied default consents
+    window.gtag("js", new Date());
+    window.gtag("consent", "default", {
       ad_storage: "denied",
       ad_user_data: "denied",
       ad_personalization: "denied",
       analytics_storage: "denied",
     });
+    window.gtag("config", "G-B4RHDV0Y5H");
+  </script>
 
-    gtag("config", "G-B4RHDV0Y5H");
-  </script>
-  <script is:inline data-category="analytics">
-    function updateConsents() {
-      gtag("consent", "update", {
-        ad_storage: "granted",
-        ad_user_data: "granted",
-        ad_personalization: "granted",
-        analytics_storage: "granted",
-      });
-    }
-  </script>
   <script
     src="https://app.viral-loops.com/widgetsV2/core/loader.js"
     data-campaign-id="e9xz4agONxBxkGnd7pUojPlnY4Y"
     id="viral-loops-loader"
     defer></script>
+  <!-- Meta Pixel Code -->
+  <script is:inline data-category="analytics">
+    // @ts-ignore
+    !(function (f, b, e, v, n, t, s) {
+      // @ts-ignore
+
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod
+          ? // @ts-ignore
+            n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+
+      // @ts-ignore
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = "2.0";
+
+      // @ts-ignore
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+
+      // @ts-ignore
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+
+      // @ts-ignore
+      s.parentNode.insertBefore(t, s);
+    })(
+      window,
+      document,
+      "script",
+      "https://connect.facebook.net/en_US/fbevents.js"
+    );
+    // @ts-ignore
+    fbq("init", "665512622734995");
+    // @ts-ignore
+    fbq("track", "PageView");
+  </script>
+  <noscript
+    ><img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?
+  id=665512622734995&ev=PageView&noscript=1"
+    /></noscript
+  >
+  <!-- End Meta Pixel Code -->
 
   <SEO
     title={title}
@@ -82,8 +132,5 @@ const social_image = "";
       ],
     }}
   />
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"
-  />
+
 </head>

@@ -15,7 +15,7 @@ export default defineConfig({
     }),
     icon(),
     sitemap(),
-    partytown({ config: { forward: ["dataLayer.push"] } }),
+    // partytown({ config: { forward: ["dataLayer.push"] } }),
     favicons(),
   ],
   experimental: {
