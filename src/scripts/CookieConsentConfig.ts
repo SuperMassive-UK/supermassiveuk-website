@@ -49,6 +49,9 @@ export const config: CookieConsentConfig = {
                   },
                   {
                     name: '_gid',   // string: exact cookie name
+                  },
+                  {
+                    name: '_fbp',   // string: exact cookie name
                   }
                 ]
               },

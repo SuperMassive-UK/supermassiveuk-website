@@ -47,6 +47,25 @@ initTWE({ Collapse });
   
     run(config);
   </script>
+  <script >
+    // Log all consent-related dataLayer events on load
+    window.addEventListener('load', function () {
+      const consentEvents = window.dataLayer.filter(item => item['event'] === 'update_consent');
+      console.log('Consent Events:', consentEvents);
+
+      console.log(window.dataLayer)
+  
+      // Optionally log current consent state
+      const currentConsent = {};
+      for (const item of consentEvents) {
+        if (item['event'] && item['consent']) {
+          Object.assign(currentConsent, item['consent']);
+        }
+      }
+      console.log('Current Consent State:', currentConsent);
+    });
+  </script>
+
   <script type="module">
     function setVh() {
       const vh = (
