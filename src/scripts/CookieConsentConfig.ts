@@ -5,6 +5,7 @@ declare global {
     interface Window {
       dataLayer: Record<string, any>[];
       gtag: (...args: any[]) => void;
+      fbq: (...args: any[]) => void;
     }
   }
   
@@ -20,6 +21,7 @@ export const config: CookieConsentConfig = {
                 ad_personalization: "granted",
                 analytics_storage: "granted",
               });
+              window.fbq("consent", "grant")
           }
       },
     guiOptions: {
