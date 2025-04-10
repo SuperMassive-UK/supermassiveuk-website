@@ -1,4 +1,4 @@
 ---
-meta_title: SuperMassive
-meta_description:  Immersive experience production company combining interactive digital technologies and set design into mind-blowing experiences. Tickets for the first experience available soon.
+meta_title: SUPERMASSIVE
+meta_description:  Discover SUPERMASSIVE: Manchester’s immersive rooftop experience. Hands-on, interactive art, light, sound & play for all ages. Now at Depot Mayfield.
 ---

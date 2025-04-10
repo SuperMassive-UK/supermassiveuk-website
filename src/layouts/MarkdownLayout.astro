@@ -1,0 +1,27 @@
+---
+import Footer from "@/components/footer/Footer.astro";
+import BaseHead from "@/components/head/BaseHead.astro";
+import NavBar from "@/components/nav/NavBar.astro";
+import { getEntry } from "astro:content";
+import { navigate } from "astro:transitions/client";
+import '@fontsource-variable/lexend';
+
+
+
+const {frontmatter} = Astro.props;
+---
+
+<html lang="en" class="dark">
+  <BaseHead title={frontmatter.title} description={frontmatter.description} type="website" />
+  <body
+    class="min-h-screen w-screen overflow-x-hidden p-0"
+  >
+    <NavBar />
+    <main 
+    id="page" class="dark prose max-w-6xl mx-auto mt-36 prose-invert px-8">
+      <slot />
+    </main>
+   <Footer />
+
+  </body>
+</html>
