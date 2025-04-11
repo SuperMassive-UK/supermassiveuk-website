@@ -39,11 +39,14 @@ import {
 initTWE({ Collapse });
     </script>
   <script>
-    import { run } from 'vanilla-cookieconsent';
+    import { run, reset, show } from 'vanilla-cookieconsent';
     import { config } from '../scripts/CookieConsentConfig';
   
     run(config);
   </script>
+  <script is:inline>
+   ;
+    </script>
   <script type="module">
     function setVh() {
       const vh = (

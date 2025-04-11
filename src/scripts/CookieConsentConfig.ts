@@ -6,10 +6,13 @@ declare global {
     dataLayer: Record<string, any>[];
     gtag: (...args: any[]) => void;
     fbq: (...args: any[]) => void;
+    ttq: { load: (...args: any[]) => void; page: (...args: any[]) => void, revokeConsent: (...args: any[]) => void };
   }
 }
 
 export const config: CookieConsentConfig = {
+  revision: 1,
+  autoClearCookies: true,
   guiOptions: {
     consentModal: {
       layout: "box",
@@ -29,6 +32,17 @@ export const config: CookieConsentConfig = {
       readOnly: true,
     },
     analytics: {
+      autoClear: {
+        cookies: [
+          {
+            name: /^_ga/,
+          },
+          {
+            name: "_gid",
+          },
+        ]
+      },
+      enabled: true,
       services: {
         ga4: {
           label:
@@ -40,6 +54,9 @@ export const config: CookieConsentConfig = {
             // TODO: load ga4
           },
           onReject: () => {
+            window.gtag("consent", "update", {
+              analytics_storage: "denied",
+            });
           },
           cookies: [
             {
@@ -53,19 +70,49 @@ export const config: CookieConsentConfig = {
       },
     },
     marketing: {
+      autoClear: {
+        cookies: [
+          {
+            name: /^_ga/,
+          },
+          {
+            name: "_gid",
+          },
+          {
+            name: "_ttp",
+          },
+          {
+            name: "_tt_enable_cookie",
+          },
+          {
+            name: "_fbp",
+          },
+          {
+            name: "_gcl_au"
+          }
+        ],
+        reloadPage: true,
+      }, 
+      
+      enabled: true,
       services: {
         ga4: {
           label:
-            '<a href="https://marketingplatform.google.com/about/analytics/terms/us/" target="_blank">Google Analytics 4</a>',
+            '<a href="https://marketingplatform.google.com/about/analytics/terms/us/" target="_blank">Google Ad Sense</a>',
           onAccept: () => {
-            
             window.gtag("consent", "update", {
               ad_storage: "granted",
               ad_user_data: "granted",
               ad_personalization: "granted",
             });
           },
+
           onReject: () => {
+            window.gtag("consent", "update", {
+              ad_storage: "denied",
+              ad_user_data: "denied",
+              ad_personalization: "denied",
+            });
           },
           cookies: [
             {
@@ -74,6 +121,10 @@ export const config: CookieConsentConfig = {
             {
               name: "_gid",
             },
+            {
+              name: "_gcl_au"
+            }
+            
           ],
         },
 
@@ -81,10 +132,10 @@ export const config: CookieConsentConfig = {
           label:
             '<a href="https://developers.facebook.com/docs/meta-pixel/guides/terms-and-policies/" target="_blank">Meta Pixel</a>',
           onAccept: () => {
-            
             window.fbq("consent", "grant");
           },
           onReject: () => {
+            window.fbq("consent", "revoke");
           },
           cookies: [
             {
@@ -96,19 +147,21 @@ export const config: CookieConsentConfig = {
           label:
             '<a href="https://ads.tiktok.com/help/article/tiktok-advertiser-tools-and-related-terms" target="_blank">TikTok Pixel</a>',
           onAccept: () => {
-            window.ttq.load('CVSEJP3C77UD3500KQS0');
-            window.ttq.page()
-            
+            window.ttq.load("CVSEJP3C77UD3500KQS0");
+            window.ttq.page();
           },
           onReject: () => {
+            console.log("revoking ttp")
+            window.ttq.revokeConsent();
           },
           cookies: [
             {
               name: "_ttp",
             },
             {
-              name: "_tt_enable",
+              name: "_tt_enable_cookie",
             },
+            
           ],
         },
       },
