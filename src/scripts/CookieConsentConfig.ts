@@ -81,12 +81,33 @@ export const config: CookieConsentConfig = {
           label:
             '<a href="https://developers.facebook.com/docs/meta-pixel/guides/terms-and-policies/" target="_blank">Meta Pixel</a>',
           onAccept: () => {
+            
+            window.fbq("consent", "grant");
           },
           onReject: () => {
           },
           cookies: [
             {
               name: "_fbp",
+            },
+          ],
+        },
+        ttp: {
+          label:
+            '<a href="https://ads.tiktok.com/help/article/tiktok-advertiser-tools-and-related-terms" target="_blank">TikTok Pixel</a>',
+          onAccept: () => {
+            window.ttq.load('CVSEJP3C77UD3500KQS0');
+            window.ttq.page()
+            
+          },
+          onReject: () => {
+          },
+          cookies: [
+            {
+              name: "_ttp",
+            },
+            {
+              name: "_tt_enable",
             },
           ],
         },
