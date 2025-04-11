@@ -6,7 +6,7 @@ declare global {
     dataLayer: Record<string, any>[];
     gtag: (...args: any[]) => void;
     fbq: (...args: any[]) => void;
-    ttq: { load: (...args: any[]) => void; page: (...args: any[]) => void, revokeConsent: (...args: any[]) => void };
+    ttq: { load: (...args: any[]) => void; page: (...args: any[]) => void, revokeConsent: (...args: any[]) => void, track: (event: string, data?: any) => void; };
   }
 }
 

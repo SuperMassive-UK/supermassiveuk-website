@@ -22,6 +22,11 @@ const {frontmatter} = Astro.props;
       <slot />
     </main>
    <Footer />
-
+   <script>
+    import { run } from 'vanilla-cookieconsent';
+    import { config } from '../scripts/CookieConsentConfig';
+  
+    run(config);
+  </script>
   </body>
 </html>

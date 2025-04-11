@@ -36,7 +36,7 @@ import SandpitBackground2 from "../assets/images/sandpit-background-2.png";
         </ul>
       </div>
       <p></p>
-      <form data-vl-action="join-stage#join" class="flex flex-col gap-4 mt-8">
+      <form data-vl-action="join-stage#join" class="flex flex-col gap-4 mt-8" id="viral-loops-signup">
         <input
           data-vl-join-stage-target="input.firstname"
           type="text"
@@ -106,3 +106,33 @@ import SandpitBackground2 from "../assets/images/sandpit-background-2.png";
       var(--sandpitBackground2);
   }
 </style>
+<script>
+ 
+  document.addEventListener("DOMContentLoaded", function () {
+    const form: HTMLFormElement | null = document.querySelector("#viral-loops-signup");
+
+    if (!form) return;
+
+    form.addEventListener("submit", function (e) {
+      // e.preventDefault(); // Prevent default form submission behavior
+
+      const formData = new FormData(form);
+      const data: any = {};
+
+      // Convert FormData to a plain object
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      console.log(window.ttq, "firing tik tok pixel event")
+
+      // Send event to TikTok Pixel
+      if (window.ttq && typeof window.ttq.track === "function") {
+        window.ttq.track("CompleteRegistration", data);
+      }
+
+      // Optionally submit the form after tracking
+      // form.submit(); // Remove this if using AJAX
+    });
+  });
+</script>
