@@ -15,6 +15,9 @@ export default $config({
     };
   },
   async run() {
+
+    console.log($app.stage)
+
     const crossAccountRoleArnSecret = new sst.Secret("DomainRoleArn");
 
     // Define the cross-account provider (root account)
@@ -24,7 +27,7 @@ export default $config({
         sessionName: "SstDeploymentSession",
         externalId: "SstDeployment", // Include if you set an External ID
       },
-      region: "eu-west-1", // Route 53 is a global service, but Pulumi requires a region
+      region: "eu-west-1", // Route 53 is a global "service, but Pulumi requires a region
     });
 
     const supermassiveUkHostedZoneIdSecret = new sst.Secret(
@@ -33,8 +36,10 @@ export default $config({
 
     const acmCert = new sst.Secret("AcmCert");
 
+    
+
     const astroSite = new sst.aws.Astro("SuperMassiveUK", {
-      domain: {
+     ...($app.stage === "production" && {  domain: {
         name: "supermassive.uk",
         dns: false,
         cert: acmCert.value,
@@ -42,47 +47,53 @@ export default $config({
       },
       warm: 3,
       regions: ["eu-west-1", "eu-west-2"],
+    }),
     });
 
-    const cloudFrontDomain = astroSite.nodes.cdn?.url; // Replace this!
+    
 
-    if (!cloudFrontDomain) {
-      throw new Error("No cloud front domain");
-    }
-
-    const rootDomainRecord = new aws.route53.Record(
-      "supermassiveRootAlias",
-      {
-        zoneId: supermassiveUkHostedZoneIdSecret.value,
-        name: "supermassive.uk",
-        type: "A",
-        aliases: [
-          {
-            name: cloudFrontDomain.apply((domain) =>
+    if ($app.stage === "production") {
+      const cloudFrontDomain = astroSite.nodes.cdn?.url; 
+    
+      if (!cloudFrontDomain) {
+        throw new Error("No cloud front domain");
+      }
+      const rootDomainRecord = new aws.route53.Record(
+        "supermassiveRootAlias",
+        {
+          zoneId: supermassiveUkHostedZoneIdSecret.value,
+          name: "supermassive.uk",
+          type: "A",
+          aliases: [
+            {
+              name: cloudFrontDomain.apply((domain) =>
+                domain.replace(/^https?:\/\//, ""),
+              ),
+              zoneId: "Z2FDTNDATAQYW2", // CloudFront hosted zone ID
+              evaluateTargetHealth: false,
+            },
+          ],
+        },
+        { provider: rootAccountProvider },
+      );
+  
+      const wwwRecord = new aws.route53.Record(
+        "supermassiveWwwCname",
+        {
+          zoneId: supermassiveUkHostedZoneIdSecret.value,
+          name: "www.supermassive.uk",
+          type: "CNAME",
+          ttl: 300,
+          records: [
+            cloudFrontDomain.apply((domain) =>
               domain.replace(/^https?:\/\//, ""),
             ),
-            zoneId: "Z2FDTNDATAQYW2", // CloudFront hosted zone ID
-            evaluateTargetHealth: false,
-          },
-        ],
-      },
-      { provider: rootAccountProvider },
-    );
+          ],
+        },
+        { provider: rootAccountProvider },
+      );
+    }
 
-    const wwwRecord = new aws.route53.Record(
-      "supermassiveWwwCname",
-      {
-        zoneId: supermassiveUkHostedZoneIdSecret.value,
-        name: "www.supermassive.uk",
-        type: "CNAME",
-        ttl: 300,
-        records: [
-          cloudFrontDomain.apply((domain) =>
-            domain.replace(/^https?:\/\//, ""),
-          ),
-        ],
-      },
-      { provider: rootAccountProvider },
-    );
+    
   },
 });

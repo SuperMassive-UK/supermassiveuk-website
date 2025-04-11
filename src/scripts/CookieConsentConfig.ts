@@ -151,7 +151,6 @@ export const config: CookieConsentConfig = {
             window.ttq.page();
           },
           onReject: () => {
-            console.log("revoking ttp")
             window.ttq.revokeConsent();
           },
           cookies: [

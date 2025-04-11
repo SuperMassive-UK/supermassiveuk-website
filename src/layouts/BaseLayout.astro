@@ -17,27 +17,26 @@ const {
 } = Astro.props;
 ---
 
-<html lang="en" class="cc--elegant-black h-full">
+<html lang="en" class="cc--elegant-black">
   <BaseHead title={title} description={description} type={type} />
   <body
-    class="w-screen overflow-x-hidden p-0 h-full"
+    class="w-screen overflow-x-hidden p-0 relative"
   >
     <NavBar />
     <main 
-    id="page" class=w-full">
+    id="page" class="w-full ">
       <slot />
     </main>
    <Footer />
 
   <script>
-    // Initialization for ES Users
-import {
-  Collapse,
-  initTWE,
-} from "tw-elements";
+    import {
+      Collapse,
+      initTWE,
+    } from "tw-elements";
 
-initTWE({ Collapse });
-    </script>
+    initTWE({ Collapse });
+  </script>
   <script>
     import { run } from 'vanilla-cookieconsent';
     import { config } from '../scripts/CookieConsentConfig';

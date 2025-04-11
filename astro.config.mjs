@@ -4,7 +4,7 @@ import icon from "astro-icon";
 import sitemap from "@astrojs/sitemap";
 import favicons from "astro-favicons";
 import aws from "astro-sst";
-import partytown from "@astrojs/partytown";
+import minify from 'astro-minify-html-swc'
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,8 +15,8 @@ export default defineConfig({
     }),
     icon(),
     sitemap(),
-    // partytown({ config: { forward: ["dataLayer.push"] } }),
     favicons(),
+    minify()
   ],
   experimental: {
     svg: true,
